@@ -28,7 +28,7 @@ yarn add for-editor-herb
 ```js
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Editor from 'for-editor'
+import Editor from 'for-editor-herb'
 
 class App extends Component {
   constructor() {
