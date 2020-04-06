@@ -4,6 +4,7 @@ export interface IToolbar {
   h2?: boolean
   h3?: boolean
   h4?: boolean
+  list?: boolean
   para?: boolean
   quote?: boolean
   table?: boolean
@@ -28,7 +29,10 @@ export interface IWords {
   h4?: string
   undo?: string
   redo?: string
-  // 段落
+  list?: string
+  orderlist?: string
+  disorderlist?: string
+  checklist?: string
   para?: string
   italic?: string
   bold?: string

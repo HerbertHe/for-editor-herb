@@ -16,6 +16,16 @@ marked.setOptions({
 
 const renderer = new marked.Renderer()
 
+// 标题解析
+const headingParse = (text: string, level: number) => {
+  return `<h${level}>
+    <span class="heading">${text}</span>
+    <a href="#${text}" name="${text}" class="anchor">
+      #
+    </a>
+  </h${level}>`
+}
+
 // latex解析
 const latexParse = (latex: string) => {
   let html: string = katex.renderToString(latex, {
@@ -80,6 +90,7 @@ const codeParse = (code: string, language: string) => {
 renderer.code = codeParse
 renderer.paragraph = paragraphParse
 renderer.link = linkParse
+renderer.heading = headingParse
 
 export default (content: string) => {
   if (typeof content !== 'string') return ''

@@ -9,7 +9,7 @@ A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long t
 
 ## What's New
 
-* [x] Toolbar button: quote/paragraph/table/inline code/collapse/katex
+* [x] Toolbar button: quote/paragraph/table/inline code/collapse/katex/list
 * [x] `Tex` render support by `katex`
 * [x] `mermaid` render(experimental, some bugs happened using `mermaidAPI`)
 * [x] Responsive Layout
@@ -89,6 +89,7 @@ toolbar: {
     h3: true,
     h4: true,
     img: true,
+    list: true,
     para: true,       // parapraph
     table: true,
     quote: true,

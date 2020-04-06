@@ -16,6 +16,8 @@ export interface IToolbar {
   h2?: boolean
   h3?: boolean
   h4?: boolean
+  // 列表
+  list?: boolean
   // 段落
   para?: boolean
   // 引用
@@ -47,6 +49,11 @@ export interface IWords {
   h4?: string
   undo?: string
   redo?: string
+  // 列表
+  list?: string
+  orderlist?: string
+  disorderlist?: string
+  checklist?: string
   // 段落
   para?: string
   italic?: string
@@ -321,6 +328,21 @@ class MdEditor extends React.Component<IP, IS> {
         prefix: '[title](',
         subfix: ')',
         str: 'url'
+      },
+      orderlist: {
+        prefix: '\n1. ',
+        subfix: '',
+        str: 'orderlist'
+      },
+      disorderlist: {
+        prefix: '\n- ',
+        subfix: '',
+        str: 'disorderlist'
+      },
+      checklist: {
+        prefix: '\n- [x] ',
+        subfix: '',
+        str: 'checklist'
       },
       innercode: {
         prefix: '`',

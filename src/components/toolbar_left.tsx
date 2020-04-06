@@ -14,6 +14,7 @@ interface IS {
   paraHidden: boolean
   titleHidden: boolean
   moreHidden: boolean
+  listHidden: boolean
 }
 
 class Toolbars extends React.Component<IP, IS> {
@@ -27,6 +28,7 @@ class Toolbars extends React.Component<IP, IS> {
   private paraTimer: number
   private titleTimer: number
   private moreTimer: number
+  private listTimer: number
 
   constructor(props: IP) {
     super(props)
@@ -36,12 +38,28 @@ class Toolbars extends React.Component<IP, IS> {
       imgList: [],
       paraHidden: true,
       titleHidden: true,
-      moreHidden: true
+      moreHidden: true,
+      listHidden: true
     }
   }
 
   onClick(type: string) {
     this.props.onClick(type)
+  }
+
+  listMouseOver() {
+    window.clearTimeout(this.listTimer)
+    this.setState({
+      listHidden: false
+    })
+  }
+
+  listMouseOut() {
+    this.listTimer = window.setTimeout(() => {
+      this.setState({
+        listHidden: true
+      })
+    }, 150)
   }
 
   paraMouseOver() {
@@ -67,7 +85,7 @@ class Toolbars extends React.Component<IP, IS> {
   }
 
   titleMouseOut() {
-    this.paraTimer = window.setTimeout(() => {
+    this.titleTimer = window.setTimeout(() => {
       this.setState({
         titleHidden: true
       })
@@ -82,7 +100,7 @@ class Toolbars extends React.Component<IP, IS> {
   }
 
   moreMouseOut() {
-    this.paraTimer = window.setTimeout(() => {
+    this.moreTimer = window.setTimeout(() => {
       this.setState({
         moreHidden: true
       })
@@ -127,10 +145,7 @@ class Toolbars extends React.Component<IP, IS> {
 
   render() {
     const { toolbar, words } = this.props
-    const { imgHidden } = this.state
-    const { paraHidden } = this.state
-    const { titleHidden } = this.state
-    const { moreHidden } = this.state
+    const { imgHidden, paraHidden, titleHidden, moreHidden, listHidden } = this.state
     return (
       <>
         <div className="for-pc">
@@ -232,6 +247,27 @@ class Toolbars extends React.Component<IP, IS> {
             {toolbar.link && (
               <li onClick={() => this.onClick('link')} title={words.link}>
                 <i className="foricon for-link" />
+              </li>
+            )}
+            {/* 列表 */}
+            {toolbar.list && (
+              <li
+                className="for-toolbar-list"
+                onMouseOver={() => this.listMouseOver()}
+                onMouseOut={() => this.listMouseOut()}
+              >
+                <i className="foricon for-list" />
+                <ul style={listHidden ? { display: 'none' } : {}}>
+                  <li onClick={() => this.onClick('disorderlist')} title={words.disorderlist}>
+                    {words.disorderlist}
+                  </li>
+                  <li onClick={() => this.onClick('orderlist')} title={words.orderlist}>
+                    {words.orderlist}
+                  </li>
+                  <li onClick={() => this.onClick('checklist')} title={words.checklist}>
+                    {words.checklist}
+                  </li>
+                </ul>
               </li>
             )}
             {toolbar.innercode && (
@@ -361,6 +397,26 @@ class Toolbars extends React.Component<IP, IS> {
                 </ul>
               </li>
             )}
+            {toolbar.list && (
+              <li
+                className="for-toolbar-list"
+                onMouseOver={() => this.listMouseOver()}
+                onMouseOut={() => this.listMouseOut()}
+              >
+                <i className="foricon for-list" />
+                <ul style={listHidden ? { display: 'none' } : {}}>
+                  <li onClick={() => this.onClick('disorderlist')} title={words.disorderlist}>
+                    {words.disorderlist}
+                  </li>
+                  <li onClick={() => this.onClick('orderlist')} title={words.orderlist}>
+                    {words.orderlist}
+                  </li>
+                  <li onClick={() => this.onClick('checklist')} title={words.checklist}>
+                    {words.checklist}
+                  </li>
+                </ul>
+              </li>
+            )}
             <li
               className="for-toolbar-more"
               onMouseOver={() => this.moreMouseOver()}
@@ -407,9 +463,7 @@ class Toolbars extends React.Component<IP, IS> {
                     {words.collapse}
                   </li>
                 )}
-                {/* <li>
-          <i className="foricon for-render" />
-        </li> */}
+
                 {/* katex支持 */}
                 {toolbar.katex && (
                   <li onClick={() => this.onClick('katex')} title={words.katex}>

@@ -75,7 +75,8 @@
                     &.for-toolbar-img,
                     &.for-toolbar-para,
                     &.for-toolbar-title,
-                    &.for-toolbar-more {
+                    &.for-toolbar-more,
+                    &.for-toolbar-list {
                         position: relative;
 
                         > ul {
@@ -298,6 +299,19 @@
             &:target {
                 padding-top: 4.5rem;
             }
+        }
+
+        // 重写锚点部分样式
+        .anchor {
+            color: #74b9ff;
+        }
+
+        .heading:hover + .anchor {
+            color: #0984e3;
+        }
+
+        .anchor:hover {
+            color: #0984e3;
         }
 
         a {

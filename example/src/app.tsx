@@ -68,11 +68,11 @@ class App extends Component<{}, IS> {
     return (
       <div className={styles.main}>
         <div className={styles.top}>
-          <h1>for-editor</h1>
+          <h1>for-editor-herb</h1>
           <ul>
             <li>
               <a
-                href="https://github.com/kkfor/for-editor"
+                href="https://github.com/HerbertHe/for-editor-herb"
                 target="_blank"
                 rel="noopener noreferrer"
               >

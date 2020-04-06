@@ -9,7 +9,7 @@
 
 ## 更多的特性
 
-* [x] 工具栏按钮 quote/paragraph/table/inline code/collapse/katex
+* [x] 工具栏按钮 quote/paragraph/table/inline code/collapse/katex/list
 * [x] `katex`渲染`Tex`
 * [x] `mermiad`渲染（实验性，mermaidAPI使用有些bug，已经提交）
 * [x] 响应式布局
@@ -89,6 +89,7 @@ toolbar: {
     h3: true,
     h4: true,
     img: true,
+    list: true,
     para: true,       // 段落
     table: true,      // 表格
     quote: true,      // 引用

@@ -28,6 +28,7 @@ export const CONFIG: ICONFIG = {
     table: true,
     quote: true,
     link: true,
+    list: true,
     innercode: true,
     code: true,
     collapse: true,
