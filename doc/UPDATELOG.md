@@ -1,5 +1,7 @@
 # 更新日志
 
+- 2020-04-06
+  - `for-editor-herb`建立，`npm`包发布，修改源码若干 `1.0.0 --> 1.0.1 --> 1.0.2`
 - 2020-02-27
   - 完善响应式布局 [3a90ea60ca82b6eb790503d4efcd81b8d805e566](https://github.com/HerbertHe/for-editor/commit/3a90ea60ca82b6eb790503d4efcd81b8d805e566)
 
