@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "noImplicitAny": true
+  },
+  "exclude": ["node_modules"]
+}
