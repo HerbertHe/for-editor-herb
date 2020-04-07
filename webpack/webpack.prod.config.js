@@ -12,7 +12,7 @@ module.exports = merge(webpackBaseConfig, {
   output: {
     path: path.resolve(__dirname, '../playground'),
     filename: 'index.js',
-    publicPath: '/',
+    publicPath: './',
     libraryTarget: 'umd'
   },
   plugins: [
@@ -23,6 +23,13 @@ module.exports = merge(webpackBaseConfig, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new UglifyJsPlugin()
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        mangle: false,
+        output: {
+          beautify: true
+        }
+      }
+    })
   ]
 })
