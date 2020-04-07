@@ -2,7 +2,7 @@
 name: Bug提交 Bug report
 about: 帮我们去做的更好 Create a report to help us improve
 title: "[BUG]"
-labels: bug
+labels: bug, wontfix
 assignees: ''
 
 ---
