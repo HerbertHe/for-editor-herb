@@ -355,6 +355,11 @@
             user-select: none;
         }
 
+        // Tex渲染分行
+        .katex-html > .mspace {
+            height: 10px;
+        }
+
         a {
             color: #0366d6;
             text-decoration: none;

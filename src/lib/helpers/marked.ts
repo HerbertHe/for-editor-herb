@@ -27,9 +27,22 @@ const headingParse = (text: string, level: number) => {
 }
 
 // latex解析
-const latexParse = (latex: string) => {
+const latexBlockParse = (latex: string) => {
   let html: string = katex.renderToString(latex, {
     displayMode: true,
+    leqno: false,
+    fleqn: false,
+    throwOnError: false,
+    strict: 'ignore',
+    trust: false,
+    output: 'html'
+  })
+  return html
+}
+
+const latexInlineParse = (latex: string) => {
+  let html: string = katex.renderToString(latex, {
+    displayMode: false,
     leqno: false,
     fleqn: false,
     throwOnError: false,
@@ -42,10 +55,15 @@ const latexParse = (latex: string) => {
 
 // 段落解析
 const paragraphParse = (text: string) => {
-  if (text.substr(0, 2) === '$$' && text.substr(-2, 2) === '$$') {
-    let len: number = text.length - 4
-    let latex: string = String.raw`${text.substr(2, len)}`
-    return latexParse(latex)
+  const texBlock = /(?<=\$\$)[\s\S]*?(?=\$\$)/
+  const texInline = /(\$+)([^\$]|[^\$][\s\S]*?[^\$])\1(?!\$)/
+  if (texBlock.test(text)) {
+    return latexBlockParse(texBlock.exec(text)[0])
+  } else if (texInline.test(text)) {
+    while (texInline.test(text)) {
+      text = text.replace(texInline.exec(text)[0], latexInlineParse(texInline.exec(text)[2]))
+    }
+    return `<p>${text}</p>`
   } else {
     return `<p>${text}</p>`
   }

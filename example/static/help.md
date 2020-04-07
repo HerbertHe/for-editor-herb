@@ -61,10 +61,16 @@ const editor = 'for-editor-herb'
 
 ## Tex
 
+Maxwell's Equations
+
 $$
-x^2 + y^2 = z^2 \newline
-\alpha = \beta
+\nabla \times H = J + \frac{\partial D}{\partial t} \newline
+\nabla \times E = - \frac{\partial B}{\partial t} \newline
+\nabla \cdot B = 0 \newline
+\nabla \cdot D = \rho
 $$
+
+Mass-energy equivalence: $E = mc^2$, Schrödinger equation: $\hat H \Psi=i \hbar \frac{\partial}{\partial t}\Psi$
 
 ## Collapse
 
