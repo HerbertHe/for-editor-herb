@@ -2,7 +2,7 @@
 
 基于[for-editor](https://github.com/kkfor/for-editor)的分支，因为原作者太久没有更新了，PR也没有处理，有些小伙伴看修改文档觉得没有很方便，索性就开了这个项目。本项目将会与给`for-editor`的提交保持同步。拥抱开源，如果你喜欢，请给个star给原项目
 
-* [demo](https://server.jieec.cn/example)
+* [demo](https://herberthe.gitee.io/for-editor-herb/)
 * [github](https://github.com/HerbertHe/for-editor-herb)
 
 > 基于`0.3.5`开始构建
