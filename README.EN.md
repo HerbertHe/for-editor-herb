@@ -1,5 +1,7 @@
 # for-editor-herb
 
+> Markdown editor for React, support Tex rendering!
+
 A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long time without refreshing, without PR handler, the repository is builded and kept in sync with `for-editor` PR. Hug to Open Source! If you like this, please give a star to [for-editor](https://github.com/kkfor/for-editor)
 
 * [demo](https://goer.icu/for-editor-herb/)
