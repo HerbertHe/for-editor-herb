@@ -11,6 +11,7 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 12px;
     background: #fff;
     font-size: 14px;
+    width: 100%;
 
     ul,
     ol,
@@ -53,6 +54,9 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
 
         > .for-pc,
         .for-mobile,
@@ -137,16 +141,36 @@
             }
         }
         > .for-pc {
-            display: block;
+            display: -webkit-box;
+            display: flex;
         }
         > .for-right-pc {
-            display: block;
+            display: -webkit-box;
+            display: flex;
         }
         > .for-mobile {
             display: none;
+            width: calc(100% - 75px);
+            > ul {
+                flex-wrap: wrap;
+                width: 100%;
+                align-content: flex-start;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                flex-direction: row;
+            }
         }
         > .for-right-mobile {
             display: none;
+            width: 75px;
+            > ul {
+                flex-wrap: wrap;
+                width: 100%;
+                align-content: flex-start;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                flex-direction: row;
+            }
         }
 
         @media screen and (max-width: "900px") {
@@ -154,13 +178,15 @@
                 display: none;
             }
             > .for-mobile {
-                display: block;
+                display: -webkit-box;
+                display: flex;
             }
             > .for-right-pc {
                 display: none;
             }
             > .for-right-mobile {
-                display: block;
+                display: -webkit-box;
+                display: flex;
             }
         }
     }

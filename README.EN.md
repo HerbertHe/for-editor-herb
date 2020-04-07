@@ -1,6 +1,6 @@
 # for-editor-herb
 
-A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long time without refreshing, without PR handler, the repository is builded and keep in sync with `for-editor` PR. Hug to Open Source! If you like this, please give a star to [for-editor](https://github.com/kkfor/for-editor)
+A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long time without refreshing, without PR handler, the repository is builded and kept in sync with `for-editor` PR. Hug to Open Source! If you like this, please give a star to [for-editor](https://github.com/kkfor/for-editor)
 
 * [demo](https://server.jieec.cn/example)
 * [github](https://github.com/HerbertHe/for-editor-herb)
