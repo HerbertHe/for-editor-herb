@@ -32,5 +32,6 @@
   "fullscreenOn": "FullScreen ON",
   "fullscreenOff": "FullScreen OFF",
   "addImgLink": "Add Image Link",
-  "addImg": "Upload Image"
+  "addImg": "Upload Image",
+  "outline": "Outline"
 }

@@ -200,6 +200,7 @@
         color: #2c3e50;
         border-radius: 0 0 8px 8px;
         overflow: hidden;
+        position: relative;
 
         .for-panel {
             height: 100%;
@@ -208,6 +209,7 @@
             overflow: auto;
             -webkit-transition: all 0.2s linear 0s;
             transition: all 0.2s linear 0s;
+            position: relative;
 
             &.for-active {
                 -webkit-box-flex: 0;
@@ -219,6 +221,139 @@
                 box-sizing: border-box;
                 padding: 10px 14px;
                 background: #fcfcfc;
+            }
+        }
+
+        // 新增大纲
+        .for-outline-box {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            z-index: 999;
+            background-color: white;
+            border-radius: 3px;
+            box-shadow: 0 0 2px grey;
+            padding: 0px;
+            > .for-outline-title {
+                height: 30px;
+                width: 30px;
+                display: -webkit-box;
+                display: flex;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                flex-direction: row;
+                -webkit-box-pack: start;
+                justify-content: flex-start;
+                -webkit-box-align: center;
+                align-items: center;
+                > i {
+                    font-size: 28px;
+                }
+                > span {
+                    display: none;
+                }
+            }
+            > .for-outline-body {
+                > ul {
+                    > li {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .for-outline-box:hover {
+            -webkit-animation: outlineopen 1s forwards ease-in;
+            animation: outlineopen 1s forwards ease-in;
+            padding: 5px;
+            > .for-outline-title {
+                -webkit-animation: outlinetitleopen 1s forwards ease-in;
+                animation: outlinetitleopen 1s forwards ease-in;
+                -webkit-box-pack: justify;
+                justify-content: space-between;
+                > span {
+                    display: block;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    -webkit-animation: titlecontent 1s forwards ease-in;
+                    animation: titlecontent 1s forwards ease-in;
+                }
+            }
+        }
+
+        @-webkit-keyframes titlecontent {
+            0% {
+                opacity: 0;
+            }
+            25% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes titlecontent {
+            0% {
+                opacity: 0;
+            }
+            25% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes outlinetitleopen {
+            25% {
+                width: 200px;
+            }
+            100% {
+                width: 200px;
+            }
+        }
+
+        @keyframes outlinetitleopen {
+            25% {
+                width: 200px;
+            }
+            100% {
+                width: 200px;
+            }
+        }
+
+        @-webkit-keyframes outlineopen {
+            25% {
+                width: 200px;
+                height: 30px;
+            }
+            50% {
+                width: 200px;
+                height: 300px;
+            }
+            100% {
+                width: 200px;
+                height: 300px;
+            }
+        }
+
+        @keyframes outlineopen {
+            25% {
+                width: 200px;
+                height: 30px;
+            }
+            50% {
+                width: 200px;
+                height: 300px;
+            }
+            100% {
+                width: 200px;
+                height: 300px;
             }
         }
 

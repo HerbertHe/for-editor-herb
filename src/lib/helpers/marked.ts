@@ -19,8 +19,8 @@ const renderer = new marked.Renderer()
 // 标题解析
 const headingParse = (text: string, level: number) => {
   return `<h${level}>
-    <span class="heading">${text}</span>
-    <a href="#${text}" name="${text}" class="anchor">
+    <span class="for-heading">${text}</span>
+    <a href="#${text}" name="${text}" class="for-anchor">
       #
     </a>
   </h${level}>`

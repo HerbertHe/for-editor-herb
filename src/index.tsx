@@ -10,6 +10,7 @@ import './lib/fonts/iconfont.css'
 import './lib/css/index.scss'
 import './lib/fonts/katex.css'
 import { CONFIG } from './lib'
+import outlined from './lib/helpers/outlined'
 
 export interface IToolbar {
   h1?: boolean
@@ -39,6 +40,7 @@ export interface IToolbar {
   redo?: boolean
   save?: boolean
   subfield?: boolean
+  outline?: boolean
 }
 
 export interface IWords {
@@ -83,6 +85,7 @@ export interface IWords {
   fullscreenOff?: string
   addImgLink?: string
   addImg?: string
+  outline?: string
 }
 
 interface ILeft {
@@ -541,6 +544,20 @@ class MdEditor extends React.Component<IP, IS> {
               </div>
             </div>
           </div>
+          {/* 大纲 */}
+          {preview && (
+            <div id="for-outline-box" className="for-outline-box">
+              <div className="for-outline-title">
+                <i className="foricon for-outline"></i>
+                <span>{words.outline}</span>
+              </div>
+              <div
+                className="for-outline-body"
+                dangerouslySetInnerHTML={{ __html: outlined(value) }}
+              ></div>
+            </div>
+          )}
+
           {/* 预览区 */}
           <div className={previewClass} ref={this.$blockPreview}>
             <div

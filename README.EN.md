@@ -106,6 +106,7 @@ toolbar: {
     redo: true,
     save: true,
     subfield: true,
+    outline: true
 ```
 
 ### events
