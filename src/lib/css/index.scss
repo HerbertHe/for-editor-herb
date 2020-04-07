@@ -328,16 +328,31 @@
         }
 
         // 重写锚点部分样式
-        .anchor {
+        .for-anchor {
             color: #74b9ff;
         }
 
-        .heading:hover + .anchor {
+        .for-heading:hover + .for-anchor {
             color: #0984e3;
         }
 
-        .anchor:hover {
+        .for-anchor:hover {
             color: #0984e3;
+        }
+
+        // 重写折叠块样式
+        details {
+            background-color: #f0f0f0;
+            border-radius: 3px;
+            padding: 0.6em;
+        }
+        summary {
+            outline: none;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         a {
