@@ -10,7 +10,7 @@ module.exports = merge(webpackBaseConfig, {
   mode: 'development',
   entry: ['./example/index.tsx'],
   output: {
-    path: path.resolve(__dirname, '../playground'),
+    path: path.resolve(__dirname, '../docs'),
     filename: 'index.js',
     publicPath: './',
     libraryTarget: 'umd'
