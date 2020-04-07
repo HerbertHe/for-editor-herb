@@ -18,7 +18,7 @@ this is a markdown editor
 
 ## Link
 
-[demo](https://server.jieec.cn/example)
+[demo](https://goer.icu/for-editor-herb/)
 
 ## Quote
 
