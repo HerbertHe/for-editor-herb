@@ -10,7 +10,7 @@ import './lib/fonts/iconfont.css'
 import './lib/css/index.scss'
 import './lib/fonts/katex.css'
 import { CONFIG } from './lib'
-import outlined from './lib/helpers/outlined'
+import { outlined, generateTOC } from './lib/helpers/outlined'
 
 export interface IToolbar {
   h1?: boolean
@@ -40,6 +40,7 @@ export interface IToolbar {
   redo?: boolean
   save?: boolean
   subfield?: boolean
+  toc?: boolean
 }
 
 export interface IWords {
@@ -63,6 +64,8 @@ export interface IWords {
   delline?: string
   underline?: string
   keytext?: string
+  superscript?: string
+  subscript?: string
   // 引用
   quote?: string
   // 表格
@@ -85,6 +88,7 @@ export interface IWords {
   addImgLink?: string
   addImg?: string
   outline?: string
+  toc?: string
 }
 
 interface ILeft {
@@ -317,6 +321,16 @@ class MdEditor extends React.Component<IP, IS> {
         subfix: '</kbd>',
         str: 'keyboard text'
       },
+      superscript: {
+        prefix: 'x<sup>',
+        subfix: '</sup>',
+        str: 'y'
+      },
+      subscript: {
+        prefix: 'a<sub>',
+        subfix: '</sub>',
+        str: '1'
+      },
       table: {
         prefix: '',
         subfix: '',
@@ -402,6 +416,16 @@ class MdEditor extends React.Component<IP, IS> {
       prefix: `![${name}](${url})`,
       subfix: '',
       str: ''
+    })
+    this.props.onChange(value)
+  }
+
+  // 添加TOC
+  addTOC = () => {
+    const value = insertText(this.$vm.current, {
+      prefix: '\n<!-- TOC -->\n\n',
+      subfix: '\n<!-- TOC -->\n',
+      str: generateTOC(this.props.value)
     })
     this.props.onChange(value)
   }
@@ -510,6 +534,7 @@ class MdEditor extends React.Component<IP, IS> {
               words={words}
               onClick={this.toolBarLeftClick}
               addImg={this.addImg}
+              addTOC={this.addTOC}
               {...this.props}
             />
             <ToolbarRight

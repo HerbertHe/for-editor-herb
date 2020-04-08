@@ -2,7 +2,7 @@
 
 > Markdown editor for React, support Tex rendering!
 
-A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long time without refreshing, without PR handler, the repository is builded and kept in sync with `for-editor` PR. Hug to Open Source! If you like this, please give a star to [for-editor](https://github.com/kkfor/for-editor)
+A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long time without refreshing, without PR handler, the repository is built and kept in sync with `for-editor` PR. Hug to Open Source! If you like this, please give a star to [for-editor](https://github.com/kkfor/for-editor)
 
 * [demo](https://goer.icu/for-editor-herb/)
 * [github](https://github.com/HerbertHe/for-editor-herb)
@@ -15,7 +15,8 @@ A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long t
 * [x] Support to render `Tex` Block and Inline `Tex` sentences
 * [x] `mermaid` render(experimental, some bugs happened using `mermaidAPI`)
 * [x] Responsive Layout
-* [x] Support Outline for jumping appointed anchor
+* [x] Support Preview Outline for jumping appointed anchor
+* [x] Generate TOC
 
 ## Install
 
@@ -107,7 +108,8 @@ toolbar: {
     undo: true,
     redo: true,
     save: true,
-    subfield: true
+    subfield: true,
+    toc: true         // generate TOC
 ```
 
 ### events

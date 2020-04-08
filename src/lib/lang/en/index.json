@@ -14,6 +14,8 @@
   "delline": "Delete Line",
   "underline": "Underline",
   "keytext": "Keyboard Text",
+  "superscript": "Superscript",
+  "subscript": "Subscript",
   "table": "Table",
   "quote": "Quote",
   "link": "Link",
@@ -33,5 +35,5 @@
   "fullscreenOff": "FullScreen OFF",
   "addImgLink": "Add Image Link",
   "addImg": "Upload Image",
-  "outline": "Outline"
+  "toc": "Generate TOC"
 }

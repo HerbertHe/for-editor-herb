@@ -1,8 +1,25 @@
 import marked from 'marked'
 
-// 添加点击事件
+const tocDepth: any = {
+  2: '- ',
+  3: '  - ',
+  4: '    - ',
+  5: '      - ',
+  6: '        - '
+}
 
-const outlined = (content: string) => {
+const generateTOC = (content: string): string => {
+  let token: any = marked.lexer(content)
+  var tocs: string = ''
+  token.forEach((item: any) => {
+    if (item.type === 'heading' && item.depth !== 1) {
+      tocs += tocDepth[item.depth] + `[${item.text}](#${item.text})\n`
+    }
+  })
+  return tocs
+}
+
+const outlined = (content: string): string => {
   // 对象解析
   let token: any = marked.lexer(content)
   var heading: string = ''
@@ -17,6 +34,7 @@ const outlined = (content: string) => {
   return `<ul class="for-outline-ul">${heading}</ul>`
 }
 
-export default (content: string) => {
-  return outlined(content)
+export {
+  outlined,
+  generateTOC
 }

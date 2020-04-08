@@ -15,7 +15,8 @@
 * [x] 支持渲染Tex块和行内Tex语句
 * [x] `mermiad`渲染（实验性，mermaidAPI使用有些bug，已经提交）
 * [x] 响应式布局
-* [x] 支持大纲跳转锚点
+* [x] 支持预览大纲跳转锚点
+* [x] 生成大纲插入
 
 ## [English Documents](./README.EN.md)
 
@@ -107,7 +108,8 @@ toolbar: {
     undo: true,
     redo: true,
     save: true,
-    subfield: true    // 单双栏切换
+    subfield: true,   // 单双栏切换
+    toc: true         // 生成大纲插入
 }
 ```
 

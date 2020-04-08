@@ -4,6 +4,7 @@ import '../lib/css/index.scss'
 interface IP {
   onClick: (type: string) => void
   addImg: (file: File, index: number) => void
+  addTOC: () => void
   toolbar: IToolbar
   words: IWords
 }
@@ -213,6 +214,12 @@ class Toolbars extends React.Component<IP, IS> {
                   <li onClick={() => this.onClick('keytext')} title={words.keytext}>
                     {words.keytext}
                   </li>
+                  <li onClick={() => this.onClick('superscript')} title={words.superscript}>
+                    {words.superscript}
+                  </li>
+                  <li onClick={() => this.onClick('subscript')} title={words.subscript}>
+                    {words.subscript}
+                  </li>
                 </ul>
               </li>
             )}
@@ -286,9 +293,12 @@ class Toolbars extends React.Component<IP, IS> {
                 <i className="foricon for-collapse" />
               </li>
             )}
-            {/* <li>
-          <i className="foricon for-render" />
-        </li> */}
+            {/* 插入TOC */}
+            {toolbar.toc && (
+              <li onClick={() => this.props.addTOC()} title={words.toc}>
+                <i className="foricon for-toc" />
+              </li>
+            )}
             {/* katex支持 */}
             {toolbar.katex && (
               <li onClick={() => this.onClick('katex')} title={words.katex}>
@@ -372,6 +382,12 @@ class Toolbars extends React.Component<IP, IS> {
                   </li>
                   <li onClick={() => this.onClick('keytext')} title={words.keytext}>
                     {words.keytext}
+                  </li>
+                  <li onClick={() => this.onClick('superscript')} title={words.superscript}>
+                    {words.superscript}
+                  </li>
+                  <li onClick={() => this.onClick('subscript')} title={words.subscript}>
+                    {words.subscript}
                   </li>
                 </ul>
               </li>
@@ -461,6 +477,14 @@ class Toolbars extends React.Component<IP, IS> {
                   <li onClick={() => this.onClick('collapse')} title={words.collapse}>
                     <i className="foricon for-collapse" />
                     {words.collapse}
+                  </li>
+                )}
+
+                {/* 插入TOC */}
+                {toolbar.toc && (
+                  <li onClick={() => this.props.addTOC()} title={words.toc}>
+                    <i className="foricon for-toc" />
+                    {words.toc}
                   </li>
                 )}
 

@@ -38,6 +38,7 @@ export const CONFIG: ICONFIG = {
     undo: true,
     redo: true,
     save: true,
-    subfield: true
+    subfield: true,
+    toc: true
   }
 }
