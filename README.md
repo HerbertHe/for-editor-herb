@@ -15,6 +15,7 @@
 * [x] 支持渲染Tex块和行内Tex语句
 * [x] `mermiad`渲染（实验性，mermaidAPI使用有些bug，已经提交）
 * [x] 响应式布局
+* [x] 支持大纲跳转锚点
 
 ## [English Documents](./README.EN.md)
 
@@ -63,16 +64,17 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 | name        | type    | default     | description                        |
 | ----------- | ------- | ----------- | ---------------------------------- |
-| value       | String  | -           | 输入框内容                         |
-| placeholder | String  | 开始编辑...   | 占位文本                           |
-| lineNum     | Boolean | true        | 是否显示行号                       |
-| style       | Object  | -           | 编辑器样式                         |
-| height      | String  | 600px       | 编辑器高度                         |
-| preview     | Boolean | false       | 预览模式                           |
-| expand      | Boolean | false       | 全屏模式                           |
-| subfield    | Boolean | false       | 双栏模式(预览模式激活下有效)       |
-| language    | String  | zh-CN       | 语言(支持 zh-CN:中文简体, en:英文) |
-| toolbar     | Object  | 如下         | 自定义工具栏                       |
+| value       | String  | -           | 输入框内容                           |
+| placeholder | String  | 开始编辑...   | 占位文本                            |
+| lineNum     | Boolean | true        | 是否显示行号                         |
+| style       | Object  | -           | 编辑器样式                           |
+| height      | String  | 600px       | 编辑器高度                           |
+| preview     | Boolean | false       | 预览模式                             |
+| expand      | Boolean | false       | 全屏模式                             |
+| subfield    | Boolean | false       | 双栏模式(预览模式激活下有效)            |
+| language    | String  | zh-CN       | 语言(支持 zh-CN:中文简体, en:英文)     |
+| toolbar     | Object  | 如下         | 自定义工具栏                         |
+| outline     | Boolean | true        | 显示Markdown的大纲                   |
 
 ```js
 /*

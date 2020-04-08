@@ -40,7 +40,6 @@ export interface IToolbar {
   redo?: boolean
   save?: boolean
   subfield?: boolean
-  outline?: boolean
 }
 
 export interface IWords {
@@ -108,6 +107,7 @@ interface IP {
   subfield?: boolean
   toolbar?: IToolbar
   language?: string
+  outline?: boolean
   addImg?: (file: File, index: number) => void
 }
 
@@ -135,7 +135,8 @@ class MdEditor extends React.Component<IP, IS> {
     subfield: false,
     style: {},
     toolbar: CONFIG.toolbar,
-    language: 'zh-CN'
+    language: 'zh-CN',
+    outline: true
   }
   private $vm = React.createRef<HTMLTextAreaElement>()
   private $scrollEdit = React.createRef<HTMLDivElement>()
@@ -469,7 +470,7 @@ class MdEditor extends React.Component<IP, IS> {
 
   render() {
     const { preview, expand, subfield, lineIndex, words } = this.state
-    const { value, placeholder, fontSize, disabled, height, style, toolbar } = this.props
+    const { value, placeholder, fontSize, disabled, height, style, toolbar, outline } = this.props
     const editorClass = classNames({
       'for-editor-edit': true,
       'for-panel': true,
@@ -545,7 +546,7 @@ class MdEditor extends React.Component<IP, IS> {
             </div>
           </div>
           {/* 大纲 */}
-          {preview && (
+          {preview && outline && (
             <div id="for-outline-box" className="for-outline-box">
               <div className="for-outline-title">
                 <i className="foricon for-outline"></i>

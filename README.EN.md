@@ -15,6 +15,7 @@ A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long t
 * [x] Support to render `Tex` Block and Inline `Tex` sentences
 * [x] `mermaid` render(experimental, some bugs happened using `mermaidAPI`)
 * [x] Responsive Layout
+* [x] Support Outline for jumping appointed anchor
 
 ## Install
 
@@ -71,6 +72,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | expand      | Boolean | false                       | fullscreen switch                                   |
 | subfield    | Boolean | false                       | true: Double columns - Edit preview same screen(notice: preview: true), Single Columns - otherwise not |
 | toolbar     | Object  | As in the following example | toolbars                                            |
+| outline     | Boolean | true | Display outline list for markdown                                          |
 
 ```js
 /*

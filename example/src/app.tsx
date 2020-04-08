@@ -9,9 +9,7 @@ interface IS {
   mobile: boolean
 }
 
-
 class App extends Component<{}, IS> {
-
   private $vm = React.createRef<Editor>()
 
   constructor(props: any) {
@@ -95,8 +93,8 @@ class App extends Component<{}, IS> {
               // }}
               value={value}
               subfield={false}
-              onChange={value => this.handleChange(value)}
-              onSave={value => this.handleSave(value)}
+              onChange={(value) => this.handleChange(value)}
+              onSave={(value) => this.handleSave(value)}
             />
           )}
           {!mobile && (
@@ -106,8 +104,8 @@ class App extends Component<{}, IS> {
               height="700px"
               value={value}
               addImg={($file) => this.addImg($file)}
-              onChange={value => this.handleChange(value)}
-              onSave={value => this.handleSave(value)}
+              onChange={(value) => this.handleChange(value)}
+              onSave={(value) => this.handleSave(value)}
             />
           )}
         </div>
