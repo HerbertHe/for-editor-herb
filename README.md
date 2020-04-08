@@ -107,8 +107,7 @@ toolbar: {
     undo: true,
     redo: true,
     save: true,
-    subfield: true,   // 单双栏切换
-    outline: true     // 大纲
+    subfield: true    // 单双栏切换
 }
 ```
 
