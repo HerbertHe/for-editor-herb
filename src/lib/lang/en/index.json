@@ -23,7 +23,7 @@
   "orderlist": "Order List",
   "disorderlist": "Disorder List",
   "checklist": "Check List",
-  "innercode": "Inner Code",
+  "inlinecode": "Inline Code",
   "code": "Code",
   "collapse": "Collapse",
   "katex": "KaTeX",

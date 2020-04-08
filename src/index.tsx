@@ -28,7 +28,7 @@ export interface IToolbar {
   img?: boolean
   link?: boolean
   // 行内代码
-  innercode?: boolean
+  inlinecode?: boolean
   code?: boolean
   // 折叠面板
   collapse?: boolean
@@ -73,7 +73,7 @@ export interface IWords {
   img?: string
   link?: string
   // 行内代码
-  innercode?: string
+  inlinecode?: string
   code?: string
   // 折叠面板
   collapse?: string
@@ -87,7 +87,6 @@ export interface IWords {
   fullscreenOff?: string
   addImgLink?: string
   addImg?: string
-  outline?: string
   toc?: string
 }
 
@@ -575,7 +574,6 @@ class MdEditor extends React.Component<IP, IS> {
             <div id="for-outline-box" className="for-outline-box">
               <div className="for-outline-title">
                 <i className="foricon for-outline"></i>
-                <span>{words.outline}</span>
               </div>
               <div
                 className="for-outline-body"

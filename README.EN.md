@@ -99,7 +99,7 @@ toolbar: {
     table: true,
     quote: true,
     link: true,
-    innercode: true,
+    inlinecode: true,
     code: true,
     collapse: true,
     katex: true,

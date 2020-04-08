@@ -257,14 +257,6 @@
                 > i {
                     font-size: 28px;
                 }
-                > span {
-                    display: none;
-                    margin-left: 10px;
-                    -webkit-transition-delay: 1s;
-                    transition-delay: 1s;
-                    -webkit-transition: display 0.5s;
-                    transition: display 0.5s;
-                }
             }
             > .for-outline-body {
                 width: 100%;
@@ -297,13 +289,6 @@
             > .for-outline-title {
                 width: 100%;
                 border-bottom: 1px solid #d6d6d6;
-                > span {
-                    display: block;
-                    -webkit-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
-                    user-select: none;
-                }
             }
             > .for-outline-body {
                 padding-left: 5px;

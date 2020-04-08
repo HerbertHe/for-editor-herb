@@ -29,7 +29,7 @@ export const CONFIG: ICONFIG = {
     quote: true,
     link: true,
     list: true,
-    innercode: true,
+    inlinecode: true,
     code: true,
     collapse: true,
     katex: true,

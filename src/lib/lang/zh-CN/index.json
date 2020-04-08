@@ -23,7 +23,7 @@
   "orderlist": "有序列表",
   "disorderlist": "无序列表",
   "checklist": "勾选框列表",
-  "innercode": "行内代码",
+  "inlinecode": "行内代码",
   "code": "代码块",
   "collapse": "折叠块",
   "katex": "KaTeX",

@@ -99,7 +99,7 @@ toolbar: {
     table: true,      // 表格
     quote: true,      // 引用
     link: true,       // 链接
-    innercode: true,  // 行内代码
+    inlinecode: true,  // 行内代码
     code: true,       // 代码块
     collapse: true,   // 折叠
     katex: true,      // katex
