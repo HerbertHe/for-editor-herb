@@ -17,6 +17,7 @@
 * [x] 响应式布局
 * [x] 支持预览大纲跳转锚点
 * [x] 生成大纲插入
+* [x] 支持繁体中文、日文（欢迎PR翻译成不同语言和纠正）
 
 ## [English Documents](./README.EN.md)
 
@@ -73,7 +74,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | preview     | Boolean | false       | 预览模式                             |
 | expand      | Boolean | false       | 全屏模式                             |
 | subfield    | Boolean | false       | 双栏模式(预览模式激活下有效)            |
-| language    | String  | zh-CN       | 语言(支持 zh-CN:中文简体, en:英文)     |
+| language    | String  | zh-CN       | 语言(支持 zh-CN:中文简体, en:英文, zh-TW: 繁体中文, jp: 日语)     |
 | toolbar     | Object  | 如下         | 自定义工具栏                         |
 | outline     | Boolean | true        | 显示Markdown的大纲                   |
 

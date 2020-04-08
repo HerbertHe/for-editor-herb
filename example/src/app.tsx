@@ -84,6 +84,7 @@ class App extends Component<{}, IS> {
             <Editor
               ref={this.$vm}
               height="500px"
+              language="en"
               // toolbar={{
               //   h1: true,
               //   h2: true,

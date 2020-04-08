@@ -17,6 +17,7 @@ A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long t
 * [x] Responsive Layout
 * [x] Support Preview Outline for jumping appointed anchor
 * [x] Generate TOC
+* [x] Support Traditional Chinese, Japanese (Welcome to PR translation to different lanaguages & Help to correct translation)
 
 ## Install
 
@@ -64,7 +65,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | name        | type    | default             | description         |
 | ----------- | ------- | ------------------- | ------------------  |
 | value       | String  | -                   | value               |
-| language    | String  | zh-CN               | Language switch, zh-CN: Simplified Chinese, en: English     |
+| language    | String  | zh-CN               | Language switch, zh-CN: Simplified Chinese, en: English, zh-TW: Traditional Chinese, jp: Japanese     |
 | placeholder | String  | Begin editing...            | The default prompt text when the textarea is empty  |
 | lineNum     | Boolean | true                        | Show lineNum                                        |
 | style       | Object  | -                           | editor styles                                       |
