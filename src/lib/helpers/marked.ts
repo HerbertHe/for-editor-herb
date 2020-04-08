@@ -1,7 +1,7 @@
 import marked from 'marked'
 import katex from 'katex'
 import Hljs from './highlight'
-import mermaided from './mermaided'
+import { mermaidMd5 } from './mermaided'
 
 marked.setOptions({
   renderer: new marked.Renderer(),
@@ -77,6 +77,8 @@ const linkParse = (href: string, title: string, text: string) => {
       }>${text}</a>`
 }
 
+const flags = ['graph', 'sequenceDiagram', 'classDiagram', 'stateDiagram', 'gantt', 'pie']
+
 const codeParse = (code: string, language: string) => {
   if (language === 'mermaid') {
     let cleanFlag = code
@@ -84,19 +86,8 @@ const codeParse = (code: string, language: string) => {
       .split(' ')[0]
       .split('\n')[0]
     if (code.length === 0) return ''
-    else if (
-      cleanFlag === 'graph' ||
-      cleanFlag === 'sequenceDiagram' ||
-      cleanFlag === 'classDiagram' ||
-      cleanFlag === 'stateDiagram' ||
-      cleanFlag === 'gantt' ||
-      cleanFlag === 'pie'
-    ) {
-      // let test: Array<String> = []
-      // test.push(code)
-      // // eslint-disable-next-line no-console
-      // console.log(test)
-      return mermaided(code)
+    else if (flags.includes(cleanFlag)) {
+      return `<div class="for-mermaid" id="for-mermaid-${mermaidMd5(code)}">${code}</div>`
     } else {
       return `<p>${code}</p>`
     }

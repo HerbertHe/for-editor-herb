@@ -278,7 +278,7 @@ class Toolbars extends React.Component<IP, IS> {
               </li>
             )}
             {toolbar.inlinecode && (
-              <li onClick={() => this.onClick('innercode')} title={words.inlinecode}>
+              <li onClick={() => this.onClick('inlinecode')} title={words.inlinecode}>
                 <i className="foricon for-inner-code" />
               </li>
             )}
@@ -461,7 +461,7 @@ class Toolbars extends React.Component<IP, IS> {
                   </li>
                 )}
                 {toolbar.inlinecode && (
-                  <li onClick={() => this.onClick('innercode')} title={words.inlinecode}>
+                  <li onClick={() => this.onClick('inlinecode')} title={words.inlinecode}>
                     <i className="foricon for-inner-code" />
                     {words.inlinecode}
                   </li>

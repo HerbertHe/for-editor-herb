@@ -1,4 +1,5 @@
 import mermaid from 'mermaid'
+const md5 = require('md5')
 
 mermaid.mermaidAPI.initialize({
   theme: 'forest',
@@ -39,17 +40,19 @@ mermaid.mermaidAPI.initialize({
   }
 })
 
-// mermaid莫名其妙会加上在id前面加上d!!!是render的问题
-const mermaided = (code: string): string => {
-  let rendered = ''
+const mermaided = (id: string, code: string): string => {
   try {
-    mermaid.mermaidAPI.render('for-preview', code, (html) => {
-      rendered = html
+    let back: string = ''
+    mermaid.render(id, code, (html) => {
+      back = html
     })
-  } catch (e) {
-    rendered = `<p>${code}</p>`
-  }
-  return rendered
+    return back
+  } catch (e) {}
 }
 
-export default mermaided
+// md5会增加不确定性，干掉他
+const mermaidMd5 = (code: string): string => {
+  return md5(code)
+}
+
+export { mermaided, mermaidMd5 }

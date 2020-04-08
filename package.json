@@ -1,6 +1,6 @@
 {
   "name": "for-editor-herb",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "react markdown editor",
   "main": "dist/index.js",
   "scripts": {
@@ -39,6 +39,7 @@
     "@types/classnames": "^2.2.9",
     "@types/katex": "^0.11.0",
     "@types/marked": "^0.6.5",
+    "@types/md5": "^2.1.33",
     "@types/mermaid": "^8.2.1",
     "@types/react": "^16.8.16",
     "@types/react-dom": "^16.8.4",
@@ -77,6 +78,7 @@
     "highlight.js": "^9.13.1",
     "katex": "^0.11.1",
     "marked": "^0.8.2",
+    "md5": "^2.2.1",
     "mermaid": "^8.4.8"
   }
 }

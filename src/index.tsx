@@ -11,6 +11,7 @@ import './lib/css/index.scss'
 import './lib/fonts/katex.css'
 import { CONFIG } from './lib'
 import { outlined, generateTOC } from './lib/helpers/outlined'
+// import { mermaided } from './lib/helpers/mermaided'
 
 export interface IToolbar {
   h1?: boolean
@@ -193,6 +194,17 @@ class MdEditor extends React.Component<IP, IS> {
     if (expand !== preProps.expand && this.state.expand !== expand) {
       this.setState({ expand })
     }
+
+    // let mermaidDOM: any = document.getElementsByClassName('for-mermaid')
+    // eslint-disable-next-line no-console
+    // console.log(mermaidDOM)
+    // setTimeout(function() {
+    //   if (mermaidDOM.length !== 0) {
+    //     for (let i = 0; i < mermaidDOM.length; i++) {
+    //       mermaided(mermaidDOM[i].id, mermaidDOM[i].innerText)
+    //     }
+    //   }
+    // }, 2000)
   }
 
   initLanguage = (): void => {
@@ -361,10 +373,10 @@ class MdEditor extends React.Component<IP, IS> {
         subfix: '',
         str: 'checklist'
       },
-      innercode: {
+      inlinecode: {
         prefix: '`',
         subfix: '`',
-        str: 'innercode'
+        str: 'inlinecode'
       },
       code: {
         prefix: '```',
@@ -589,7 +601,7 @@ class MdEditor extends React.Component<IP, IS> {
               ref={this.$scrollPreview}
               className="for-preview for-markdown-preview"
               dangerouslySetInnerHTML={{ __html: marked(value) }}
-            />
+            ></div>
           </div>
         </div>
       </div>
