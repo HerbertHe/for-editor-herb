@@ -1,28 +1,31 @@
 # for-editor-herb
 
-> React的markdown编辑器组件，支持Tex渲染
+[![version](https://img.shields.io/npm/v/for-editor-herb.svg)](https://www.npmjs.com/package/for-editor-herb)
+[![download](https://img.shields.io/npm/dm/for-editor-herb.svg)](https://www.npmjs.com/package/for-editor-herb)
 
-基于[for-editor](https://github.com/kkfor/for-editor)的分支，因为原作者太久没有更新了，PR也没有处理，有些小伙伴看修改文档觉得没有很方便，索性就开了这个项目。本项目将会与给`for-editor`的提交保持同步。拥抱开源，如果你喜欢，请给个star给原项目
+> Markdown editor for React, support Tex rendering!
 
-* [demo](https://herberthe.gitee.io/for-editor-herb/)
+A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long time without refreshing, without PR handler, the repository is built and kept in sync with `for-editor` PR. Hug to Open Source! If you like this, please give a star to [for-editor](https://github.com/kkfor/for-editor)
+
+* [demo](https://goer.icu/for-editor-herb/)
 * [github](https://github.com/HerbertHe/for-editor-herb)
 
-> 基于`0.3.5`开始构建
+> Base on `0.3.5`
 
-## [English Documents](./README.EN.md)
+## [简体中文文档](./README.CN.md)
 
-## 更多的特性
+## What's New
 
-* [x] 工具栏按钮 quote/paragraph/table/inline code/collapse/katex/list
-* [x] 支持渲染Tex块和行内Tex语句
-* [x] 响应式布局
-* [x] 支持预览大纲跳转锚点
-* [x] 生成大纲插入
-* [x] 支持繁体中文、日文（欢迎PR翻译成不同语言和纠正）
-* [x] 支持GitHub Diff语法 ( v1.5.0~ )
-* [x] 支持自定义高亮代码语言类型 ( v2.0.0~ )
+* [x] Toolbar button: quote/paragraph/table/inline code/collapse/katex/list
+* [x] Support to render `Tex` Block and Inline `Tex` sentences
+* [x] Responsive Layout
+* [x] Support Preview Outline for jumping appointed anchor
+* [x] Generate TOC
+* [x] Support Traditional Chinese, Japanese (Welcome to PR translation to different lanaguages & Help to correct translation)
+* [x] Support GitHub Diff Syntax ( v1.5.0~ )
+* [x] Support highlight the programming language which you want ( v2.0.0~ )
 
-## 安装
+## Install
 
 ```shell
 # npm
@@ -31,13 +34,14 @@ npm install for-editor-herb -S
 yarn add for-editor-herb
 ```
 
-## 使用
+## Use
 
 ```js
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Editor from 'for-editor-herb'
-// 引入代码高亮包
+
+// require `highlight.js` package
 const Hljs = require('highlight.js')
 
 class App extends Component {
@@ -49,7 +53,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // 在componentDidMount生命周期注册你想高亮的语言
+    // register languages in componentDidMount lifecycle
     Hljs.registerLanguage('css', require('highlight.js/lib/languages/css'))
     Hljs.registerLanguage('json', require('highlight.js/lib/languages/json'))
     Hljs.registerLanguage('less', require('highlight.js/lib/languages/less'))
@@ -67,50 +71,52 @@ class App extends Component {
 
   render() {
     const { value } = this.state
-    // 传递Hljs.highlightAuto函数
-    return （
+    // Transfer function `Hljs.highlightAuto` to the Editor
+    return (
       <Editor
         value={value}
         onChange={() => this.handleChange()}
         highlight={Hljs.highlightAuto}
       />
-    ）
+    )
   }
 }
 
 ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
-## API
+## Api
 
-### 属性
+### props
 
-| name        | type    | default     | description                                                   |
-| ----------- | ------- | ----------- | ------------------------------------------------------------- |
-| value       | String  | -           | 输入框内容                                                      |
-| placeholder | String  | 开始编辑...   | 占位文本                                                       |
-| lineNum     | Boolean | true        | 是否显示行号                                                    |
-| style       | Object  | -           | 编辑器样式                                                      |
-| height      | String  | 600px       | 编辑器高度                                                      |
-| preview     | Boolean | false       | 预览模式                                                        |
-| expand      | Boolean | false       | 全屏模式                                                        |
-| subfield    | Boolean | false       | 双栏模式(预览模式激活下有效)                                       |
-| language    | String  | zh-CN       | 语言(支持 zh-CN:中文简体, en:英文, zh-TW: 繁体中文, jp: 日语)       |
-| toolbar     | Object  | 如下         | 自定义工具栏                                                    |
-| outline     | Boolean | true        | 显示Markdown的大纲                                              |
-| highlight   | Function| Hljs.highlightAuto | Hljs(highlight.js) 的 highlightAuto函数                 |
+| name        | type    | default             | description         |
+| ----------- | ------- | ------------------- | ------------------  |
+| value       | String  | -                   | value               |
+| language    | String  | zh-CN               | Language switch, zh-CN: Simplified Chinese, en: English, zh-TW: Traditional Chinese, jp: Japanese     |
+| placeholder | String  | Begin editing...            | The default prompt text when the textarea is empty  |
+| lineNum     | Boolean | true                        | Show lineNum                                        |
+| style       | Object  | -                           | editor styles                                       |
+| height      | String  | 600px                       | editor height                                       |
+| preview     | Boolean | false                       | preview switch                                      |
+| expand      | Boolean | false                       | fullscreen switch                                   |
+| subfield    | Boolean | false                       | true: Double columns - Edit preview same screen(notice: preview: true), Single Columns - otherwise not |
+| toolbar     | Object  | As in the following example | toolbars                                            |
+| outline     | Boolean | true | Display outline list for markdown                                          |
+| highlight   | Function| Hljs.highlightAuto | Hljs (highlight.js)'s function --- highlightAuto             |
 
 ```js
 /*
-默认工具栏按钮全部开启, 传入自定义对象
-  例如: {
-    h1: true, // h1
-    code: true, // 代码块
-    preview: true, // 预览
+  The default toolbar properties are all true,
+  You can customize the object to cover them.
+  eg: {
+    h1: true,
+    code: true,
+    preview: true,
   }
-  此时, 仅仅显示此三个功能键
-  注:传入空对象则不显示工具栏
-*/
+  At this point, the toolbar only displays the three function keys.
+  notice: Toolbar will be hidden when empty object.
+ */
+
 toolbar: {
     h1: true,
     h2: true,
@@ -118,33 +124,32 @@ toolbar: {
     h4: true,
     img: true,
     list: true,
-    para: true,       // 段落
-    table: true,      // 表格
-    quote: true,      // 引用
-    link: true,       // 链接
-    inlinecode: true,  // 行内代码
-    code: true,       // 代码块
-    collapse: true,   // 折叠
-    katex: true,      // katex
-    preview: true,    // 预览
-    expand: true,     // 全屏
+    para: true,       // parapraph
+    table: true,
+    quote: true,
+    link: true,
+    inlinecode: true,
+    code: true,
+    collapse: true,
+    katex: true,
+    preview: true,
+    expand: true,
     undo: true,
     redo: true,
     save: true,
-    subfield: true,   // 单双栏切换
-    toc: true         // 生成大纲插入
-}
+    subfield: true,
+    toc: true         // generate TOC
 ```
 
-### 事件
+### events
 
-| name     | params        | default | description    |
-| -------- | ------------- | ------- | -------------- |
-| onChange | String: value | -       | 内容改变的回调    |
-| onSave   | String: value | -       | 保存时回调       |
-| addImg   | File: file    | -       | 添加图片时回调    |
+| name     | params        | default | description                                 |
+| -------- | ------------- | ------- | ------------------------------------------- |
+| onChange | String: value | -       | Edit area change callback event             |
+| onSave   | String: value | -       | Ctrl+s and click save button callback event |
+| addImg   | File: file    | -       | upload image callback event                 |
 
-### 图片上传
+### upload image
 
 ```js
 class App extends Component {
@@ -182,19 +187,19 @@ class App extends Component {
 }
 ```
 
-### 快捷键
+### hot key
 
 | name   | description |
 | ------ | ----------- |
-| tab    | 两空格缩进    |
-| ctrl+s | 保存         |
-| ctrl+z | 上一步       |
-| ctrl+y | 下一步       |
+| tab    | two space   |
+| ctrl+s | save        |
+| ctrl+z | undo        |
+| ctrl+y | redo        |
 
-## 更新日志
+## Update
 
-* [更新日志](./doc/UPDATELOG.md)
+* [Update Log](./doc/UPDATELOG.md)
 
-## License
+## Licence
 
-for-editor-herb is [MIT License](./LICENSE)
+for-editor is [MIT Licence](./LICENSE).

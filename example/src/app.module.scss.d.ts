@@ -4,6 +4,8 @@ interface CssExports {
   'editor': string;
   'main': string;
   'top': string;
+  'topLeft': string;
+  'topRight': string;
 }
 declare var cssExports: CssExports;
 export = cssExports;

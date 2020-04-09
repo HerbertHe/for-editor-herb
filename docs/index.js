@@ -118,7 +118,8 @@
                     var _this = _super.call(this, props) || this;
                     return _this.$vm = react_1.default.createRef(), _this.state = {
                         value: "",
-                        mobile: !1
+                        mobile: !1,
+                        language: "en"
                     }, _this;
                 }
                 return __extends(App, _super), App.prototype.componentDidMount = function() {
@@ -157,16 +158,60 @@
                         className: styles.main
                     }, react_1.default.createElement("div", {
                         className: styles.top
-                    }, react_1.default.createElement("h1", null, "for-editor-herb"), react_1.default.createElement("ul", null, react_1.default.createElement("li", null, react_1.default.createElement("a", {
+                    }, react_1.default.createElement("div", {
+                        className: styles.topLeft
+                    }, react_1.default.createElement("h1", null, "Live Editor"), react_1.default.createElement("div", null, react_1.default.createElement("a", {
+                        href: "https://www.npmjs.com/package/for-editor-herb"
+                    }, react_1.default.createElement("img", {
+                        alt: "version",
+                        src: "https://img.shields.io/npm/v/for-editor-herb.svg",
+                        width: "80px",
+                        height: "20px"
+                    })), react_1.default.createElement("a", {
+                        href: "https://www.npmjs.com/package/for-editor-herb"
+                    }, react_1.default.createElement("img", {
+                        alt: "download",
+                        src: "https://img.shields.io/npm/dm/for-editor-herb.svg",
+                        width: "140px",
+                        height: "20px"
+                    })))), react_1.default.createElement("div", {
+                        className: styles.topRight
+                    }, react_1.default.createElement("a", {
                         href: "https://github.com/HerbertHe/for-editor-herb",
-                        target: "_blank",
-                        rel: "noopener noreferrer"
-                    }, "GitHub")))), react_1.default.createElement("div", {
+                        title: "https://github.com/HerbertHe/for-editor-herb"
+                    }, react_1.default.createElement("svg", {
+                        className: "icon",
+                        viewBox: "0 0 1024 1024",
+                        version: "1.1",
+                        xmlns: "http://www.w3.org/2000/svg",
+                        "p-id": "2481",
+                        width: "45",
+                        height: "45"
+                    }, react_1.default.createElement("path", {
+                        d: "M569.6 659.2c12.8-3.2 25.6-3.2 38.4-6.4 38.4-9.6 70.4-28.8 86.4-64 19.2-38.4 22.4-76.8 12.8-118.4-3.2-19.2-12.8-32-25.6-48-3.2-3.2-3.2-6.4-3.2-9.6 6.4-25.6 6.4-48-3.2-73.6 0-3.2-3.2-6.4-9.6-6.4-16 0-28.8 6.4-41.6 12.8s-22.4 12.8-32 19.2c-3.2 3.2-6.4 3.2-9.6 3.2-51.2-12.8-99.2-12.8-150.4 0-3.2 0-6.4 0-9.6-3.2-22.4-12.8-41.6-25.6-67.2-28.8-16-3.2-16-3.2-19.2 12.8-6.4 22.4-6.4 44.8 0 67.2v6.4c-28.8 32-35.2 73.6-28.8 112 3.2 12.8 3.2 22.4 6.4 35.2 16 44.8 48 70.4 96 83.2 12.8 3.2 25.6 6.4 41.6 9.6-9.6 9.6-16 25.6-19.2 38.4 0 3.2-3.2 3.2-3.2 3.2-32 12.8-67.2 9.6-89.6-25.6-9.6-16-22.4-28.8-44.8-32h-16c-6.4 0-6.4 6.4-3.2 9.6l6.4 6.4c16 9.6 28.8 25.6 35.2 44.8 12.8 28.8 35.2 41.6 67.2 44.8 12.8 0 28.8 0 44.8-3.2v60.8c0 9.6-9.6 16-22.4 12.8-25.6-9.6-51.2-22.4-76.8-38.4-96-67.2-147.2-160-140.8-278.4 6.4-147.2 115.2-265.6 259.2-294.4 166.4-32 326.4 70.4 371.2 233.6 41.6 160-51.2 326.4-204.8 377.6-16 6.4-25.6 0-25.6-19.2v-76.8c3.2-25.6 0-48-19.2-67.2z",
+                        fill: "#FFFFFF",
+                        "p-id": "2482"
+                    }))), react_1.default.createElement("select", {
+                        value: this.state.language,
+                        onChange: function(e) {
+                            _this.setState({
+                                language: e.target.value
+                            }), _this.forceUpdate();
+                        }
+                    }, react_1.default.createElement("option", {
+                        value: "en"
+                    }, "English"), react_1.default.createElement("option", {
+                        value: "zh-CN"
+                    }, "中文(简体)"), react_1.default.createElement("option", {
+                        value: "zh-TW"
+                    }, "中文(繁體)"), react_1.default.createElement("option", {
+                        value: "jp"
+                    }, "日本語")))), react_1.default.createElement("div", {
                         className: styles.editor
                     }, mobile && react_1.default.createElement(index_1.default, {
                         ref: this.$vm,
                         height: "500px",
-                        language: "en",
+                        language: this.state.language,
                         value: value,
                         subfield: !1,
                         onChange: function(value) {
@@ -178,7 +223,7 @@
                         highlight: Hljs.highlightAuto
                     }), !mobile && react_1.default.createElement(index_1.default, {
                         ref: this.$vm,
-                        language: "en",
+                        language: this.state.language,
                         height: "700px",
                         value: value,
                         addImg: function($file) {
@@ -285,10 +330,12 @@
             };
         },
         "./node_modules/css-modules-typescript-loader/index.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js!./example/src/app.module.scss": function(module, exports, __webpack_require__) {
-            (exports = module.exports = __webpack_require__("./node_modules/css-loader/dist/runtime/api.js")(!1)).push([ module.i, "html {\n  height: 100%; }\n\nbody {\n  height: 100%;\n  margin: 0; }\n\n.XtgO0MYuXWqjGmc-cJBTD {\n  padding-bottom: 40px; }\n  .XtgO0MYuXWqjGmc-cJBTD h1,\n  .XtgO0MYuXWqjGmc-cJBTD ul,\n  .XtgO0MYuXWqjGmc-cJBTD li {\n    margin: 0;\n    padding: 0; }\n  .XtgO0MYuXWqjGmc-cJBTD ul,\n  .XtgO0MYuXWqjGmc-cJBTD li {\n    list-style: none; }\n  .XtgO0MYuXWqjGmc-cJBTD a {\n    color: inherit; }\n  .XtgO0MYuXWqjGmc-cJBTD ._3aRq2oBN9_wczjGDctN5yR {\n    display: flex;\n    justify-content: space-between;\n    height: 80px;\n    line-height: 80px;\n    padding: 0 20px;\n    margin-bottom: 30px;\n    font-size: 18px;\n    color: #fff;\n    background: linear-gradient(160deg, #852178, #019845); }\n  .XtgO0MYuXWqjGmc-cJBTD ._3dObe-fI1yHqYDEcMRbyx9 {\n    width: 90%;\n    max-width: 1400px;\n    margin: 0 auto; }\n", "" ]), 
+            (exports = module.exports = __webpack_require__("./node_modules/css-loader/dist/runtime/api.js")(!1)).push([ module.i, "html {\n  height: 100%; }\n\nbody {\n  height: 100%;\n  margin: 0; }\n\n.XtgO0MYuXWqjGmc-cJBTD {\n  padding-bottom: 40px; }\n  .XtgO0MYuXWqjGmc-cJBTD h1,\n  .XtgO0MYuXWqjGmc-cJBTD ul,\n  .XtgO0MYuXWqjGmc-cJBTD li {\n    margin: 0;\n    padding: 0; }\n  .XtgO0MYuXWqjGmc-cJBTD ul,\n  .XtgO0MYuXWqjGmc-cJBTD li {\n    list-style: none; }\n  .XtgO0MYuXWqjGmc-cJBTD a {\n    color: inherit; }\n  .XtgO0MYuXWqjGmc-cJBTD ._3aRq2oBN9_wczjGDctN5yR {\n    display: flex;\n    -webkit-box-pack: justify;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    height: auto;\n    padding: 0 20px;\n    margin-bottom: 30px;\n    font-size: 18px;\n    color: #fff;\n    background-color: black;\n    padding-top: 20px;\n    padding-bottom: 20px; }\n  .XtgO0MYuXWqjGmc-cJBTD .RK-mYlGlBoq-L0mRBFn7A {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: flex-start;\n    height: auto; }\n    .XtgO0MYuXWqjGmc-cJBTD .RK-mYlGlBoq-L0mRBFn7A > h1 {\n      height: auto;\n      font-size: x-large; }\n    .XtgO0MYuXWqjGmc-cJBTD .RK-mYlGlBoq-L0mRBFn7A > div {\n      height: 20px;\n      margin-top: 15px;\n      display: flex;\n      flex-direction: row;\n      width: 230px;\n      justify-content: space-between;\n      align-items: center; }\n  .XtgO0MYuXWqjGmc-cJBTD ._162_b5AFVkNIvEeCBBULs- {\n    width: 100px;\n    height: 70px;\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center; }\n    .XtgO0MYuXWqjGmc-cJBTD ._162_b5AFVkNIvEeCBBULs- > select {\n      position: absolute;\n      bottom: 0px;\n      right: 0px;\n      width: 85px; }\n  .XtgO0MYuXWqjGmc-cJBTD ._3dObe-fI1yHqYDEcMRbyx9 {\n    width: 90%;\n    max-width: 1400px;\n    margin: 0 auto; }\n", "" ]), 
             exports.locals = {
                 main: "XtgO0MYuXWqjGmc-cJBTD",
                 top: "_3aRq2oBN9_wczjGDctN5yR",
+                topLeft: "RK-mYlGlBoq-L0mRBFn7A",
+                topRight: "_162_b5AFVkNIvEeCBBULs-",
                 editor: "_3dObe-fI1yHqYDEcMRbyx9"
             };
         },
@@ -27406,7 +27453,7 @@
                     var _this = _super.call(this, props) || this;
                     return _this.$vm = React.createRef(), _this.$scrollEdit = React.createRef(), _this.$scrollPreview = React.createRef(), 
                     _this.$blockEdit = React.createRef(), _this.$blockPreview = React.createRef(), _this.initLanguage = function() {
-                        var language = _this.props.language, lang = lib_1.CONFIG.langList.indexOf(language) >= 0 ? language : "zh-CN";
+                        var language = _this.props.language, lang = lib_1.CONFIG.langList.indexOf(language) >= 0 ? language : "en";
                         _this.setState({
                             words: lib_1.CONFIG.language[lang]
                         });
@@ -27632,8 +27679,8 @@
                         _this.toolBarLeftClick(type);
                     }), this.reLineNum(value), this.initLanguage();
                 }, MdEditor.prototype.componentDidUpdate = function(preProps) {
-                    var _this = this, _a = this.props, value = _a.value, preview = _a.preview, expand = _a.expand, subfield = _a.subfield, _b = this.state, history = _b.history, historyIndex = _b.historyIndex;
-                    preProps.value !== value && this.reLineNum(value), value !== history[historyIndex] && (window.clearTimeout(this.currentTimeout), 
+                    var _this = this, _a = this.props, value = _a.value, preview = _a.preview, expand = _a.expand, subfield = _a.subfield, language = _a.language, _b = this.state, history = _b.history, historyIndex = _b.historyIndex;
+                    if (preProps.value !== value && this.reLineNum(value), value !== history[historyIndex] && (window.clearTimeout(this.currentTimeout), 
                     this.currentTimeout = window.setTimeout(function() {
                         _this.saveHistory(value);
                     }, 500)), subfield !== preProps.subfield && this.state.subfield !== subfield && this.setState({
@@ -27642,7 +27689,12 @@
                         preview: preview
                     }), expand !== preProps.expand && this.state.expand !== expand && this.setState({
                         expand: expand
-                    });
+                    }), language !== preProps.language) {
+                        var lang = lib_1.CONFIG.langList.indexOf(language) >= 0 ? language : "en";
+                        this.setState({
+                            words: lib_1.CONFIG.language[lang]
+                        });
+                    }
                 }, MdEditor.prototype.reLineNum = function(value) {
                     var lineIndex = value ? value.split("\n").length : 1;
                     this.setState({
@@ -27748,7 +27800,7 @@
                     subfield: !1,
                     style: {},
                     toolbar: lib_1.CONFIG.toolbar,
-                    language: "zh-CN",
+                    language: "en",
                     outline: !0
                 }, MdEditor;
             }(React.Component);

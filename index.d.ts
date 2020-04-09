@@ -20,6 +20,7 @@ export interface IToolbar {
   redo?: boolean
   save?: boolean
   subfield?: boolean
+  toc?: boolean
 }
 export interface IWords {
   placeholder?: string
@@ -40,11 +41,13 @@ export interface IWords {
   delline?: string
   underline?: string
   keytext?: string
+  superscript?: string
+  subscript?: string
   quote?: string
   table?: string
   img?: string
   link?: string
-  innercode?: string
+  inlinecode?: string
   code?: string
   collapse?: string
   katex?: string
@@ -56,6 +59,7 @@ export interface IWords {
   fullscreenOff?: string
   addImgLink?: string
   addImg?: string
+  toc?: string
 }
 interface IP {
   value?: string
@@ -73,6 +77,7 @@ interface IP {
   toolbar?: IToolbar
   language?: string
   addImg?: (file: File, index: number) => void
+  highlight: () => string
 }
 interface IS {
   preview: boolean

@@ -27,15 +27,75 @@ body {
   }
 
   .top {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: justify;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
     justify-content: space-between;
-    height: 80px;
-    line-height: 80px;
+    -webkit-box-align: center;
+    align-items: center;
+    height: auto;
     padding: 0 20px;
     margin-bottom: 30px;
     font-size: 18px;
     color: #fff;
-    background: linear-gradient(160deg, #852178, #019845);
+    background-color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .topLeft {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    height: auto;
+    > h1 {
+      height: auto;
+      font-size: x-large;
+    }
+    > div {
+      height: 20px;
+      margin-top: 15px;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      flex-direction: row;
+      width: 230px;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      align-items: center;
+    }
+  }
+
+  .topRight {
+    width: 100px;
+    height: 70px;
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    > select {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      width: 85px;
+    }
   }
 
   .editor {

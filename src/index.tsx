@@ -140,7 +140,7 @@ class MdEditor extends React.Component<IP, IS> {
     subfield: false,
     style: {},
     toolbar: CONFIG.toolbar,
-    language: 'zh-CN',
+    language: 'en',
     outline: true
   }
   private $vm = React.createRef<HTMLTextAreaElement>()
@@ -174,7 +174,7 @@ class MdEditor extends React.Component<IP, IS> {
   }
 
   componentDidUpdate(preProps: IP) {
-    const { value, preview, expand, subfield } = this.props
+    const { value, preview, expand, subfield, language } = this.props
     const { history, historyIndex } = this.state
     if (preProps.value !== value) {
       this.reLineNum(value)
@@ -196,12 +196,19 @@ class MdEditor extends React.Component<IP, IS> {
       this.setState({ expand })
     }
 
+    if (language !== preProps.language) {
+      const lang = CONFIG.langList.indexOf(language) >= 0 ? language : 'en'
+      this.setState({
+        words: CONFIG.language[lang]
+      })
+    }
+
     // 在此添加渲染函数
   }
 
   initLanguage = (): void => {
     const { language } = this.props
-    const lang = CONFIG.langList.indexOf(language) >= 0 ? language : 'zh-CN'
+    const lang = CONFIG.langList.indexOf(language) >= 0 ? language : 'en'
     this.setState({
       words: CONFIG.language[lang]
     })
