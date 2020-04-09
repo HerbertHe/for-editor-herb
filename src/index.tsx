@@ -165,11 +165,10 @@ class MdEditor extends React.Component<IP, IS> {
   }
 
   componentDidMount() {
-    const { value } = this.props
     keydownListen(this.$vm.current, (type: string) => {
       this.toolBarLeftClick(type)
     })
-    this.reLineNum(value)
+    this.reLineNum()
     this.initLanguage()
   }
 
@@ -177,7 +176,7 @@ class MdEditor extends React.Component<IP, IS> {
     const { value, preview, expand, subfield, language } = this.props
     const { history, historyIndex } = this.state
     if (preProps.value !== value) {
-      this.reLineNum(value)
+      this.reLineNum()
     }
     if (value !== history[historyIndex]) {
       window.clearTimeout(this.currentTimeout)
@@ -237,11 +236,11 @@ class MdEditor extends React.Component<IP, IS> {
     })
   }
 
-  // 重新计算行号
-  reLineNum(value: string) {
-    const lineIndex = value ? value.split('\n').length : 1
+  reLineNum() {
+    const editHeight: number = parseFloat(document.getElementById('true-value').getBoundingClientRect().height.toFixed(1))
+    const baseHeight: number = parseInt(((editHeight - 38.4) / 22.4 + 1.0).toFixed())
     this.setState({
-      lineIndex
+      lineIndex: baseHeight
     })
   }
 
@@ -569,7 +568,7 @@ class MdEditor extends React.Component<IP, IS> {
             <div className="for-editor-block" ref={this.$scrollEdit}>
               {lineNum()}
               <div className="for-editor-content">
-                <pre>{value} </pre>
+                <pre id="true-value">{value} </pre>
                 <textarea
                   ref={this.$vm}
                   value={value}

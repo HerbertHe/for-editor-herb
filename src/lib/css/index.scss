@@ -603,24 +603,17 @@
             line-height: 1.6;
             background-color: #fefbec;
             border-radius: 3px;
-            position: relative;
 
             code {
                 padding: 0;
                 margin: 0;
                 font-size: 100%;
                 background: transparent;
-            }
-            > .for-code-language {
-                position: absolute;
-                top: 0;
-                right: 10px;
-                color: gray;
-                background-color: transparent;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
+                overflow-x: scroll;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                -ms-overflow-style: none;
             }
         }
 

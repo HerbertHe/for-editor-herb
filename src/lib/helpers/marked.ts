@@ -96,7 +96,7 @@ const markedRender = (content: string, highlight: Function): string => {
       })
       return `<pre class="for-md-diff"><code>${backDiff}</code></pre>`
     } else {
-      return `<pre><span class="for-code-language">${language}</span><code class="language-${language}">${
+      return `<pre><code title="${language}" class="language-${language}">${
         highlight(code).value
       }</code></pre>`
     }
