@@ -11,7 +11,6 @@ import './lib/css/index.scss'
 import './lib/fonts/katex.css'
 import { CONFIG } from './lib'
 import { outlined, generateTOC } from './lib/helpers/outlined'
-// import { mermaided } from './lib/helpers/mermaided'
 
 export interface IToolbar {
   h1?: boolean
@@ -195,16 +194,7 @@ class MdEditor extends React.Component<IP, IS> {
       this.setState({ expand })
     }
 
-    // let mermaidDOM: any = document.getElementsByClassName('for-mermaid')
-    // eslint-disable-next-line no-console
-    // console.log(mermaidDOM)
-    // setTimeout(function() {
-    //   if (mermaidDOM.length !== 0) {
-    //     for (let i = 0; i < mermaidDOM.length; i++) {
-    //       mermaided(mermaidDOM[i].id, mermaidDOM[i].innerText)
-    //     }
-    //   }
-    // }, 2000)
+    // 在此添加渲染函数
   }
 
   initLanguage = (): void => {
@@ -300,37 +290,37 @@ class MdEditor extends React.Component<IP, IS> {
       quote: {
         prefix: '> ',
         subfix: '',
-        str: 'quote'
+        str: words.quote
       },
       italic: {
         prefix: '*',
         subfix: '*',
-        str: 'italic'
+        str: words.italic
       },
       bold: {
         prefix: '**',
         subfix: '**',
-        str: 'bold'
+        str: words.bold
       },
       bolditalic: {
         prefix: '***',
         subfix: '***',
-        str: 'bold-italic'
+        str: words.bolditalic
       },
       delline: {
         prefix: '~~',
         subfix: '~~',
-        str: 'delete line'
+        str: words.delline
       },
       underline: {
         prefix: '<u>',
         subfix: '</u>',
-        str: 'underline'
+        str: words.underline
       },
       keytext: {
         prefix: '<kbd>',
         subfix: '</kbd>',
-        str: 'keyboard text'
+        str: words.keytext
       },
       superscript: {
         prefix: 'x<sup>',
@@ -361,22 +351,22 @@ class MdEditor extends React.Component<IP, IS> {
       orderlist: {
         prefix: '\n1. ',
         subfix: '',
-        str: 'orderlist'
+        str: 'item'
       },
       disorderlist: {
         prefix: '\n- ',
         subfix: '',
-        str: 'disorderlist'
+        str: 'item'
       },
       checklist: {
         prefix: '\n- [x] ',
         subfix: '',
-        str: 'checklist'
+        str: 'item'
       },
       inlinecode: {
         prefix: '`',
         subfix: '`',
-        str: 'inlinecode'
+        str: words.inlinecode
       },
       code: {
         prefix: '```',
@@ -386,7 +376,7 @@ class MdEditor extends React.Component<IP, IS> {
       collapse: {
         prefix: '\n<details>\n<summary>title</summary>\n\n',
         subfix: '\n</details>\n\n',
-        str: 'content'
+        str: words.collapse
       },
       katex: {
         prefix: '\n\n$$\n',

@@ -275,8 +275,9 @@
                     -webkit-transition: height 1s;
                     transition: height 1s;
                     > li {
-                        height: auto;
+                        height: 35px;
                         display: none;
+                        overflow: hidden;
                     }
                 }
             }
@@ -307,7 +308,14 @@
                     padding-bottom: 5px;
                     > li {
                         display: -webkit-box;
-                        display: block;
+                        display: flex;
+                        -webkit-box-orient: horizontal;
+                        -webkit-box-direction: normal;
+                        flex-direction: row;
+                        -webkit-box-pack: start;
+                        justify-content: flex-start;
+                        -webkit-box-align: center;
+                        align-items: center;
                         margin-top: 3px;
                         -webkit-user-select: none;
                         -moz-user-select: none;
@@ -316,11 +324,14 @@
                         width: 100%;
                         padding-top: 5px;
                         padding-bottom: 5px;
+                        overflow: hidden;
                         > a {
                             text-decoration: none;
                             color: black;
                             text-overflow: ellipsis;
-                            width: 100%;
+                            white-space: nowrap;
+                            width: 90%;
+                            overflow: hidden;
                         }
                         &:hover {
                             background-color: #f0f0f0;
@@ -328,7 +339,7 @@
                     }
                     > .for-outline-h1 {
                         > a {
-                            font-size: 23px;
+                            font-size: 20px;
                             font-weight: 700;
                         }
                     }
@@ -507,6 +518,15 @@
         // Tex渲染分行
         .katex-html > .mspace {
             height: 10px;
+        }
+
+        // 写kbd样式
+        kbd {
+            background-color: white;
+            box-shadow: 0 0 2px grey;
+            padding: 3px;
+            border-radius: 2px;
+            font-weight: 600;
         }
 
         a {

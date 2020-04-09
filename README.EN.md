@@ -13,7 +13,6 @@ A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long t
 
 * [x] Toolbar button: quote/paragraph/table/inline code/collapse/katex/list
 * [x] Support to render `Tex` Block and Inline `Tex` sentences
-* [x] `mermaid` render(experimental, some bugs happened using `mermaidAPI`)
 * [x] Responsive Layout
 * [x] Support Preview Outline for jumping appointed anchor
 * [x] Generate TOC

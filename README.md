@@ -13,7 +13,6 @@
 
 * [x] 工具栏按钮 quote/paragraph/table/inline code/collapse/katex/list
 * [x] 支持渲染Tex块和行内Tex语句
-* [x] `mermiad`渲染（实验性，mermaidAPI使用有些bug，已经提交）
 * [x] 响应式布局
 * [x] 支持预览大纲跳转锚点
 * [x] 生成大纲插入

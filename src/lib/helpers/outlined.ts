@@ -27,7 +27,7 @@ const outlined = (content: string): string => {
     if (item.type === 'heading') {
       heading += `<li class="for-outline-h${item.depth}">${
         item.depth === 1 ? '╃' : '┕'
-      } <a href="#${item.text}">${item.text}</a></li>`
+      } <a href="#${item.text}" title=${item.text}>${item.text}</a></li>`
     }
   })
 
