@@ -60,18 +60,19 @@ body {
     > h1 {
       height: auto;
       font-size: x-large;
+      margin-bottom: 15px;
     }
     > div {
       height: 20px;
-      margin-top: 15px;
+      margin-top: 5px;
       display: -webkit-box;
       display: flex;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       flex-direction: row;
       width: 230px;
-      -webkit-box-pack: justify;
-      justify-content: space-between;
+      -webkit-box-pack: start;
+      justify-content: flex-start;
       -webkit-box-align: center;
       align-items: center;
     }
@@ -79,7 +80,7 @@ body {
 
   .topRight {
     width: 100px;
-    height: 70px;
+    height: 97px;
     position: relative;
     display: -webkit-box;
     display: flex;

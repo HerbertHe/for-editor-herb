@@ -2,6 +2,8 @@
 
 [![version](https://img.shields.io/npm/v/for-editor-herb.svg)](https://www.npmjs.com/package/for-editor-herb)
 [![download](https://img.shields.io/npm/dm/for-editor-herb.svg)](https://www.npmjs.com/package/for-editor-herb)
+[![cnpmVersion](https://cnpmjs.org/badge/v/for-editor-herb.svg)](https://cnpmjs.org/package/for-editor-herb)
+[![cnpmDownload](https://cnpmjs.org/badge/d/for-editor-herb.svg)](https://cnpmjs.org/package/for-editor-herb)
 
 > Markdown editor for React, support Tex rendering!
 

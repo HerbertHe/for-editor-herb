@@ -93,12 +93,29 @@ class App extends Component<{}, IS> {
                   height="20px"
                 />
               </a>
-
-              <a href="https://www.npmjs.com/package/for-editor-herb">
+              <a href="https://www.npmjs.com/package/for-editor-herb" style={{ marginLeft: '5px' }}>
                 <img
                   alt="download"
                   src="https://img.shields.io/npm/dm/for-editor-herb.svg"
                   width="140px"
+                  height="20px"
+                />
+              </a>
+            </div>
+            <div>
+              <a href="https://cnpmjs.org/package/for-editor-herb">
+                <img
+                  alt="cnpmVersion"
+                  src="https://cnpmjs.org/badge/v/for-editor-herb.svg"
+                  width="80px"
+                  height="20px"
+                />
+              </a>
+              <a href="https://cnpmjs.org/package/for-editor-herb" style={{ marginLeft: '5px' }}>
+                <img
+                  alt="cnpmDownload"
+                  src="https://cnpmjs.org/badge/d/for-editor-herb.svg"
+                  width="93px"
                   height="20px"
                 />
               </a>

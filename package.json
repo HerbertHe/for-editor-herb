@@ -1,6 +1,6 @@
 {
   "name": "for-editor-herb",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "react markdown editor",
   "main": "dist/index.js",
   "scripts": {
@@ -39,8 +39,6 @@
     "@types/classnames": "^2.2.9",
     "@types/katex": "^0.11.0",
     "@types/marked": "^0.6.5",
-    "@types/md5": "^2.1.33",
-    "@types/mermaid": "^8.2.1",
     "@types/react": "^16.8.16",
     "@types/react-dom": "^16.8.4",
     "@typescript-eslint/eslint-plugin": "^1.13.0",

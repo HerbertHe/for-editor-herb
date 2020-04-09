@@ -830,18 +830,6 @@
   resolved "https://registry.npm.taobao.org/@types/marked/download/@types/marked-0.6.5.tgz#3cf2a56ef615dad24aaf99784ef90a9eba4e29d8"
   integrity sha1-PPKlbvYV2tJKr5l4TvkKnrpOKdg=
 
-"@types/md5@^2.1.33":
-  version "2.1.33"
-  resolved "https://registry.npmjs.org/@types/md5/-/md5-2.1.33.tgz#8c8dba30df4ad0e92296424f08c4898dd808e8df"
-  integrity sha512-8+X960EtKLoSblhauxLKy3zzotagjoj3Jt1Tx9oaxUdZEPIBl+mkrUz6PNKpzJgkrKSN9YgkWTA29c0KnLshmA==
-  dependencies:
-    "@types/node" "*"
-
-"@types/mermaid@^8.2.1":
-  version "8.2.1"
-  resolved "https://registry.npm.taobao.org/@types/mermaid/download/@types/mermaid-8.2.1.tgz#778fd45393965d6acf885b878911627fe9365d56"
-  integrity sha1-d4/UU5OWXWrPiFuHiRFif+k2XVY=
-
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.npm.taobao.org/@types/minimatch/download/@types/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"

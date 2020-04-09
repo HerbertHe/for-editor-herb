@@ -2,6 +2,8 @@
 
 [![version](https://img.shields.io/npm/v/for-editor-herb.svg)](https://www.npmjs.com/package/for-editor-herb)
 [![download](https://img.shields.io/npm/dm/for-editor-herb.svg)](https://www.npmjs.com/package/for-editor-herb)
+[![cnpmVersion](https://cnpmjs.org/badge/v/for-editor-herb.svg)](https://cnpmjs.org/package/for-editor-herb)
+[![cnpmDownload](https://cnpmjs.org/badge/d/for-editor-herb.svg)](https://cnpmjs.org/package/for-editor-herb)
 
 > React的markdown编辑器组件，支持Tex渲染
 

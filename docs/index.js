@@ -168,11 +168,31 @@
                         width: "80px",
                         height: "20px"
                     })), react_1.default.createElement("a", {
-                        href: "https://www.npmjs.com/package/for-editor-herb"
+                        href: "https://www.npmjs.com/package/for-editor-herb",
+                        style: {
+                            marginLeft: "5px"
+                        }
                     }, react_1.default.createElement("img", {
                         alt: "download",
                         src: "https://img.shields.io/npm/dm/for-editor-herb.svg",
                         width: "140px",
+                        height: "20px"
+                    }))), react_1.default.createElement("div", null, react_1.default.createElement("a", {
+                        href: "https://cnpmjs.org/package/for-editor-herb"
+                    }, react_1.default.createElement("img", {
+                        alt: "cnpmVersion",
+                        src: "https://cnpmjs.org/badge/v/for-editor-herb.svg",
+                        width: "80px",
+                        height: "20px"
+                    })), react_1.default.createElement("a", {
+                        href: "https://cnpmjs.org/package/for-editor-herb",
+                        style: {
+                            marginLeft: "5px"
+                        }
+                    }, react_1.default.createElement("img", {
+                        alt: "cnpmDownload",
+                        src: "https://cnpmjs.org/badge/d/for-editor-herb.svg",
+                        width: "93px",
                         height: "20px"
                     })))), react_1.default.createElement("div", {
                         className: styles.topRight
@@ -330,7 +350,7 @@
             };
         },
         "./node_modules/css-modules-typescript-loader/index.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js!./example/src/app.module.scss": function(module, exports, __webpack_require__) {
-            (exports = module.exports = __webpack_require__("./node_modules/css-loader/dist/runtime/api.js")(!1)).push([ module.i, "html {\n  height: 100%; }\n\nbody {\n  height: 100%;\n  margin: 0; }\n\n.XtgO0MYuXWqjGmc-cJBTD {\n  padding-bottom: 40px; }\n  .XtgO0MYuXWqjGmc-cJBTD h1,\n  .XtgO0MYuXWqjGmc-cJBTD ul,\n  .XtgO0MYuXWqjGmc-cJBTD li {\n    margin: 0;\n    padding: 0; }\n  .XtgO0MYuXWqjGmc-cJBTD ul,\n  .XtgO0MYuXWqjGmc-cJBTD li {\n    list-style: none; }\n  .XtgO0MYuXWqjGmc-cJBTD a {\n    color: inherit; }\n  .XtgO0MYuXWqjGmc-cJBTD ._3aRq2oBN9_wczjGDctN5yR {\n    display: flex;\n    -webkit-box-pack: justify;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    height: auto;\n    padding: 0 20px;\n    margin-bottom: 30px;\n    font-size: 18px;\n    color: #fff;\n    background-color: black;\n    padding-top: 20px;\n    padding-bottom: 20px; }\n  .XtgO0MYuXWqjGmc-cJBTD .RK-mYlGlBoq-L0mRBFn7A {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: flex-start;\n    height: auto; }\n    .XtgO0MYuXWqjGmc-cJBTD .RK-mYlGlBoq-L0mRBFn7A > h1 {\n      height: auto;\n      font-size: x-large; }\n    .XtgO0MYuXWqjGmc-cJBTD .RK-mYlGlBoq-L0mRBFn7A > div {\n      height: 20px;\n      margin-top: 15px;\n      display: flex;\n      flex-direction: row;\n      width: 230px;\n      justify-content: space-between;\n      align-items: center; }\n  .XtgO0MYuXWqjGmc-cJBTD ._162_b5AFVkNIvEeCBBULs- {\n    width: 100px;\n    height: 70px;\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center; }\n    .XtgO0MYuXWqjGmc-cJBTD ._162_b5AFVkNIvEeCBBULs- > select {\n      position: absolute;\n      bottom: 0px;\n      right: 0px;\n      width: 85px; }\n  .XtgO0MYuXWqjGmc-cJBTD ._3dObe-fI1yHqYDEcMRbyx9 {\n    width: 90%;\n    max-width: 1400px;\n    margin: 0 auto; }\n", "" ]), 
+            (exports = module.exports = __webpack_require__("./node_modules/css-loader/dist/runtime/api.js")(!1)).push([ module.i, "html {\n  height: 100%; }\n\nbody {\n  height: 100%;\n  margin: 0; }\n\n.XtgO0MYuXWqjGmc-cJBTD {\n  padding-bottom: 40px; }\n  .XtgO0MYuXWqjGmc-cJBTD h1,\n  .XtgO0MYuXWqjGmc-cJBTD ul,\n  .XtgO0MYuXWqjGmc-cJBTD li {\n    margin: 0;\n    padding: 0; }\n  .XtgO0MYuXWqjGmc-cJBTD ul,\n  .XtgO0MYuXWqjGmc-cJBTD li {\n    list-style: none; }\n  .XtgO0MYuXWqjGmc-cJBTD a {\n    color: inherit; }\n  .XtgO0MYuXWqjGmc-cJBTD ._3aRq2oBN9_wczjGDctN5yR {\n    display: flex;\n    -webkit-box-pack: justify;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    height: auto;\n    padding: 0 20px;\n    margin-bottom: 30px;\n    font-size: 18px;\n    color: #fff;\n    background-color: black;\n    padding-top: 20px;\n    padding-bottom: 20px; }\n  .XtgO0MYuXWqjGmc-cJBTD .RK-mYlGlBoq-L0mRBFn7A {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: flex-start;\n    height: auto; }\n    .XtgO0MYuXWqjGmc-cJBTD .RK-mYlGlBoq-L0mRBFn7A > h1 {\n      height: auto;\n      font-size: x-large;\n      margin-bottom: 15px; }\n    .XtgO0MYuXWqjGmc-cJBTD .RK-mYlGlBoq-L0mRBFn7A > div {\n      height: 20px;\n      margin-top: 5px;\n      display: flex;\n      flex-direction: row;\n      width: 230px;\n      justify-content: flex-start;\n      align-items: center; }\n  .XtgO0MYuXWqjGmc-cJBTD ._162_b5AFVkNIvEeCBBULs- {\n    width: 100px;\n    height: 97px;\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center; }\n    .XtgO0MYuXWqjGmc-cJBTD ._162_b5AFVkNIvEeCBBULs- > select {\n      position: absolute;\n      bottom: 0px;\n      right: 0px;\n      width: 85px; }\n  .XtgO0MYuXWqjGmc-cJBTD ._3dObe-fI1yHqYDEcMRbyx9 {\n    width: 90%;\n    max-width: 1400px;\n    margin: 0 auto; }\n", "" ]), 
             exports.locals = {
                 main: "XtgO0MYuXWqjGmc-cJBTD",
                 top: "_3aRq2oBN9_wczjGDctN5yR",
