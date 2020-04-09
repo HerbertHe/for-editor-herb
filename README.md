@@ -17,6 +17,7 @@
 * [x] 支持预览大纲跳转锚点
 * [x] 生成大纲插入
 * [x] 支持繁体中文、日文（欢迎PR翻译成不同语言和纠正）
+* [x] 支持GitHub Diff语法 ( v1.5.0~ )
 
 ## [English Documents](./README.EN.md)
 

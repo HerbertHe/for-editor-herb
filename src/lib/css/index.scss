@@ -601,8 +601,9 @@
             padding: 0.6em;
             overflow: auto;
             line-height: 1.6;
-            background-color: #f0f0f0;
+            background-color: #fefbec;
             border-radius: 3px;
+            position: relative;
 
             code {
                 padding: 0;
@@ -610,12 +611,57 @@
                 font-size: 100%;
                 background: transparent;
             }
+            > .for-code-language {
+                position: absolute;
+                top: 0;
+                right: 10px;
+                color: gray;
+                background-color: transparent;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+        }
+
+        // 扩展diff语法样式
+        .for-md-diff {
+            padding: 0.6em;
+            overflow: auto;
+            line-height: 1.6;
+            background-color: transparent;
+            code {
+                padding: 0;
+                margin: 0;
+                font-size: 100%;
+                background: transparent;
+                > p {
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
+                > .for-md-diff-add {
+                    color: #22863a;
+                    background-color: #f0fff4;
+                }
+                > .for-md-diff-del {
+                    color: #b31d28;
+                    background-color: #ffeef0;
+                }
+                > .for-md-diff-focus {
+                    color: #e36209;
+                    background-color: #ffebda;
+                }
+                > .for-md-diff-ignore {
+                    color: #6a737d;
+                    background-color: transparent;
+                }
+            }
         }
 
         code {
             padding: 0.2em 0.4em;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #fefbec;
             border-radius: 3px;
         }
 

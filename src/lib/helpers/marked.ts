@@ -76,23 +76,29 @@ const linkParse = (href: string, title: string, text: string) => {
       }>${text}</a>`
 }
 
-// const flags = ['graph', 'sequenceDiagram', 'classDiagram', 'stateDiagram', 'gantt', 'pie']
-
 const codeParse = (code: string, language: string) => {
-  // if (language === 'mermaid') {
-  //   let cleanFlag = code
-  //     .replace(/[\r\n]/g, '')
-  //     .split(' ')[0]
-  //     .split('\n')[0]
-  //   if (code.length === 0) return ''
-  //   else if (flags.includes(cleanFlag)) {
-  //     return `<div class="for-mermaid" id="for-mermaid-${mermaidMd5(code)}">${code}</div>`
-  //   } else {
-  //     return `<p>${code}</p>`
-  //   }
-  // } else {
-  return `<pre><code class=language-${language}>${Hljs.highlightAuto(code).value}</code></pre>`
-  // }
+  if (language === 'diff') {
+    let diffArray: Array<string> = code.split('\n')
+    let backDiff: string = ''
+    diffArray.forEach((item: string) => {
+      if (/(?<=\+ )/.test(item)) {
+        backDiff += `<p class="for-md-diff-add">${item}</p>`
+      } else if (/(?<=\- )/.test(item)) {
+        backDiff += `<p class="for-md-diff-del">${item}</p>`
+      } else if (/(?<=\! )/.test(item)) {
+        backDiff += `<p class="for-md-diff-focus">${item}</p>`
+      } else if (/(?<=\# )/.test(item)) {
+        backDiff += `<p class="for-md-diff-ignore">${item}</p>`
+      } else {
+        backDiff += `<p>${item}</p>`
+      }
+    })
+    return `<pre class="for-md-diff"><code>${backDiff}</code></pre>`
+  } else {
+    return `<pre><span class="for-code-language">${language}</span><code class="language-${language}">${
+      Hljs.highlightAuto(code).value
+    }</code></pre>`
+  }
 }
 
 renderer.code = codeParse

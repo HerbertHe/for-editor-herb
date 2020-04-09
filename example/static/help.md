@@ -27,10 +27,29 @@ this is a markdown editor
 ## Code
 
 ```js
-const editor = 'for-editor-herb'
+const editor = require('for-editor-herb')
+```
+
+```go
+import (
+  "fmt"
+)
+
+func main() {
+  fmt.Println("Hello World")
+}
 ```
 
 `const editor`
+
+### GitHub Diff
+
+```diff
++ add
+- delete
+! focus
+# ignore
+```
 
 ## List
 

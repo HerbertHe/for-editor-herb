@@ -17,6 +17,7 @@ A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long t
 * [x] Support Preview Outline for jumping appointed anchor
 * [x] Generate TOC
 * [x] Support Traditional Chinese, Japanese (Welcome to PR translation to different lanaguages & Help to correct translation)
+* [x] Support GitHub Diff Syntax ( v1.5.0~ )
 
 ## Install
 
