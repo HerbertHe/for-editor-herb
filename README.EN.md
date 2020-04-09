@@ -97,7 +97,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | subfield    | Boolean | false                       | true: Double columns - Edit preview same screen(notice: preview: true), Single Columns - otherwise not |
 | toolbar     | Object  | As in the following example | toolbars                                            |
 | outline     | Boolean | true | Display outline list for markdown                                          |
-| highlight   | Function| Hljs.highlightAuto | Hljs (highlight.js)'s function --- highAuto                  |
+| highlight   | Function| Hljs.highlightAuto | Hljs (highlight.js)'s function --- highlightAuto             |
 
 ```js
 /*
