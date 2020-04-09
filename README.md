@@ -9,6 +9,8 @@
 
 > 基于`0.3.5`开始构建
 
+## [English Documents](./README.EN.md)
+
 ## 更多的特性
 
 * [x] 工具栏按钮 quote/paragraph/table/inline code/collapse/katex/list
@@ -18,8 +20,7 @@
 * [x] 生成大纲插入
 * [x] 支持繁体中文、日文（欢迎PR翻译成不同语言和纠正）
 * [x] 支持GitHub Diff语法 ( v1.5.0~ )
-
-## [English Documents](./README.EN.md)
+* [x] 支持自定义高亮代码语言类型 ( v2.0.0~ )
 
 ## 安装
 
@@ -36,6 +37,8 @@ yarn add for-editor-herb
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Editor from 'for-editor-herb'
+// 引入代码高亮包
+const Hljs = require('highlight.js')
 
 class App extends Component {
   constructor() {
@@ -43,6 +46,17 @@ class App extends Component {
     this.state = {
       value: ''
     }
+  }
+
+  componentDidMount() {
+    // 在componentDidMount生命周期注册你想高亮的语言
+    Hljs.registerLanguage('css', require('highlight.js/lib/languages/css'))
+    Hljs.registerLanguage('json', require('highlight.js/lib/languages/json'))
+    Hljs.registerLanguage('less', require('highlight.js/lib/languages/less'))
+    Hljs.registerLanguage('scss', require('highlight.js/lib/languages/scss'))
+    Hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
+    Hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'))
+    Hljs.registerLanguage('go', require('highlight.js/lib/languages/go'))
   }
 
   handleChange(value) {
@@ -53,7 +67,14 @@ class App extends Component {
 
   render() {
     const { value } = this.state
-    return <Editor value={value} onChange={() => this.handleChange()} />
+    // 传递Hljs.highlightAuto函数
+    return （
+      <Editor
+        value={value}
+        onChange={() => this.handleChange()}
+        highlight={Hljs.highlightAuto}
+      />
+    ）
   }
 }
 
@@ -64,19 +85,20 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 ### 属性
 
-| name        | type    | default     | description                        |
-| ----------- | ------- | ----------- | ---------------------------------- |
-| value       | String  | -           | 输入框内容                           |
-| placeholder | String  | 开始编辑...   | 占位文本                            |
-| lineNum     | Boolean | true        | 是否显示行号                         |
-| style       | Object  | -           | 编辑器样式                           |
-| height      | String  | 600px       | 编辑器高度                           |
-| preview     | Boolean | false       | 预览模式                             |
-| expand      | Boolean | false       | 全屏模式                             |
-| subfield    | Boolean | false       | 双栏模式(预览模式激活下有效)            |
-| language    | String  | zh-CN       | 语言(支持 zh-CN:中文简体, en:英文, zh-TW: 繁体中文, jp: 日语)     |
-| toolbar     | Object  | 如下         | 自定义工具栏                         |
-| outline     | Boolean | true        | 显示Markdown的大纲                   |
+| name        | type    | default     | description                                                   |
+| ----------- | ------- | ----------- | ------------------------------------------------------------- |
+| value       | String  | -           | 输入框内容                                                      |
+| placeholder | String  | 开始编辑...   | 占位文本                                                       |
+| lineNum     | Boolean | true        | 是否显示行号                                                    |
+| style       | Object  | -           | 编辑器样式                                                      |
+| height      | String  | 600px       | 编辑器高度                                                      |
+| preview     | Boolean | false       | 预览模式                                                        |
+| expand      | Boolean | false       | 全屏模式                                                        |
+| subfield    | Boolean | false       | 双栏模式(预览模式激活下有效)                                       |
+| language    | String  | zh-CN       | 语言(支持 zh-CN:中文简体, en:英文, zh-TW: 繁体中文, jp: 日语)       |
+| toolbar     | Object  | 如下         | 自定义工具栏                                                    |
+| outline     | Boolean | true        | 显示Markdown的大纲                                              |
+| highlight   | Function| Hljs.highlightAuto | Hljs(highlight.js) 的 highlightAuto函数                 |
 
 ```js
 /*
@@ -116,11 +138,11 @@ toolbar: {
 
 ### 事件
 
-| name     | params        | default | description         |
-| -------- | ------------- | ------- | ------------------- |
-| onChange | String: value | -       | 内容改变的回调         |
-| onSave   | String: value | -       | 保存时回调            |
-| addImg   | File: file    | -       | 添加图片时回调         |
+| name     | params        | default | description    |
+| -------- | ------------- | ------- | -------------- |
+| onChange | String: value | -       | 内容改变的回调    |
+| onSave   | String: value | -       | 保存时回调       |
+| addImg   | File: file    | -       | 添加图片时回调    |
 
 ### 图片上传
 

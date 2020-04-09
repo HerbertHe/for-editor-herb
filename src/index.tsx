@@ -112,6 +112,8 @@ interface IP {
   language?: string
   outline?: boolean
   addImg?: (file: File, index: number) => void
+  // highlight
+  highlight: () => string
 }
 
 interface IS {
@@ -590,7 +592,7 @@ class MdEditor extends React.Component<IP, IS> {
               id="for-preview"
               ref={this.$scrollPreview}
               className="for-preview for-markdown-preview"
-              dangerouslySetInnerHTML={{ __html: marked(value) }}
+              dangerouslySetInnerHTML={{ __html: marked(value, this.props.highlight) }}
             ></div>
           </div>
         </div>

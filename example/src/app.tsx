@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import Editor from '../../src/index'
-// import Editor from '../../dist'
 import * as styles from './app.module.scss'
 import value from '../static/help.md'
+
+const Hljs = require('highlight.js')
 
 interface IS {
   value: string
@@ -31,6 +32,17 @@ class App extends Component<{}, IS> {
         value
       })
     }, 200)
+
+    Hljs.registerLanguage('css', require('highlight.js/lib/languages/css'))
+    Hljs.registerLanguage('json', require('highlight.js/lib/languages/json'))
+    Hljs.registerLanguage('less', require('highlight.js/lib/languages/less'))
+    Hljs.registerLanguage('scss', require('highlight.js/lib/languages/scss'))
+    Hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
+    Hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'))
+    Hljs.registerLanguage('go', require('highlight.js/lib/languages/go'))
+
+    // eslint-disable-next-line no-console
+    console.log(Hljs)
   }
 
   resize() {
@@ -52,11 +64,13 @@ class App extends Component<{}, IS> {
   }
 
   handleSave(value: string) {
+    // eslint-disable-next-line no-console
     console.log('触发保存事件', value)
   }
 
   addImg($file: File) {
     this.$vm.current.$img2Url($file.name, 'file_url')
+    // eslint-disable-next-line no-console
     console.log($file)
   }
 
@@ -85,17 +99,11 @@ class App extends Component<{}, IS> {
               ref={this.$vm}
               height="500px"
               language="en"
-              // toolbar={{
-              //   h1: true,
-              //   h2: true,
-              //   h3: true,
-              //   save: true,
-              //   preview: true
-              // }}
               value={value}
               subfield={false}
               onChange={(value) => this.handleChange(value)}
               onSave={(value) => this.handleSave(value)}
+              highlight={Hljs.highlightAuto}
             />
           )}
           {!mobile && (
@@ -107,6 +115,7 @@ class App extends Component<{}, IS> {
               addImg={($file) => this.addImg($file)}
               onChange={(value) => this.handleChange(value)}
               onSave={(value) => this.handleSave(value)}
+              highlight={Hljs.highlightAuto}
             />
           )}
         </div>

@@ -18,6 +18,7 @@ A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long t
 * [x] Generate TOC
 * [x] Support Traditional Chinese, Japanese (Welcome to PR translation to different lanaguages & Help to correct translation)
 * [x] Support GitHub Diff Syntax ( v1.5.0~ )
+* [x] Support highlight the programming language which you want ( v2.0.0~ )
 
 ## Install
 
@@ -35,12 +36,26 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Editor from 'for-editor-herb'
 
+// require `highlight.js` package
+const Hljs = require('highlight.js')
+
 class App extends Component {
   constructor() {
     super()
     this.state = {
       value: ''
     }
+  }
+
+  componentDidMount() {
+    // register languages in componentDidMount lifecycle
+    Hljs.registerLanguage('css', require('highlight.js/lib/languages/css'))
+    Hljs.registerLanguage('json', require('highlight.js/lib/languages/json'))
+    Hljs.registerLanguage('less', require('highlight.js/lib/languages/less'))
+    Hljs.registerLanguage('scss', require('highlight.js/lib/languages/scss'))
+    Hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
+    Hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'))
+    Hljs.registerLanguage('go', require('highlight.js/lib/languages/go'))
   }
 
   handleChange(value) {
@@ -51,7 +66,14 @@ class App extends Component {
 
   render() {
     const { value } = this.state
-    return <Editor value={value} onChange={() => this.handleChange()} />
+    // Transfer function `Hljs.highlightAuto` to the Editor
+    return (
+      <Editor
+        value={value}
+        onChange={() => this.handleChange()}
+        highlight={Hljs.highlightAuto}
+      />
+    )
   }
 }
 
@@ -75,6 +97,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | subfield    | Boolean | false                       | true: Double columns - Edit preview same screen(notice: preview: true), Single Columns - otherwise not |
 | toolbar     | Object  | As in the following example | toolbars                                            |
 | outline     | Boolean | true | Display outline list for markdown                                          |
+| highlight   | Function| Hljs.highlightAuto | Hljs (highlight.js)'s function --- highAuto                  |
 
 ```js
 /*
