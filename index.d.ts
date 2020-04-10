@@ -43,6 +43,7 @@ export interface IWords {
   keytext?: string
   superscript?: string
   subscript?: string
+  marktag?: string
   quote?: string
   table?: string
   img?: string
