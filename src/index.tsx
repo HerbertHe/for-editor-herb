@@ -238,7 +238,7 @@ class MdEditor extends React.Component<IP, IS> {
 
   reLineNum() {
     const editHeight: number = parseFloat(document.getElementById('true-value').getBoundingClientRect().height.toFixed(1))
-    const baseHeight: number = parseInt(((editHeight - 38.4) / 22.4 + 1.0).toFixed())
+    const baseHeight: number = parseInt(((editHeight - 16.0) / 22.4).toFixed())
     this.setState({
       lineIndex: baseHeight
     })

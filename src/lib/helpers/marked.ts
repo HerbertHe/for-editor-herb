@@ -1,6 +1,6 @@
 import marked from 'marked'
 import katex from 'katex'
-// import Hljs from './highlight'
+const emojione = require('emojione')
 
 const markedRender = (content: string, highlight: Function): string => {
   marked.setOptions({
@@ -57,13 +57,30 @@ const markedRender = (content: string, highlight: Function): string => {
   const paragraphParse = (text: string) => {
     const texBlock = /(?<=\$\$)[\s\S]*?(?=\$\$)/
     const texInline = /(\$+)([^\$]|[^\$][\s\S]*?[^\$])\1(?!\$)/
+    const emojiInline = /(\:+)([^\:]|[^\:][\s\S]*?[^\:])\1(?!\:)/g
+    const excludeColon = /([\S]+:)/g
+    const excludeHttp = /(?<=http(s)?:\/\/)[\s\S]*?/
+
     if (texBlock.test(text)) {
       return latexBlockParse(texBlock.exec(text)[0])
     } else if (texInline.test(text)) {
       while (texInline.test(text)) {
-        text = text.replace(texInline.exec(text)[0], latexInlineParse(texInline.exec(text)[2]))
+        let result: RegExpExecArray = texInline.exec(text)
+        text = text.replace(result[0], latexInlineParse(result[2]))
       }
       return `<p>${text}</p>`
+    } else if (emojiInline.test(text) && !excludeHttp.test(text)) {
+      let back: string = ''
+      let others: RegExpMatchArray = text.match(excludeColon)
+      let textArray: Array<string> = text.replace('\n', ' ').split(' ')
+      textArray.forEach((item: string) => {
+        if (others.includes(item)) {
+          back += emojione.shortnameToImage(item)
+        } else {
+          back += item
+        }
+      })
+      return `<p class="for-para-emoji">${back}</p>`
     } else {
       return `<p>${text}</p>`
     }

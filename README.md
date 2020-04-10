@@ -26,6 +26,7 @@ A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long t
 * [x] Support Traditional Chinese, Japanese (Welcome to PR translation to different lanaguages & Help to correct translation)
 * [x] Support GitHub Diff Syntax ( v1.5.0~ )
 * [x] Support to highlight the programming language which you want ( v2.0.0~ )
+* [x] Support to render `emoji` by `emoji shortname` ( v2.2.0~ ), visit [joypixels](https://www.joypixels.com/emoji) for more information
 
 ## Install
 

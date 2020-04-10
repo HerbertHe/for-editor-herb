@@ -24,6 +24,7 @@
 * [x] 支持繁体中文、日文（欢迎PR翻译成不同语言和纠正）
 * [x] 支持GitHub Diff语法 ( v1.5.0~ )
 * [x] 支持自定义高亮代码语言类型 ( v2.0.0~ )
+* [x] 支持`emoji shortname` 渲染`emoji` ( v2.2.0~ ), 更多详情访问 [joypixels](https://www.joypixels.com/emoji)
 
 ## 安装
 

@@ -16,6 +16,12 @@ this is a markdown editor
 
 <kbd>keyboard text</kbd>
 
+### emoji
+
+China: :cn: Japan: :jp: US: :us:
+
+> Wanna know which emoji is supported, visit: [joypixels](https://www.joypixels.com/emoji)
+
 ## Link
 
 [demo](https://goer.icu/for-editor-herb/)

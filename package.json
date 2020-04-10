@@ -1,10 +1,9 @@
 {
   "name": "for-editor-herb",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "react markdown editor",
   "main": "dist/index.js",
   "scripts": {
-    "start": "npm run dev",
     "dev": "webpack-dev-server --config webpack/webpack.dev.config.js",
     "build": "webpack --config webpack/webpack.prod.config.js",
     "dist": "webpack --config webpack/webpack.dist.config.js",
@@ -16,6 +15,7 @@
   },
   "keywords": [
     "javascript",
+    "typescript",
     "react",
     "markdown",
     "editor"
@@ -73,6 +73,7 @@
     "webpack-merge": "^4.1.5"
   },
   "dependencies": {
+    "emojione": "^4.5.0",
     "highlight.js": "^9.18.1",
     "katex": "^0.11.1",
     "marked": "^0.8.2"
