@@ -66,6 +66,7 @@ export interface IWords {
   keytext?: string
   superscript?: string
   subscript?: string
+  marktag?: string
   // 引用
   quote?: string
   // 表格
@@ -339,6 +340,11 @@ class MdEditor extends React.Component<IP, IS> {
         prefix: 'a<sub>',
         subfix: '</sub>',
         str: '1'
+      },
+      marktag: {
+        prefix: '==',
+        subfix: '==',
+        str: words.marktag
       },
       table: {
         prefix: '',

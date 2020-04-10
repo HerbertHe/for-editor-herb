@@ -7,16 +7,20 @@
 
 > Markdown editor for React, support Tex rendering!
 
+## About Versions
+
+### About Version Number
+
+`x.x.x` ---> `Incompatible Update` . `New Features(include Fixing Known Bugs)` . `Fix Bugs`
+
 A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long time without refreshing, without PR handler, the repository is built and kept in sync with `for-editor` PR. Hug to Open Source! If you like this, please give a star to [for-editor](https://github.com/kkfor/for-editor)
 
-* [demo](https://goer.icu/for-editor-herb/)
-* [github](https://github.com/HerbertHe/for-editor-herb)
+* [Demo](https://goer.icu/for-editor-herb/)
+* [GitHub](https://github.com/HerbertHe/for-editor-herb)
 
 > Base on `0.3.5`
 
-## [简体中文文档](./README.CN.md)
-
-## What's New
+### What's New
 
 * [x] Toolbar button: quote/paragraph/table/inline code/collapse/katex/list
 * [x] Support to render `Tex` Block and Inline `Tex` sentences
@@ -27,6 +31,12 @@ A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long t
 * [x] Support GitHub Diff Syntax ( v1.5.0~ )
 * [x] Support to highlight the programming language which you want ( v2.0.0~ )
 * [x] Support to render `emoji` by `emoji shortname` ( v2.2.0~ ), visit [joypixels](https://www.joypixels.com/emoji) for more information
+* [x] Support markdown Expanded Syntax
+  * use `==Mark==` to highlight (mark) the inline text ( v2.3.0~ )
+
+### Documents
+
+* [简体中文](./README.CN.md)
 
 ## Install
 

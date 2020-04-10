@@ -60,6 +60,7 @@ const markedRender = (content: string, highlight: Function): string => {
     const emojiInline = /(\:+)([^\:]|[^\:][\s\S]*?[^\:])\1(?!\:)/g
     const excludeColon = /([\S]+:)/g
     const excludeHttp = /(?<=http(s)?:\/\/)[\s\S]*?/
+    const markTag = /(\=\=+)([^\=\=]|[^\=\=][\s\S]*?[^\=\=])\1(?!\=\=)/g
 
     if (texBlock.test(text)) {
       return latexBlockParse(texBlock.exec(text)[0])
@@ -77,10 +78,36 @@ const markedRender = (content: string, highlight: Function): string => {
         if (others.includes(item)) {
           back += emojione.shortnameToImage(item)
         } else {
-          back += item
+          back += item + ' '
         }
       })
       return `<p class="for-para-emoji">${back}</p>`
+    } else if (markTag.test(text)) {
+      let back: string = ''
+      let textHandle: Array<string> = text
+        .replace('\n', ' ')
+        .replace(markTag, '\n')
+        .split('\n')
+      let markTags: RegExpMatchArray = text.match(markTag)
+      if (textHandle[0].length === 0) {
+        markTags.forEach((item: string, index: number) => {
+          textHandle = textHandle.filter((el) => !(el.length === 0))
+          textHandle.splice(2 * index, 0, item)
+        })
+      } else if (textHandle[0].length !== 0) {
+        markTags.forEach((item: string, index: number) => {
+          textHandle = textHandle.filter((el) => !(el.length === 0))
+          textHandle.splice(2 * index + 1, 0, item)
+        })
+      }
+      textHandle.forEach((item: string) => {
+        if (markTag.test(item)) {
+          back += `<mark>${item.substr(2, item.length - 4)}</mark>`
+        } else {
+          back += item + ' '
+        }
+      })
+      return `<p>${back}</p>`
     } else {
       return `<p>${text}</p>`
     }

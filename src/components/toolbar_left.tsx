@@ -220,6 +220,9 @@ class Toolbars extends React.Component<IP, IS> {
                   <li onClick={() => this.onClick('subscript')} title={words.subscript}>
                     {words.subscript}
                   </li>
+                  <li onClick={() => this.onClick('marktag')} title={words.marktag}>
+                    {words.marktag}
+                  </li>
                 </ul>
               </li>
             )}
@@ -388,6 +391,9 @@ class Toolbars extends React.Component<IP, IS> {
                   </li>
                   <li onClick={() => this.onClick('subscript')} title={words.subscript}>
                     {words.subscript}
+                  </li>
+                  <li onClick={() => this.onClick('marktag')} title={words.marktag}>
+                    {words.marktag}
                   </li>
                 </ul>
               </li>

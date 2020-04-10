@@ -16,6 +16,8 @@ this is a markdown editor
 
 <kbd>keyboard text</kbd>
 
+==mark==Not Mark==Mark==Not Mark
+
 ### emoji
 
 China: :cn: Japan: :jp: US: :us:

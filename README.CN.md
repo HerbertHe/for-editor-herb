@@ -7,14 +7,20 @@
 
 > React的markdown编辑器组件，支持Tex渲染
 
+## 版本说明
+
+### 版本号说明
+
+`x.x.x` --> `不兼容更新` . `新特性更新(含已知bug修复)` . `bug修复`
+
 基于[for-editor](https://github.com/kkfor/for-editor)的分支，因为原作者太久没有更新了，PR也没有处理，有些小伙伴看修改文档觉得没有很方便，索性就开了这个项目。本项目将会与给`for-editor`的提交保持同步。拥抱开源，如果你喜欢，请给个star给原项目
 
-* [demo](https://herberthe.gitee.io/for-editor-herb/)
-* [github](https://github.com/HerbertHe/for-editor-herb)
+* [Demo](https://herberthe.gitee.io/for-editor-herb/)
+* [GitHub](https://github.com/HerbertHe/for-editor-herb)
 
 > 基于`0.3.5`开始构建
 
-## 更多的特性
+### 更多的特性
 
 * [x] 工具栏按钮 quote/paragraph/table/inline code/collapse/katex/list
 * [x] 支持渲染Tex块和行内Tex语句
@@ -25,6 +31,12 @@
 * [x] 支持GitHub Diff语法 ( v1.5.0~ )
 * [x] 支持自定义高亮代码语言类型 ( v2.0.0~ )
 * [x] 支持`emoji shortname` 渲染`emoji` ( v2.2.0~ ), 更多详情访问 [joypixels](https://www.joypixels.com/emoji)
+* [x] 支持扩展语法
+  * 支持`==Mark==`语法高亮行内文本
+
+### 文档
+
+* [English Document](./README.md)
 
 ## 安装
 
