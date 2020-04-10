@@ -166,10 +166,11 @@ class MdEditor extends React.Component<IP, IS> {
   }
 
   componentDidMount() {
+    const { value } = this.props
     keydownListen(this.$vm.current, (type: string) => {
       this.toolBarLeftClick(type)
     })
-    this.reLineNum()
+    this.reLineNum(value)
     this.initLanguage()
   }
 
@@ -177,7 +178,7 @@ class MdEditor extends React.Component<IP, IS> {
     const { value, preview, expand, subfield, language } = this.props
     const { history, historyIndex } = this.state
     if (preProps.value !== value) {
-      this.reLineNum()
+      this.reLineNum(value)
     }
     if (value !== history[historyIndex]) {
       window.clearTimeout(this.currentTimeout)
@@ -237,11 +238,17 @@ class MdEditor extends React.Component<IP, IS> {
     })
   }
 
-  reLineNum() {
-    const editHeight: number = parseFloat(document.getElementById('true-value').getBoundingClientRect().height.toFixed(1))
-    const baseHeight: number = parseInt(((editHeight - 16.0) / 22.4).toFixed())
+  // reLineNum() {
+  //   const editHeight: number = parseFloat(document.getElementById('true-value').getBoundingClientRect().height.toFixed(1))
+  //   const baseHeight: number = parseInt(((editHeight - 16.0) / 22.4).toFixed())
+  //   this.setState({
+  //     lineIndex: baseHeight
+  //   })
+  // }
+  reLineNum(value: string) {
+    const lineIndex = value ? value.split('\n').length : 1
     this.setState({
-      lineIndex: baseHeight
+      lineIndex
     })
   }
 
