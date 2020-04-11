@@ -9,11 +9,11 @@
 
 ## 版本说明
 
+> 全新重构
+
 ### 版本号说明
 
 `x.x.x` --> `不兼容更新` . `新特性更新(含已知bug修复)` . `bug修复`
-
-基于[for-editor](https://github.com/kkfor/for-editor)的分支，因为原作者太久没有更新了，PR也没有处理，有些小伙伴看修改文档觉得没有很方便，索性就开了这个项目。本项目将会与给`for-editor`的提交保持同步。拥抱开源，如果你喜欢，请给个star给原项目
 
 * [Demo](https://herberthe.gitee.io/for-editor-herb/)
 * [GitHub](https://github.com/HerbertHe/for-editor-herb)

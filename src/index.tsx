@@ -144,7 +144,8 @@ class MdEditor extends React.Component<IP, IS> {
     language: 'en',
     outline: true
   }
-  private $vm = React.createRef<HTMLTextAreaElement>()
+  // private $vm = React.createRef<HTMLTextAreaElement>()
+  private $vm = React.createRef<HTMLDivElement>()
   private $scrollEdit = React.createRef<HTMLDivElement>()
   private $scrollPreview = React.createRef<HTMLDivElement>()
   private $blockEdit = React.createRef<HTMLDivElement>()
@@ -169,7 +170,8 @@ class MdEditor extends React.Component<IP, IS> {
     keydownListen(this.$vm.current, (type: string) => {
       this.toolBarLeftClick(type)
     })
-    this.reLineNum()
+    // this.reLineNum()
+    // this.$vm.current.innerText = this.state.value
     this.initLanguage()
   }
 
@@ -177,7 +179,8 @@ class MdEditor extends React.Component<IP, IS> {
     const { value, preview, expand, subfield, language } = this.props
     const { history, historyIndex } = this.state
     if (preProps.value !== value) {
-      this.reLineNum()
+      // this.reLineNum()
+      this.$vm.current.innerHTML = value
     }
     if (value !== history[historyIndex]) {
       window.clearTimeout(this.currentTimeout)
@@ -215,8 +218,12 @@ class MdEditor extends React.Component<IP, IS> {
   }
 
   // 输入框改变
-  handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
-    const value = e.target.value
+  // handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
+  //   const value = e.target.value
+  //   this.props.onChange(value)
+  // }
+  handleChange = (e: React.ChangeEvent<HTMLDivElement>): void => {
+    const value = e.target.innerText
     this.props.onChange(value)
   }
 
@@ -238,7 +245,12 @@ class MdEditor extends React.Component<IP, IS> {
   }
 
   reLineNum() {
-    const editHeight: number = parseFloat(document.getElementById('true-value').getBoundingClientRect().height.toFixed(1))
+    const editHeight: number = parseFloat(
+      document
+        .getElementById('true-value')
+        .getBoundingClientRect()
+        .height.toFixed(1)
+    )
     const baseHeight: number = parseInt(((editHeight - 16.0) / 22.4).toFixed())
     this.setState({
       lineIndex: baseHeight
@@ -247,7 +259,8 @@ class MdEditor extends React.Component<IP, IS> {
 
   // 保存
   save = (): void => {
-    this.props.onSave(this.$vm.current!.value)
+    // this.props.onSave(this.$vm.current!.value)
+    this.props.onSave(this.$vm.current!.innerText)
   }
 
   // 撤销
@@ -401,6 +414,11 @@ class MdEditor extends React.Component<IP, IS> {
         prefix: '  ',
         subfix: '',
         str: ''
+      },
+      enter: {
+        prefix: '\n',
+        subfix: '',
+        str: ''
       }
     }
 
@@ -438,8 +456,8 @@ class MdEditor extends React.Component<IP, IS> {
   // 添加TOC
   addTOC = () => {
     const value = insertText(this.$vm.current, {
-      prefix: '\n<!-- TOC -->\n\n',
-      subfix: '\n<!-- TOC -->\n',
+      prefix: '\n',
+      subfix: '\n',
       str: generateTOC(this.props.value)
     })
     this.props.onChange(value)
@@ -573,7 +591,7 @@ class MdEditor extends React.Component<IP, IS> {
           >
             <div className="for-editor-block" ref={this.$scrollEdit}>
               {lineNum()}
-              <div className="for-editor-content">
+              {/* <div className="for-editor-content">
                 <pre id="true-value">{value} </pre>
                 <textarea
                   ref={this.$vm}
@@ -582,7 +600,13 @@ class MdEditor extends React.Component<IP, IS> {
                   onChange={this.handleChange}
                   placeholder={placeholder ? placeholder : words.placeholder}
                 />
-              </div>
+              </div> */}
+              <div
+                id="for-editor-writter"
+                contentEditable={!disabled}
+                data-text={placeholder}
+                ref={this.$vm}
+              ></div>
             </div>
           </div>
           {/* 大纲 */}

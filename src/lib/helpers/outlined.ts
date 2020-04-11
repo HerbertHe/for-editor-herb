@@ -20,7 +20,7 @@ const generateTOC = (content: string): string => {
 }
 
 const outlined = (content: string): string => {
-  // 对象解析
+  content = content.replace('&nbsp;', ' ')
   let token: any = marked.lexer(content)
   var heading: string = ''
   token.forEach((item: any) => {
@@ -34,7 +34,4 @@ const outlined = (content: string): string => {
   return `<ul class="for-outline-ul">${heading}</ul>`
 }
 
-export {
-  outlined,
-  generateTOC
-}
+export { outlined, generateTOC }

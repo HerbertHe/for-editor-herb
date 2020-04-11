@@ -12,10 +12,6 @@ this is a markdown editor
 
 ~~delete line~~
 
-<u>underline</u>
-
-<kbd>keyboard text</kbd>
-
 ==mark==Not Mark==Mark==Not Mark
 
 ### emoji
@@ -100,9 +96,3 @@ $$
 Mass-energy equivalence: $E = mc^2$, Schrödinger equation: $\hat H \Psi=i \hbar \frac{\partial}{\partial t}\Psi$
 
 ## Collapse
-
-<details>
-<summary>title</summary>
-
-content
-</details>

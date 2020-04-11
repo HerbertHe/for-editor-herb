@@ -3,6 +3,8 @@ import katex from 'katex'
 const emojione = require('emojione')
 
 const markedRender = (content: string, highlight: Function): string => {
+  // content要进行预处理替换掉所有的&nbsp;
+  content = content.replace('&nbsp;', ' ')
   marked.setOptions({
     renderer: new marked.Renderer(),
     gfm: true,

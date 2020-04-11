@@ -109,5 +109,8 @@ module.exports = {
         loader: require.resolve('raw-loader')
       }
     ]
+  },
+  extensions: {
+    // 这个位置引入CDN的js
   }
 }

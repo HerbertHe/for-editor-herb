@@ -412,23 +412,37 @@
                 }
             }
 
-            .for-editor-content {
-                -webkit-box-flex: 1;
-                flex: 1;
-                position: relative;
-                height: 100%;
-                margin-left: 10px;
-
-                pre {
-                    padding: 8px 0;
-                    display: block;
-                    white-space: pre-wrap;
-                    word-wrap: break-word;
-                    visibility: hidden;
-                    margin: 0;
-                    font-family: inherit;
+            #for-editor-writter {
+                outline: none;
+                border: none;
+                width: 100%;
+                white-space: pre-line;
+                > text {
+                    width: 100%;
                 }
             }
+
+            #for-editor-writter:empty:not(:focus)::before{
+                content: attr(data-text);
+            }
+
+            // .for-editor-content {
+            //     -webkit-box-flex: 1;
+            //     flex: 1;
+            //     position: relative;
+            //     height: 100%;
+            //     margin-left: 10px;
+
+            //     pre {
+            //         padding: 8px 0;
+            //         display: block;
+            //         white-space: pre-wrap;
+            //         word-wrap: break-word;
+            //         visibility: hidden;
+            //         margin: 0;
+            //         font-family: inherit;
+            //     }
+            // }
         }
     }
 

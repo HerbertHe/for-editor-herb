@@ -9,11 +9,11 @@
 
 ## About Versions
 
+> Rebuilding All Structure
+
 ### About Version Number
 
 `x.x.x` ---> `Incompatible Update` . `New Features(include Fixing Known Bugs)` . `Fix Bugs`
-
-A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long time without refreshing, without PR handler, the repository is built and kept in sync with `for-editor` PR. Hug to Open Source! If you like this, please give a star to [for-editor](https://github.com/kkfor/for-editor)
 
 * [Demo](https://goer.icu/for-editor-herb/)
 * [GitHub](https://github.com/HerbertHe/for-editor-herb)

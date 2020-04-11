@@ -1,3 +1,4 @@
+// 此文件不需要重构
 const KEY_CODE = {
   F8: 119,
   F9: 120,
@@ -36,13 +37,19 @@ const KEY_CODE = {
   _SIX: 54
 }
 
-export default ($vm: HTMLTextAreaElement, func: any) => {
-  $vm.addEventListener('keydown', e => {
+export default ($vm: HTMLDivElement, func: any) => {
+  $vm.addEventListener('keydown', (e) => {
     if (!(e.ctrlKey || e.metaKey) && !e.altKey && !e.shiftKey) {
       switch (e.keyCode) {
         case KEY_CODE.TAB: {
           e.preventDefault()
           func('tab')
+          break
+        }
+        case KEY_CODE.ENTER: {
+          e.preventDefault()
+          // 阻止回车事件
+          func('enter')
           break
         }
       }
