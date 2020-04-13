@@ -231,7 +231,48 @@
                     }, mobile && react_1.default.createElement(index_1.default, {
                         ref: this.$vm,
                         height: "500px",
-                        language: this.state.language,
+                        language: {
+                            placeholder: "开始编辑...",
+                            undo: "上一步",
+                            redo: "下一步",
+                            h1: "一级标题",
+                            h2: "二级标题",
+                            h3: "三级标题",
+                            h4: "四级标题",
+                            h5: "五级标题",
+                            h6: "六级标题",
+                            para: "段落",
+                            italic: "斜体",
+                            bold: "粗体",
+                            bolditalic: "斜粗体",
+                            delline: "删除线",
+                            underline: "下划线",
+                            keytext: "键盘文本",
+                            superscript: "上标",
+                            subscript: "下标",
+                            marktag: "高亮标签",
+                            table: "表格",
+                            quote: "引用",
+                            img: "添加图片链接",
+                            link: "链接",
+                            list: "列表",
+                            orderlist: "有序列表",
+                            disorderlist: "无序列表",
+                            checklist: "勾选框列表",
+                            inlinecode: "行内代码",
+                            code: "代码块",
+                            collapse: "折叠块",
+                            katex: "KaTeX",
+                            save: "保存",
+                            preview: "预览",
+                            singleColumn: "单栏",
+                            doubleColumn: "双栏",
+                            fullscreenOn: "全屏编辑",
+                            fullscreenOff: "退出全屏",
+                            addImgLink: "添加图片链接",
+                            addImg: "上传图片",
+                            toc: "生成大纲"
+                        },
                         value: value,
                         subfield: !1,
                         onChange: function(value) {
@@ -255,7 +296,8 @@
                         onSave: function(value) {
                             return _this.handleSave(value);
                         },
-                        highlight: Hljs.highlightAuto
+                        highlight: Hljs.highlightAuto,
+                        anchor: !1
                     })));
                 }, App;
             }(react_1.Component);
@@ -295,7 +337,7 @@
             (module.exports = __webpack_require__("./node_modules/css-loader/dist/runtime/api.js")(!1)).push([ module.i, "#root {\n  height: 100%; }\n", "" ]);
         },
         "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./src/lib/css/index.scss": function(module, exports, __webpack_require__) {
-            (module.exports = __webpack_require__("./node_modules/css-loader/dist/runtime/api.js")(!1)).push([ module.i, '.for-container {\n  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;\n  display: flex;\n  flex-direction: column;\n  height: 600px;\n  border: 1px solid #ddd;\n  border-radius: 8px;\n  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 12px;\n  background: #fff;\n  font-size: 14px;\n  width: 100%; }\n  .for-container ul,\n  .for-container ol,\n  .for-container li {\n    margin: 0;\n    padding: 0; }\n  .for-container.for-fullscreen {\n    position: fixed;\n    z-index: 99999;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    height: 100% !important; }\n  .for-container > div:first-child {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px; }\n  .for-container .for-hidden {\n    display: none; }\n  .for-container .for-toolbar {\n    font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;\n    display: flex;\n    justify-content: space-between;\n    padding: 0 6px;\n    border-bottom: 1px solid #ddd;\n    color: #555;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    flex-direction: row; }\n    .for-container .for-toolbar > .for-pc > ul,\n    .for-container .for-toolbar .for-mobile > ul,\n    .for-container .for-toolbar .for-right-pc > ul,\n    .for-container .for-toolbar .for-right-mobile > ul {\n      display: flex; }\n      .for-container .for-toolbar > .for-pc > ul > li,\n      .for-container .for-toolbar .for-mobile > ul > li,\n      .for-container .for-toolbar .for-right-pc > ul > li,\n      .for-container .for-toolbar .for-right-mobile > ul > li {\n        display: flex;\n        align-items: center;\n        padding: 4px 6px;\n        margin: 8px 4px;\n        border-radius: 4px;\n        line-height: normal; }\n        .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list,\n        .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img,\n        .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para,\n        .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title,\n        .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more,\n        .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list,\n        .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img,\n        .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para,\n        .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title,\n        .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more,\n        .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list,\n        .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img,\n        .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para,\n        .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title,\n        .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more,\n        .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list {\n          position: relative; }\n          .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img > ul, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para > ul, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title > ul, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more > ul, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list > ul,\n          .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img > ul,\n          .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para > ul,\n          .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title > ul,\n          .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more > ul,\n          .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list > ul,\n          .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img > ul,\n          .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para > ul,\n          .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title > ul,\n          .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more > ul,\n          .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list > ul,\n          .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img > ul,\n          .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para > ul,\n          .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title > ul,\n          .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more > ul,\n          .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list > ul {\n            position: absolute;\n            top: 100%;\n            left: -50px;\n            width: 140px;\n            margin-top: 4px;\n            background: #fff;\n            border-radius: 4px;\n            box-shadow: rgba(0, 0, 0, 0.1) 0 2px 8px 0;\n            z-index: 99;\n            line-height: 2.8;\n            text-align: center;\n            list-style: none; }\n            .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img > ul li, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para > ul li, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title > ul li, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more > ul li, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list > ul li,\n            .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img > ul li,\n            .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para > ul li,\n            .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title > ul li,\n            .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more > ul li,\n            .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list > ul li,\n            .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img > ul li,\n            .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para > ul li,\n            .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title > ul li,\n            .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more > ul li,\n            .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list > ul li,\n            .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img > ul li,\n            .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para > ul li,\n            .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title > ul li,\n            .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more > ul li,\n            .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list > ul li {\n              position: relative; }\n              .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img > ul li:hover, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para > ul li:hover, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title > ul li:hover, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more > ul li:hover, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list > ul li:hover,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img > ul li:hover,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para > ul li:hover,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title > ul li:hover,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more > ul li:hover,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list > ul li:hover,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img > ul li:hover,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para > ul li:hover,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title > ul li:hover,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more > ul li:hover,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list > ul li:hover,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img > ul li:hover,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para > ul li:hover,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title > ul li:hover,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more > ul li:hover,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list > ul li:hover {\n                background: #e9e9e9; }\n              .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img > ul li:first-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para > ul li:first-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title > ul li:first-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more > ul li:first-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list > ul li:first-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img > ul li:first-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para > ul li:first-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title > ul li:first-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more > ul li:first-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list > ul li:first-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img > ul li:first-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para > ul li:first-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title > ul li:first-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more > ul li:first-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list > ul li:first-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img > ul li:first-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para > ul li:first-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title > ul li:first-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more > ul li:first-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list > ul li:first-child {\n                border-radius: 4px 4px 0 0; }\n              .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img > ul li:last-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para > ul li:last-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title > ul li:last-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more > ul li:last-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list > ul li:last-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img > ul li:last-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para > ul li:last-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title > ul li:last-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more > ul li:last-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list > ul li:last-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img > ul li:last-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para > ul li:last-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title > ul li:last-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more > ul li:last-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list > ul li:last-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img > ul li:last-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para > ul li:last-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title > ul li:last-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more > ul li:last-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list > ul li:last-child {\n                border-radius: 0 0 4px 4px; }\n              .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img > ul li input, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para > ul li input, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title > ul li input, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more > ul li input, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list > ul li input,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img > ul li input,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para > ul li input,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title > ul li input,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more > ul li input,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list > ul li input,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img > ul li input,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para > ul li input,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title > ul li input,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more > ul li input,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list > ul li input,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img > ul li input,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para > ul li input,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title > ul li input,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more > ul li input,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list > ul li input {\n                position: absolute;\n                width: 100%;\n                opacity: 0;\n                left: 0;\n                top: 0;\n                bottom: 0;\n                cursor: pointer; }\n        .for-container .for-toolbar > .for-pc > ul > li.for-active,\n        .for-container .for-toolbar .for-mobile > ul > li.for-active,\n        .for-container .for-toolbar .for-right-pc > ul > li.for-active,\n        .for-container .for-toolbar .for-right-mobile > ul > li.for-active {\n          background: #ddd; }\n        .for-container .for-toolbar > .for-pc > ul > li:hover,\n        .for-container .for-toolbar .for-mobile > ul > li:hover,\n        .for-container .for-toolbar .for-right-pc > ul > li:hover,\n        .for-container .for-toolbar .for-right-mobile > ul > li:hover {\n          cursor: pointer;\n          background: #e9e9e9; }\n        .for-container .for-toolbar > .for-pc > ul > li i,\n        .for-container .for-toolbar .for-mobile > ul > li i,\n        .for-container .for-toolbar .for-right-pc > ul > li i,\n        .for-container .for-toolbar .for-right-mobile > ul > li i {\n          font-size: 1.2em; }\n    .for-container .for-toolbar > .for-pc {\n      display: flex; }\n    .for-container .for-toolbar > .for-right-pc {\n      display: flex; }\n    .for-container .for-toolbar > .for-mobile {\n      display: none;\n      width: calc(100% - 75px); }\n      .for-container .for-toolbar > .for-mobile > ul {\n        flex-wrap: wrap;\n        width: 100%;\n        align-content: flex-start;\n        flex-direction: row; }\n    .for-container .for-toolbar > .for-right-mobile {\n      display: none;\n      width: 75px; }\n      .for-container .for-toolbar > .for-right-mobile > ul {\n        flex-wrap: wrap;\n        width: 100%;\n        align-content: flex-start;\n        flex-direction: row; }\n    @media screen and (max-width: 900px) {\n      .for-container .for-toolbar > .for-pc {\n        display: none; }\n      .for-container .for-toolbar > .for-mobile {\n        display: flex; }\n      .for-container .for-toolbar > .for-right-pc {\n        display: none; }\n      .for-container .for-toolbar > .for-right-mobile {\n        display: flex; } }\n  .for-container .for-editor {\n    display: flex;\n    justify-content: space-between;\n    height: 100%;\n    color: #2c3e50;\n    border-radius: 0 0 8px 8px;\n    overflow: hidden;\n    position: relative; }\n    .for-container .for-editor .for-panel {\n      height: 100%;\n      flex: 0 0 100%;\n      overflow: auto;\n      transition: all 0.2s linear 0s;\n      position: relative; }\n      .for-container .for-editor .for-panel.for-active {\n        flex: 0 0 50%; }\n      .for-container .for-editor .for-panel .for-preview {\n        min-height: 100%;\n        box-sizing: border-box;\n        padding: 10px 14px;\n        background: #fcfcfc; }\n    .for-container .for-editor .for-outline-box {\n      width: 30px;\n      height: 30px;\n      position: absolute;\n      top: 15px;\n      right: 30px;\n      z-index: 999;\n      background-color: white;\n      border-radius: 3px;\n      box-shadow: 0 0 2px grey;\n      padding: 0px;\n      transition: height 1s, width 1s;\n      overflow: hidden; }\n      .for-container .for-editor .for-outline-box > .for-outline-title {\n        height: 30px;\n        width: 30px;\n        display: flex;\n        flex-direction: row;\n        justify-content: flex-start;\n        align-items: center;\n        transition: width 1s; }\n        .for-container .for-editor .for-outline-box > .for-outline-title > i {\n          font-size: 28px; }\n      .for-container .for-editor .for-outline-box > .for-outline-body {\n        width: 100%;\n        height: calc(100% - 30px);\n        margin-top: 5px;\n        overflow-x: hidden;\n        overflow-y: scroll;\n        -ms-overflow-style: none; }\n        .for-container .for-editor .for-outline-box > .for-outline-body::-webkit-scrollbar {\n          display: none; }\n        .for-container .for-editor .for-outline-box > .for-outline-body > ul {\n          height: 0px;\n          transition-delay: 1s;\n          transition: height 1s; }\n          .for-container .for-editor .for-outline-box > .for-outline-body > ul > li {\n            height: 35px;\n            display: none;\n            overflow: hidden; }\n    .for-container .for-editor .for-outline-box:hover {\n      height: 300px;\n      width: 200px;\n      padding: 5px; }\n      .for-container .for-editor .for-outline-box:hover > .for-outline-title {\n        width: 100%;\n        border-bottom: 1px solid #d6d6d6; }\n      .for-container .for-editor .for-outline-box:hover > .for-outline-body {\n        padding-left: 5px; }\n        .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul {\n          height: 100%;\n          width: 100%;\n          display: flex;\n          flex-direction: column;\n          justify-content: flex-start;\n          align-items: flex-start;\n          padding-bottom: 5px; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > li {\n            display: flex;\n            flex-direction: row;\n            justify-content: flex-start;\n            align-items: center;\n            margin-top: 3px;\n            -webkit-user-select: none;\n            -moz-user-select: none;\n            -ms-user-select: none;\n            user-select: none;\n            width: 100%;\n            padding-top: 5px;\n            padding-bottom: 5px;\n            overflow: hidden; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > li > a {\n              text-decoration: none;\n              color: black;\n              text-overflow: ellipsis;\n              white-space: nowrap;\n              width: 90%;\n              overflow: hidden; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > li:hover {\n              background-color: #f0f0f0; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h1 > a {\n            font-size: 20px;\n            font-weight: 700; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h2 {\n            margin-left: 0px; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h2 > a {\n              font-size: 18px;\n              font-weight: 400; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h3 {\n            margin-left: 5px; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h3 > a {\n              font-size: 17px;\n              font-weight: 400; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h4 {\n            margin-left: 10px; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h4 > a {\n              font-size: 16px;\n              font-weight: 400; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h5 {\n            margin-left: 15px; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h5 > a {\n              font-size: 15px;\n              font-weight: 400; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h6 {\n            margin-left: 20px; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h6 > a {\n              font-size: 14px;\n              font-weight: 400; }\n    .for-container .for-editor .for-editor-edit {\n      line-height: 1.6;\n      height: 100%; }\n      .for-container .for-editor .for-editor-edit.for-edit-preview {\n        width: 0;\n        flex: 0 0 0; }\n      .for-container .for-editor .for-editor-edit .for-editor-block {\n        display: flex;\n        min-height: 100%; }\n      .for-container .for-editor .for-editor-edit .for-line-num {\n        list-style: none;\n        background: #eee;\n        padding: 8px 0 120px;\n        min-width: 30px;\n        text-align: center; }\n        .for-container .for-editor .for-editor-edit .for-line-num.hidden {\n          display: none; }\n        .for-container .for-editor .for-editor-edit .for-line-num li {\n          list-style: none; }\n      .for-container .for-editor .for-editor-edit .for-editor-content {\n        flex: 1;\n        position: relative;\n        height: 100%;\n        margin-left: 10px; }\n        .for-container .for-editor .for-editor-edit .for-editor-content pre {\n          padding: 8px 0;\n          display: block;\n          white-space: pre-wrap;\n          word-wrap: break-word;\n          visibility: hidden;\n          margin: 0;\n          font-family: inherit; }\n  .for-container textarea {\n    font-family: "Consolas", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;\n    box-sizing: border-box;\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    padding: 8px 0;\n    display: block;\n    height: 100%;\n    width: 100%;\n    overflow: hidden;\n    resize: none;\n    border: none;\n    outline: none;\n    font-size: inherit;\n    color: inherit;\n    background: none;\n    line-height: inherit; }\n  .for-container .for-markdown-preview {\n    line-height: 2; }\n    .for-container .for-markdown-preview p,\n    .for-container .for-markdown-preview blockquote,\n    .for-container .for-markdown-preview ul,\n    .for-container .for-markdown-preview ol,\n    .for-container .for-markdown-preview dl,\n    .for-container .for-markdown-preview pre {\n      margin-top: 0;\n      margin-bottom: 0.6em; }\n    .for-container .for-markdown-preview h1,\n    .for-container .for-markdown-preview h2 {\n      border-bottom: 1px solid #e2e2e2; }\n    .for-container .for-markdown-preview h1,\n    .for-container .for-markdown-preview h2,\n    .for-container .for-markdown-preview h3,\n    .for-container .for-markdown-preview h4,\n    .for-container .for-markdown-preview h5,\n    .for-container .for-markdown-preview h6 {\n      padding: 0;\n      margin: 0 0 0.6em;\n      font-weight: 600;\n      text-indent: 0; }\n      .for-container .for-markdown-preview h1:target,\n      .for-container .for-markdown-preview h2:target,\n      .for-container .for-markdown-preview h3:target,\n      .for-container .for-markdown-preview h4:target,\n      .for-container .for-markdown-preview h5:target,\n      .for-container .for-markdown-preview h6:target {\n        padding-top: 4.5rem; }\n    .for-container .for-markdown-preview .for-anchor {\n      color: #74b9ff; }\n    .for-container .for-markdown-preview .for-heading:hover + .for-anchor {\n      color: #0984e3; }\n    .for-container .for-markdown-preview .for-anchor:hover {\n      color: #0984e3; }\n    .for-container .for-markdown-preview details {\n      background-color: #f0f0f0;\n      border-radius: 3px;\n      padding: 0.6em; }\n    .for-container .for-markdown-preview summary {\n      outline: none;\n      cursor: pointer;\n      -webkit-user-select: none;\n      -moz-user-select: none;\n      -ms-user-select: none;\n      user-select: none; }\n    .for-container .for-markdown-preview .for-para-emoji {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      align-items: center;\n      flex-wrap: wrap;\n      align-content: flex-start;\n      word-wrap: break-word;\n      word-break: break-all;\n      overflow: hidden;\n      width: 100%;\n      height: auto; }\n      .for-container .for-markdown-preview .for-para-emoji > img {\n        width: 22.4px;\n        height: 22.4px;\n        margin: 0;\n        padding-left: 5px;\n        padding-right: 5px; }\n    .for-container .for-markdown-preview .katex-html > .mspace {\n      height: 10px; }\n    .for-container .for-markdown-preview kbd {\n      background-color: white;\n      box-shadow: 0 0 2px grey;\n      padding: 3px;\n      border-radius: 2px;\n      font-weight: 600; }\n    .for-container .for-markdown-preview a {\n      color: #0366d6;\n      text-decoration: none; }\n      .for-container .for-markdown-preview a:hover {\n        text-decoration: underline; }\n    .for-container .for-markdown-preview ul,\n    .for-container .for-markdown-preview ol {\n      padding: 0.2em 0.8em; }\n      .for-container .for-markdown-preview ul > li,\n      .for-container .for-markdown-preview ol > li {\n        line-height: 2;\n        padding-left: 0.2em;\n        margin-left: 0.2em;\n        list-style-type: disc; }\n        .for-container .for-markdown-preview ul > li > p,\n        .for-container .for-markdown-preview ol > li > p {\n          text-indent: 0; }\n        .for-container .for-markdown-preview ul > li > ul:last-child,\n        .for-container .for-markdown-preview ol > li > ul:last-child {\n          margin-bottom: 0; }\n        .for-container .for-markdown-preview ul > li > ul li,\n        .for-container .for-markdown-preview ol > li > ul li {\n          list-style-type: circle; }\n          .for-container .for-markdown-preview ul > li > ul li > ul li,\n          .for-container .for-markdown-preview ol > li > ul li > ul li {\n            list-style-type: square; }\n    .for-container .for-markdown-preview > ul,\n    .for-container .for-markdown-preview ol {\n      padding: 0 20px; }\n    .for-container .for-markdown-preview ol > li {\n      list-style-type: decimal; }\n    .for-container .for-markdown-preview blockquote {\n      margin: 0;\n      margin-bottom: 0.6em;\n      padding: 0 1em;\n      color: #6a737d;\n      border-left: 0.25em solid #dfe2e5; }\n      .for-container .for-markdown-preview blockquote p {\n        text-indent: 0; }\n        .for-container .for-markdown-preview blockquote p:first-child {\n          margin-top: 0; }\n        .for-container .for-markdown-preview blockquote p:last-child {\n          margin-bottom: 0; }\n    .for-container .for-markdown-preview pre {\n      padding: 0.6em;\n      overflow: auto;\n      line-height: 1.6;\n      background-color: #fefbec;\n      border-radius: 3px; }\n      .for-container .for-markdown-preview pre code {\n        padding: 0;\n        margin: 0;\n        font-size: 100%;\n        background: transparent;\n        overflow-x: scroll;\n        -ms-overflow-style: none; }\n        .for-container .for-markdown-preview pre code::-webkit-scrollbar {\n          display: none; }\n    .for-container .for-markdown-preview .for-md-diff {\n      padding: 0.6em;\n      overflow: auto;\n      line-height: 1.6;\n      background-color: transparent; }\n      .for-container .for-markdown-preview .for-md-diff code {\n        padding: 0;\n        margin: 0;\n        font-size: 100%;\n        background: transparent; }\n        .for-container .for-markdown-preview .for-md-diff code > p {\n          padding-left: 5px;\n          padding-right: 5px; }\n        .for-container .for-markdown-preview .for-md-diff code > .for-md-diff-add {\n          color: #22863a;\n          background-color: #f0fff4; }\n        .for-container .for-markdown-preview .for-md-diff code > .for-md-diff-del {\n          color: #b31d28;\n          background-color: #ffeef0; }\n        .for-container .for-markdown-preview .for-md-diff code > .for-md-diff-focus {\n          color: #e36209;\n          background-color: #ffebda; }\n        .for-container .for-markdown-preview .for-md-diff code > .for-md-diff-ignore {\n          color: #6a737d;\n          background-color: transparent; }\n    .for-container .for-markdown-preview code {\n      padding: 0.2em 0.4em;\n      margin: 0;\n      background-color: #fefbec;\n      border-radius: 3px; }\n    .for-container .for-markdown-preview hr {\n      margin-bottom: 0.6em;\n      height: 1px;\n      background: #dadada;\n      border: none; }\n    .for-container .for-markdown-preview table {\n      width: 100%;\n      border: 1px solid #ddd;\n      margin-bottom: 0.6em;\n      border-collapse: collapse;\n      text-align: left; }\n      .for-container .for-markdown-preview table thead {\n        background: #eee; }\n      .for-container .for-markdown-preview table th,\n      .for-container .for-markdown-preview table td {\n        padding: 0.1em 0.4em;\n        border: 1px solid #ddd; }\n    .for-container .for-markdown-preview img {\n      display: block;\n      margin: 0 auto;\n      max-width: 100%;\n      margin-bottom: 0.6em; }\n', "" ]);
+            (module.exports = __webpack_require__("./node_modules/css-loader/dist/runtime/api.js")(!1)).push([ module.i, '.for-container {\n  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;\n  display: flex;\n  flex-direction: column;\n  height: 600px;\n  border: 1px solid #ddd;\n  border-radius: 8px;\n  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 12px;\n  background: #fff;\n  font-size: 14px;\n  width: 100%; }\n  .for-container ul,\n  .for-container ol,\n  .for-container li {\n    margin: 0;\n    padding: 0; }\n  .for-container.for-fullscreen {\n    position: fixed;\n    z-index: 99999;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    height: 100% !important; }\n  .for-container > div:first-child {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px; }\n  .for-container .for-hidden {\n    display: none; }\n  .for-container .for-toolbar {\n    font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;\n    display: flex;\n    justify-content: space-between;\n    padding: 0 6px;\n    border-bottom: 1px solid #ddd;\n    color: #555;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    flex-direction: row; }\n    .for-container .for-toolbar > .for-pc > ul,\n    .for-container .for-toolbar .for-mobile > ul,\n    .for-container .for-toolbar .for-right-pc > ul,\n    .for-container .for-toolbar .for-right-mobile > ul {\n      display: flex; }\n      .for-container .for-toolbar > .for-pc > ul > li,\n      .for-container .for-toolbar .for-mobile > ul > li,\n      .for-container .for-toolbar .for-right-pc > ul > li,\n      .for-container .for-toolbar .for-right-mobile > ul > li {\n        display: flex;\n        align-items: center;\n        padding: 4px 6px;\n        margin: 8px 4px;\n        border-radius: 4px;\n        line-height: normal; }\n        .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list,\n        .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img,\n        .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para,\n        .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title,\n        .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more,\n        .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list,\n        .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img,\n        .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para,\n        .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title,\n        .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more,\n        .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list,\n        .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img,\n        .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para,\n        .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title,\n        .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more,\n        .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list {\n          position: relative; }\n          .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img > ul, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para > ul, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title > ul, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more > ul, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list > ul,\n          .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img > ul,\n          .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para > ul,\n          .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title > ul,\n          .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more > ul,\n          .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list > ul,\n          .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img > ul,\n          .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para > ul,\n          .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title > ul,\n          .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more > ul,\n          .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list > ul,\n          .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img > ul,\n          .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para > ul,\n          .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title > ul,\n          .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more > ul,\n          .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list > ul {\n            position: absolute;\n            top: 100%;\n            left: -50px;\n            width: 140px;\n            margin-top: 4px;\n            background: #fff;\n            border-radius: 4px;\n            box-shadow: rgba(0, 0, 0, 0.1) 0 2px 8px 0;\n            z-index: 99;\n            line-height: 2.8;\n            text-align: center;\n            list-style: none; }\n            .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img > ul li, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para > ul li, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title > ul li, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more > ul li, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list > ul li,\n            .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img > ul li,\n            .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para > ul li,\n            .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title > ul li,\n            .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more > ul li,\n            .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list > ul li,\n            .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img > ul li,\n            .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para > ul li,\n            .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title > ul li,\n            .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more > ul li,\n            .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list > ul li,\n            .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img > ul li,\n            .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para > ul li,\n            .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title > ul li,\n            .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more > ul li,\n            .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list > ul li {\n              position: relative; }\n              .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img > ul li:hover, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para > ul li:hover, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title > ul li:hover, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more > ul li:hover, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list > ul li:hover,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img > ul li:hover,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para > ul li:hover,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title > ul li:hover,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more > ul li:hover,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list > ul li:hover,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img > ul li:hover,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para > ul li:hover,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title > ul li:hover,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more > ul li:hover,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list > ul li:hover,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img > ul li:hover,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para > ul li:hover,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title > ul li:hover,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more > ul li:hover,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list > ul li:hover {\n                background: #e9e9e9; }\n              .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img > ul li:first-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para > ul li:first-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title > ul li:first-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more > ul li:first-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list > ul li:first-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img > ul li:first-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para > ul li:first-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title > ul li:first-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more > ul li:first-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list > ul li:first-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img > ul li:first-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para > ul li:first-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title > ul li:first-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more > ul li:first-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list > ul li:first-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img > ul li:first-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para > ul li:first-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title > ul li:first-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more > ul li:first-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list > ul li:first-child {\n                border-radius: 4px 4px 0 0; }\n              .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img > ul li:last-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para > ul li:last-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title > ul li:last-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more > ul li:last-child, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list > ul li:last-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img > ul li:last-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para > ul li:last-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title > ul li:last-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more > ul li:last-child,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list > ul li:last-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img > ul li:last-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para > ul li:last-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title > ul li:last-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more > ul li:last-child,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list > ul li:last-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img > ul li:last-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para > ul li:last-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title > ul li:last-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more > ul li:last-child,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list > ul li:last-child {\n                border-radius: 0 0 4px 4px; }\n              .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-img > ul li input, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-para > ul li input, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-title > ul li input, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-more > ul li input, .for-container .for-toolbar > .for-pc > ul > li.for-toolbar-list > ul li input,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-img > ul li input,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-para > ul li input,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-title > ul li input,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-more > ul li input,\n              .for-container .for-toolbar .for-mobile > ul > li.for-toolbar-list > ul li input,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-img > ul li input,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-para > ul li input,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-title > ul li input,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-more > ul li input,\n              .for-container .for-toolbar .for-right-pc > ul > li.for-toolbar-list > ul li input,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-img > ul li input,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-para > ul li input,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-title > ul li input,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-more > ul li input,\n              .for-container .for-toolbar .for-right-mobile > ul > li.for-toolbar-list > ul li input {\n                position: absolute;\n                width: 100%;\n                opacity: 0;\n                left: 0;\n                top: 0;\n                bottom: 0;\n                cursor: pointer; }\n        .for-container .for-toolbar > .for-pc > ul > li.for-active,\n        .for-container .for-toolbar .for-mobile > ul > li.for-active,\n        .for-container .for-toolbar .for-right-pc > ul > li.for-active,\n        .for-container .for-toolbar .for-right-mobile > ul > li.for-active {\n          background: #ddd; }\n        .for-container .for-toolbar > .for-pc > ul > li:hover,\n        .for-container .for-toolbar .for-mobile > ul > li:hover,\n        .for-container .for-toolbar .for-right-pc > ul > li:hover,\n        .for-container .for-toolbar .for-right-mobile > ul > li:hover {\n          cursor: pointer;\n          background: #e9e9e9; }\n        .for-container .for-toolbar > .for-pc > ul > li i,\n        .for-container .for-toolbar .for-mobile > ul > li i,\n        .for-container .for-toolbar .for-right-pc > ul > li i,\n        .for-container .for-toolbar .for-right-mobile > ul > li i {\n          font-size: 1.2em; }\n    .for-container .for-toolbar > .for-pc {\n      display: flex;\n      width: calc(100% - 110px); }\n      .for-container .for-toolbar > .for-pc > ul {\n        flex-wrap: wrap;\n        width: 100%;\n        align-content: flex-start;\n        flex-direction: row; }\n    .for-container .for-toolbar > .for-right-pc {\n      display: flex;\n      width: 110px; }\n    .for-container .for-toolbar > .for-mobile {\n      display: none;\n      width: calc(100% - 75px); }\n      .for-container .for-toolbar > .for-mobile > ul {\n        flex-wrap: wrap;\n        width: 100%;\n        align-content: flex-start;\n        flex-direction: row; }\n    .for-container .for-toolbar > .for-right-mobile {\n      display: none;\n      width: 75px; }\n      .for-container .for-toolbar > .for-right-mobile > ul {\n        flex-wrap: wrap;\n        width: 100%;\n        align-content: flex-start;\n        flex-direction: row; }\n    @media screen and (max-width: 900px) {\n      .for-container .for-toolbar > .for-pc {\n        display: none; }\n      .for-container .for-toolbar > .for-mobile {\n        display: flex; }\n      .for-container .for-toolbar > .for-right-pc {\n        display: none; }\n      .for-container .for-toolbar > .for-right-mobile {\n        display: flex; } }\n  .for-container .for-editor {\n    display: flex;\n    justify-content: space-between;\n    height: 100%;\n    color: #2c3e50;\n    border-radius: 0 0 8px 8px;\n    overflow: hidden;\n    position: relative; }\n    .for-container .for-editor .for-panel {\n      height: 100%;\n      flex: 0 0 100%;\n      overflow: auto;\n      transition: all 0.2s linear 0s;\n      position: relative; }\n      .for-container .for-editor .for-panel.for-active {\n        flex: 0 0 50%; }\n      .for-container .for-editor .for-panel .for-preview {\n        min-height: 100%;\n        box-sizing: border-box;\n        padding: 10px 14px;\n        background: #fcfcfc; }\n    .for-container .for-editor .for-outline-box {\n      width: 30px;\n      height: 30px;\n      position: absolute;\n      top: 15px;\n      right: 30px;\n      z-index: 999;\n      background-color: white;\n      border-radius: 3px;\n      box-shadow: 0 0 2px grey;\n      padding: 0px;\n      transition: height 1s, width 1s;\n      overflow: hidden; }\n      .for-container .for-editor .for-outline-box > .for-outline-title {\n        height: 30px;\n        width: 30px;\n        display: flex;\n        flex-direction: row;\n        justify-content: flex-start;\n        align-items: center;\n        transition: width 1s; }\n        .for-container .for-editor .for-outline-box > .for-outline-title > i {\n          font-size: 28px; }\n      .for-container .for-editor .for-outline-box > .for-outline-body {\n        width: 100%;\n        height: calc(100% - 30px);\n        margin-top: 5px;\n        overflow-x: hidden;\n        overflow-y: scroll;\n        -ms-overflow-style: none; }\n        .for-container .for-editor .for-outline-box > .for-outline-body::-webkit-scrollbar {\n          display: none; }\n        .for-container .for-editor .for-outline-box > .for-outline-body > ul {\n          height: 0px;\n          transition-delay: 1s;\n          transition: height 1s; }\n          .for-container .for-editor .for-outline-box > .for-outline-body > ul > li {\n            height: 35px;\n            display: none;\n            overflow: hidden; }\n    .for-container .for-editor .for-outline-box:hover {\n      height: 300px;\n      width: 200px;\n      padding: 5px; }\n      .for-container .for-editor .for-outline-box:hover > .for-outline-title {\n        width: 100%;\n        border-bottom: 1px solid #d6d6d6; }\n      .for-container .for-editor .for-outline-box:hover > .for-outline-body {\n        padding-left: 5px; }\n        .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul {\n          height: 100%;\n          width: 100%;\n          display: flex;\n          flex-direction: column;\n          justify-content: flex-start;\n          align-items: flex-start;\n          padding-bottom: 5px; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > li {\n            display: flex;\n            flex-direction: row;\n            justify-content: flex-start;\n            align-items: center;\n            margin-top: 3px;\n            -webkit-user-select: none;\n            -moz-user-select: none;\n            -ms-user-select: none;\n            user-select: none;\n            width: 100%;\n            padding-top: 5px;\n            padding-bottom: 5px;\n            overflow: hidden; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > li > a {\n              text-decoration: none;\n              color: black;\n              text-overflow: ellipsis;\n              white-space: nowrap;\n              width: 90%;\n              overflow: hidden; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > li:hover {\n              background-color: #f0f0f0; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h1 > a {\n            font-size: 20px;\n            font-weight: 700; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h2 {\n            margin-left: 0px; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h2 > a {\n              font-size: 18px;\n              font-weight: 400; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h3 {\n            margin-left: 5px; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h3 > a {\n              font-size: 17px;\n              font-weight: 400; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h4 {\n            margin-left: 10px; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h4 > a {\n              font-size: 16px;\n              font-weight: 400; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h5 {\n            margin-left: 15px; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h5 > a {\n              font-size: 15px;\n              font-weight: 400; }\n          .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h6 {\n            margin-left: 20px; }\n            .for-container .for-editor .for-outline-box:hover > .for-outline-body > ul > .for-outline-h6 > a {\n              font-size: 14px;\n              font-weight: 400; }\n    .for-container .for-editor .for-editor-edit {\n      line-height: 1.6;\n      height: 100%; }\n      .for-container .for-editor .for-editor-edit.for-edit-preview {\n        width: 0;\n        flex: 0 0 0; }\n      .for-container .for-editor .for-editor-edit .for-editor-block {\n        display: flex;\n        min-height: 100%; }\n      .for-container .for-editor .for-editor-edit .for-line-num {\n        list-style: none;\n        background: #eee;\n        padding: 8px 0 120px;\n        min-width: 30px;\n        text-align: center; }\n        .for-container .for-editor .for-editor-edit .for-line-num.hidden {\n          display: none; }\n        .for-container .for-editor .for-editor-edit .for-line-num li {\n          list-style: none; }\n      .for-container .for-editor .for-editor-edit .for-editor-content {\n        flex: 1;\n        position: relative;\n        height: 100%;\n        margin-left: 10px; }\n        .for-container .for-editor .for-editor-edit .for-editor-content pre {\n          padding: 8px 0;\n          display: block;\n          white-space: pre-wrap;\n          word-wrap: break-word;\n          visibility: hidden;\n          margin: 0;\n          font-family: inherit; }\n  .for-container textarea {\n    font-family: "Consolas", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;\n    box-sizing: border-box;\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    padding: 8px 0;\n    display: block;\n    height: 100%;\n    width: 100%;\n    overflow: hidden;\n    resize: none;\n    border: none;\n    outline: none;\n    font-size: inherit;\n    color: inherit;\n    background: none;\n    line-height: inherit; }\n  .for-container .for-markdown-preview {\n    line-height: 2; }\n    .for-container .for-markdown-preview p,\n    .for-container .for-markdown-preview blockquote,\n    .for-container .for-markdown-preview ul,\n    .for-container .for-markdown-preview ol,\n    .for-container .for-markdown-preview dl,\n    .for-container .for-markdown-preview pre {\n      margin-top: 0;\n      margin-bottom: 0.6em; }\n    .for-container .for-markdown-preview h1,\n    .for-container .for-markdown-preview h2 {\n      border-bottom: 1px solid #e2e2e2; }\n    .for-container .for-markdown-preview h1,\n    .for-container .for-markdown-preview h2,\n    .for-container .for-markdown-preview h3,\n    .for-container .for-markdown-preview h4,\n    .for-container .for-markdown-preview h5,\n    .for-container .for-markdown-preview h6 {\n      padding: 0;\n      margin: 0 0 0.6em;\n      font-weight: 600;\n      text-indent: 0; }\n      .for-container .for-markdown-preview h1:target,\n      .for-container .for-markdown-preview h2:target,\n      .for-container .for-markdown-preview h3:target,\n      .for-container .for-markdown-preview h4:target,\n      .for-container .for-markdown-preview h5:target,\n      .for-container .for-markdown-preview h6:target {\n        padding-top: 4.5rem; }\n    .for-container .for-markdown-preview .for-anchor {\n      color: #74b9ff; }\n    .for-container .for-markdown-preview .for-heading:hover + .for-anchor {\n      color: #0984e3; }\n    .for-container .for-markdown-preview .for-anchor:hover {\n      color: #0984e3; }\n    .for-container .for-markdown-preview details {\n      background-color: #f0f0f0;\n      border-radius: 3px;\n      padding: 0.6em; }\n    .for-container .for-markdown-preview summary {\n      outline: none;\n      cursor: pointer;\n      -webkit-user-select: none;\n      -moz-user-select: none;\n      -ms-user-select: none;\n      user-select: none; }\n    .for-container .for-markdown-preview .for-para-emoji {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      align-items: center;\n      flex-wrap: wrap;\n      align-content: flex-start;\n      word-wrap: break-word;\n      word-break: break-all;\n      overflow: hidden;\n      width: 100%;\n      height: auto; }\n      .for-container .for-markdown-preview .for-para-emoji > img {\n        width: 22.4px;\n        height: 22.4px;\n        margin: 0;\n        padding-left: 5px;\n        padding-right: 5px; }\n    .for-container .for-markdown-preview .katex-html > .mspace {\n      height: 10px; }\n    .for-container .for-markdown-preview kbd {\n      background-color: white;\n      box-shadow: 0 0 2px grey;\n      padding: 3px;\n      border-radius: 2px;\n      font-weight: 600; }\n    .for-container .for-markdown-preview a {\n      color: #0366d6;\n      text-decoration: none; }\n      .for-container .for-markdown-preview a:hover {\n        text-decoration: underline; }\n    .for-container .for-markdown-preview ul,\n    .for-container .for-markdown-preview ol {\n      padding: 0.2em 0.8em; }\n      .for-container .for-markdown-preview ul > li,\n      .for-container .for-markdown-preview ol > li {\n        line-height: 2;\n        padding-left: 0.2em;\n        margin-left: 0.2em;\n        list-style-type: disc; }\n        .for-container .for-markdown-preview ul > li > p,\n        .for-container .for-markdown-preview ol > li > p {\n          text-indent: 0; }\n        .for-container .for-markdown-preview ul > li > ul:last-child,\n        .for-container .for-markdown-preview ol > li > ul:last-child {\n          margin-bottom: 0; }\n        .for-container .for-markdown-preview ul > li > ul li,\n        .for-container .for-markdown-preview ol > li > ul li {\n          list-style-type: circle; }\n          .for-container .for-markdown-preview ul > li > ul li > ul li,\n          .for-container .for-markdown-preview ol > li > ul li > ul li {\n            list-style-type: square; }\n    .for-container .for-markdown-preview > ul,\n    .for-container .for-markdown-preview ol {\n      padding: 0 20px; }\n    .for-container .for-markdown-preview ol > li {\n      list-style-type: decimal; }\n    .for-container .for-markdown-preview blockquote {\n      margin: 0;\n      margin-bottom: 0.6em;\n      padding: 0 1em;\n      color: #6a737d;\n      border-left: 0.25em solid #dfe2e5; }\n      .for-container .for-markdown-preview blockquote p {\n        text-indent: 0; }\n        .for-container .for-markdown-preview blockquote p:first-child {\n          margin-top: 0; }\n        .for-container .for-markdown-preview blockquote p:last-child {\n          margin-bottom: 0; }\n    .for-container .for-markdown-preview pre {\n      padding: 0.6em;\n      overflow: auto;\n      line-height: 1.6;\n      background-color: #fefbec;\n      border-radius: 3px; }\n      .for-container .for-markdown-preview pre code {\n        padding: 0;\n        margin: 0;\n        font-size: 100%;\n        background: transparent;\n        overflow-x: scroll;\n        -ms-overflow-style: none; }\n        .for-container .for-markdown-preview pre code::-webkit-scrollbar {\n          display: none; }\n    .for-container .for-markdown-preview .for-md-diff {\n      padding: 0.6em;\n      overflow: auto;\n      line-height: 1.6;\n      background-color: transparent; }\n      .for-container .for-markdown-preview .for-md-diff code {\n        padding: 0;\n        margin: 0;\n        font-size: 100%;\n        background: transparent; }\n        .for-container .for-markdown-preview .for-md-diff code > p {\n          padding-left: 5px;\n          padding-right: 5px; }\n        .for-container .for-markdown-preview .for-md-diff code > .for-md-diff-add {\n          color: #22863a;\n          background-color: #f0fff4; }\n        .for-container .for-markdown-preview .for-md-diff code > .for-md-diff-del {\n          color: #b31d28;\n          background-color: #ffeef0; }\n        .for-container .for-markdown-preview .for-md-diff code > .for-md-diff-focus {\n          color: #e36209;\n          background-color: #ffebda; }\n        .for-container .for-markdown-preview .for-md-diff code > .for-md-diff-ignore {\n          color: #6a737d;\n          background-color: transparent; }\n    .for-container .for-markdown-preview code {\n      padding: 0.2em 0.4em;\n      margin: 0;\n      background-color: #fefbec;\n      border-radius: 3px; }\n    .for-container .for-markdown-preview hr {\n      margin-bottom: 0.6em;\n      height: 1px;\n      background: #dadada;\n      border: none; }\n    .for-container .for-markdown-preview table {\n      width: 100%;\n      border: 1px solid #ddd;\n      margin-bottom: 0.6em;\n      border-collapse: collapse;\n      text-align: left; }\n      .for-container .for-markdown-preview table thead {\n        background: #eee; }\n      .for-container .for-markdown-preview table th,\n      .for-container .for-markdown-preview table td {\n        padding: 0.1em 0.4em;\n        border: 1px solid #ddd; }\n    .for-container .for-markdown-preview img {\n      display: block;\n      margin: 0 auto;\n      max-width: 100%;\n      margin-bottom: 0.6em; }\n', "" ]);
         },
         "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/lib/fonts/iconfont.css": function(module, exports, __webpack_require__) {
             exports = module.exports = __webpack_require__("./node_modules/css-loader/dist/runtime/api.js")(!1);
@@ -54801,39 +54843,62 @@
                         title: words.redo + " (ctrl+y)"
                     }, React.createElement("i", {
                         className: "foricon for-redo"
-                    })), toolbar.h1 && React.createElement("li", {
+                    })), React.createElement("li", {
+                        className: "for-toolbar-title",
+                        onMouseOver: function() {
+                            return _this.titleMouseOver();
+                        },
+                        onMouseOut: function() {
+                            return _this.titleMouseOut();
+                        },
+                        onClick: function() {
+                            return _this.titleMouseOut();
+                        }
+                    }, React.createElement("i", {
+                        className: "foricon for-title"
+                    }), React.createElement("ul", {
+                        style: titleHidden ? {
+                            display: "none"
+                        } : {}
+                    }, toolbar.h1 && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("h1");
                         },
                         title: words.h1
-                    }, "H1"), toolbar.h2 && React.createElement("li", {
+                    }, words.h1), toolbar.h2 && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("h2");
                         },
                         title: words.h2
-                    }, "H2"), toolbar.h3 && React.createElement("li", {
+                    }, words.h2), toolbar.h3 && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("h3");
                         },
                         title: words.h3
-                    }, "H3"), toolbar.h4 && React.createElement("li", {
+                    }, words.h3), toolbar.h4 && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("h4");
                         },
                         title: words.h4
-                    }, "H4"), toolbar.quote && React.createElement("li", {
+                    }, words.h4), toolbar.h5 && React.createElement("li", {
                         onClick: function() {
-                            return _this.onClick("quote");
+                            return _this.onClick("h5");
                         },
-                        title: words.quote
-                    }, React.createElement("i", {
-                        className: "foricon for-quote"
-                    })), toolbar.para && React.createElement("li", {
+                        title: words.h5
+                    }, words.h5), toolbar.h6 && React.createElement("li", {
+                        onClick: function() {
+                            return _this.onClick("h6");
+                        },
+                        title: words.h6
+                    }, words.h6))), toolbar.para.paragraph && React.createElement("li", {
                         className: "for-toolbar-para",
                         onMouseOver: function() {
                             return _this.paraMouseOver();
                         },
                         onMouseOut: function() {
+                            return _this.paraMouseOut();
+                        },
+                        onClick: function() {
                             return _this.paraMouseOut();
                         }
                     }, React.createElement("i", {
@@ -54842,47 +54907,47 @@
                         style: paraHidden ? {
                             display: "none"
                         } : {}
-                    }, React.createElement("li", {
+                    }, toolbar.para.italic && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("italic");
                         },
                         title: words.italic
-                    }, words.italic), React.createElement("li", {
+                    }, words.italic), toolbar.para.bold && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("bold");
                         },
                         title: words.bold
-                    }, words.bold), React.createElement("li", {
+                    }, words.bold), toolbar.para.bolditalic && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("bolditalic");
                         },
                         title: words.bolditalic
-                    }, words.bolditalic), React.createElement("li", {
+                    }, words.bolditalic), toolbar.para.delline && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("delline");
                         },
                         title: words.delline
-                    }, words.delline), React.createElement("li", {
+                    }, words.delline), toolbar.para.underline && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("underline");
                         },
                         title: words.underline
-                    }, words.underline), React.createElement("li", {
+                    }, words.underline), toolbar.para.keytext && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("keytext");
                         },
                         title: words.keytext
-                    }, words.keytext), React.createElement("li", {
+                    }, words.keytext), toolbar.para.superscript && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("superscript");
                         },
                         title: words.superscript
-                    }, words.superscript), React.createElement("li", {
+                    }, words.superscript), toolbar.para.subscript && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("subscript");
                         },
                         title: words.subscript
-                    }, words.subscript), React.createElement("li", {
+                    }, words.subscript), toolbar.para.marktag && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("marktag");
                         },
@@ -54901,6 +54966,9 @@
                         },
                         onMouseOut: function() {
                             return _this.imgMouseOut();
+                        },
+                        onClick: function() {
+                            return _this.imgMouseOut();
                         }
                     }, React.createElement("i", {
                         className: "foricon for-image"
@@ -54918,7 +54986,14 @@
                         onChange: function(e) {
                             return _this.addImgFile(e);
                         }
-                    })))), toolbar.link && React.createElement("li", {
+                    })))), toolbar.quote && React.createElement("li", {
+                        onClick: function() {
+                            return _this.onClick("quote");
+                        },
+                        title: words.quote
+                    }, React.createElement("i", {
+                        className: "foricon for-quote"
+                    })), toolbar.link && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("link");
                         },
@@ -54931,6 +55006,9 @@
                             return _this.listMouseOver();
                         },
                         onMouseOut: function() {
+                            return _this.listMouseOut();
+                        },
+                        onClick: function() {
                             return _this.listMouseOut();
                         }
                     }, React.createElement("i", {
@@ -55025,7 +55103,10 @@
                     }), React.createElement("ul", {
                         style: titleHidden ? {
                             display: "none"
-                        } : {}
+                        } : {},
+                        onClick: function() {
+                            return _this.titleMouseOut();
+                        }
                     }, toolbar.h1 && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("h1");
@@ -55046,7 +55127,7 @@
                             return _this.onClick("h4");
                         },
                         title: words.h4
-                    }, words.h4))), toolbar.para && React.createElement("li", {
+                    }, words.h4))), toolbar.para.paragraph && React.createElement("li", {
                         className: "for-toolbar-para",
                         onMouseOver: function() {
                             return _this.paraMouseOver();
@@ -55059,48 +55140,51 @@
                     }), React.createElement("ul", {
                         style: paraHidden ? {
                             display: "none"
-                        } : {}
-                    }, React.createElement("li", {
+                        } : {},
+                        onClick: function() {
+                            return _this.paraMouseOut();
+                        }
+                    }, toolbar.para.italic && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("italic");
                         },
                         title: words.italic
-                    }, words.italic), React.createElement("li", {
+                    }, words.italic), toolbar.para.bold && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("bold");
                         },
                         title: words.bold
-                    }, words.bold), React.createElement("li", {
+                    }, words.bold), toolbar.para.bolditalic && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("bolditalic");
                         },
                         title: words.bolditalic
-                    }, words.bolditalic), React.createElement("li", {
+                    }, words.bolditalic), toolbar.para.delline && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("delline");
                         },
                         title: words.delline
-                    }, words.delline), React.createElement("li", {
+                    }, words.delline), toolbar.para.underline && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("underline");
                         },
                         title: words.underline
-                    }, words.underline), React.createElement("li", {
+                    }, words.underline), toolbar.para.keytext && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("keytext");
                         },
                         title: words.keytext
-                    }, words.keytext), React.createElement("li", {
+                    }, words.keytext), toolbar.para.superscript && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("superscript");
                         },
                         title: words.superscript
-                    }, words.superscript), React.createElement("li", {
+                    }, words.superscript), toolbar.para.subscript && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("subscript");
                         },
                         title: words.subscript
-                    }, words.subscript), React.createElement("li", {
+                    }, words.subscript), toolbar.para.marktag && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("marktag");
                         },
@@ -55118,7 +55202,10 @@
                     }), React.createElement("ul", {
                         style: imgHidden ? {
                             display: "none"
-                        } : {}
+                        } : {},
+                        onClick: function() {
+                            return _this.imgMouseOut();
+                        }
                     }, React.createElement("li", {
                         onClick: function() {
                             return _this.addImgUrl();
@@ -55142,7 +55229,10 @@
                     }), React.createElement("ul", {
                         style: listHidden ? {
                             display: "none"
-                        } : {}
+                        } : {},
+                        onClick: function() {
+                            return _this.listMouseOut();
+                        }
                     }, React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("disorderlist");
@@ -55171,7 +55261,10 @@
                     }), React.createElement("ul", {
                         style: moreHidden ? {
                             display: "none"
-                        } : {}
+                        } : {},
+                        onClick: function() {
+                            return _this.moreMouseOut();
+                        }
                     }, toolbar.quote && React.createElement("li", {
                         onClick: function() {
                             return _this.onClick("quote");
@@ -55394,9 +55487,14 @@
                     var _this = _super.call(this, props) || this;
                     return _this.$vm = React.createRef(), _this.$scrollEdit = React.createRef(), _this.$scrollPreview = React.createRef(), 
                     _this.$blockEdit = React.createRef(), _this.$blockPreview = React.createRef(), _this.initLanguage = function() {
-                        var language = _this.props.language, lang = lib_1.CONFIG.langList.indexOf(language) >= 0 ? language : "en";
-                        _this.setState({
-                            words: lib_1.CONFIG.language[lang]
+                        var language = _this.props.language;
+                        if ("string" == typeof language) {
+                            var lang = lib_1.CONFIG.langList.indexOf(language) >= 0 ? language : "en";
+                            _this.setState({
+                                words: lib_1.CONFIG.language[lang]
+                            });
+                        } else _this.setState({
+                            words: language
                         });
                     }, _this.handleChange = function(e) {
                         var value = e.target.value;
@@ -55442,6 +55540,16 @@
                                 prefix: "#### ",
                                 subfix: "",
                                 str: words.h4
+                            },
+                            h5: {
+                                prefix: "##### ",
+                                subfix: "",
+                                str: words.h5
+                            },
+                            h6: {
+                                prefix: "###### ",
+                                subfix: "",
+                                str: words.h6
                             },
                             quote: {
                                 prefix: "> ",
@@ -55578,18 +55686,18 @@
                     }, _this.toolBarRightClick = function(type) {
                         var rightClick = {
                             preview: function() {
-                                _this.setState({
+                                _this.reLineNum(), _this.setState({
                                     preview: !_this.state.preview
                                 });
                             },
                             expand: function() {
-                                _this.setState({
+                                _this.reLineNum(), _this.setState({
                                     expand: !_this.state.expand
                                 });
                             },
                             subfield: function() {
                                 var _a = _this.state, preview = _a.preview, subfield = _a.subfield;
-                                preview ? subfield ? _this.setState({
+                                _this.reLineNum(), preview ? subfield ? _this.setState({
                                     subfield: !1,
                                     preview: !1
                                 }) : _this.setState({
@@ -55616,17 +55724,58 @@
                         historyIndex: 0,
                         lineIndex: 1,
                         value: props.value,
-                        words: {}
+                        words: {
+                            placeholder: "",
+                            h1: "",
+                            h2: "",
+                            h3: "",
+                            h4: "",
+                            h5: "",
+                            h6: "",
+                            undo: "",
+                            redo: "",
+                            list: "",
+                            orderlist: "",
+                            disorderlist: "",
+                            checklist: "",
+                            para: "",
+                            italic: "",
+                            bold: "",
+                            bolditalic: "",
+                            delline: "",
+                            underline: "",
+                            keytext: "",
+                            superscript: "",
+                            subscript: "",
+                            marktag: "",
+                            quote: "",
+                            table: "",
+                            img: "",
+                            link: "",
+                            inlinecode: "",
+                            code: "",
+                            collapse: "",
+                            katex: "",
+                            save: "",
+                            preview: "",
+                            singleColumn: "",
+                            doubleColumn: "",
+                            fullscreenOn: "",
+                            fullscreenOff: "",
+                            addImgLink: "",
+                            addImg: "",
+                            toc: ""
+                        }
                     }, _this;
                 }
                 return __extends(MdEditor, _super), MdEditor.prototype.componentDidMount = function() {
-                    var _this = this, value = this.props.value;
+                    var _this = this;
                     keydownListen_1.default(this.$vm.current, function(type) {
                         _this.toolBarLeftClick(type);
-                    }), this.reLineNum(value), this.initLanguage();
+                    }), this.reLineNum(), this.initLanguage();
                 }, MdEditor.prototype.componentDidUpdate = function(preProps) {
                     var _this = this, _a = this.props, value = _a.value, preview = _a.preview, expand = _a.expand, subfield = _a.subfield, language = _a.language, _b = this.state, history = _b.history, historyIndex = _b.historyIndex;
-                    if (preProps.value !== value && this.reLineNum(value), value !== history[historyIndex] && (window.clearTimeout(this.currentTimeout), 
+                    if (preProps.value !== value && this.reLineNum(), value !== history[historyIndex] && (window.clearTimeout(this.currentTimeout), 
                     this.currentTimeout = window.setTimeout(function() {
                         _this.saveHistory(value);
                     }, 500)), subfield !== preProps.subfield && this.state.subfield !== subfield && this.setState({
@@ -55635,19 +55784,21 @@
                         preview: preview
                     }), expand !== preProps.expand && this.state.expand !== expand && this.setState({
                         expand: expand
-                    }), language !== preProps.language) {
+                    }), language !== preProps.language) if ("string" == typeof language) {
                         var lang = lib_1.CONFIG.langList.indexOf(language) >= 0 ? language : "en";
                         this.setState({
                             words: lib_1.CONFIG.language[lang]
                         });
-                    }
-                }, MdEditor.prototype.reLineNum = function(value) {
-                    var lineIndex = value ? value.split("\n").length : 1;
+                    } else this.setState({
+                        words: language
+                    });
+                }, MdEditor.prototype.reLineNum = function() {
+                    var editHeight = parseFloat(document.getElementById("true-value").getBoundingClientRect().height.toFixed(1)), baseHeight = parseInt(((editHeight - 16) / 22.4).toFixed());
                     this.setState({
-                        lineIndex: lineIndex
+                        lineIndex: baseHeight
                     });
                 }, MdEditor.prototype.render = function() {
-                    var _a = this.state, preview = _a.preview, expand = _a.expand, subfield = _a.subfield, lineIndex = _a.lineIndex, words = _a.words, _b = this.props, value = _b.value, placeholder = _b.placeholder, fontSize = _b.fontSize, disabled = _b.disabled, height = _b.height, style = _b.style, toolbar = _b.toolbar, outline = _b.outline, editorClass = classnames_1.default({
+                    var _a = this.state, preview = _a.preview, expand = _a.expand, subfield = _a.subfield, lineIndex = _a.lineIndex, words = _a.words, _b = this.props, value = _b.value, placeholder = _b.placeholder, fontSize = _b.fontSize, disabled = _b.disabled, height = _b.height, style = _b.style, toolbar = _b.toolbar, outline = _b.outline, highlight = _b.highlight, anchor = _b.anchor, editorClass = classnames_1.default({
                         "for-editor-edit": !0,
                         "for-panel": !0,
                         "for-active": preview && subfield,
@@ -55713,7 +55864,7 @@
                         disabled: disabled,
                         onChange: this.handleChange,
                         placeholder: placeholder || words.placeholder
-                    })))), preview && outline && React.createElement("div", {
+                    })))), preview && outline && anchor && React.createElement("div", {
                         id: "for-outline-box",
                         className: "for-outline-box"
                     }, React.createElement("div", {
@@ -55733,7 +55884,7 @@
                         ref: this.$scrollPreview,
                         className: "for-preview for-markdown-preview",
                         dangerouslySetInnerHTML: {
-                            __html: marked_1.default(value, this.props.highlight)
+                            __html: marked_1.default(value, highlight, anchor)
                         }
                     }))));
                 }, MdEditor.defaultProps = {
@@ -55749,7 +55900,8 @@
                     style: {},
                     toolbar: lib_1.CONFIG.toolbar,
                     language: "en",
-                    outline: !0
+                    outline: !0,
+                    anchor: !0
                 }, MdEditor;
             }(React.Component);
             exports.default = MdEditor;
@@ -55856,7 +56008,7 @@
                 };
             };
             exports.__esModule = !0;
-            var marked_1 = __importDefault(__webpack_require__("./node_modules/marked/src/marked.js")), katex_1 = __importDefault(__webpack_require__("./node_modules/katex/dist/katex.js")), emojione = __webpack_require__("./node_modules/emojione/lib/js/emojione.js"), markedRender = function(content, highlight) {
+            var marked_1 = __importDefault(__webpack_require__("./node_modules/marked/src/marked.js")), katex_1 = __importDefault(__webpack_require__("./node_modules/katex/dist/katex.js")), emojione = __webpack_require__("./node_modules/emojione/lib/js/emojione.js"), markedRender = function(content, highlight, anchor) {
                 marked_1.default.setOptions({
                     renderer: new marked_1.default.Renderer(),
                     gfm: !0,
@@ -55930,13 +56082,13 @@
                 }, renderer.link = function(href, title, text) {
                     return "<a href=" + href + "\n      title=" + (title || href) + "\n      target='_blank'\n      }>" + text + "</a>";
                 }, renderer.heading = function(text, level) {
-                    return "<h" + level + '>\n    <span class="for-heading">' + text + '</span>\n    <a href="#' + text + '" name="' + text + '" class="for-anchor">\n      #\n    </a>\n  </h' + level + ">";
+                    return "<h" + level + '>\n    <span class="for-heading">' + text + "</span>\n    " + (anchor ? '<a href="#' + text + '" name="' + text + '" class="for-anchor">#</a>' : "") + "\n  </h" + level + ">";
                 }, marked_1.default(content, {
                     renderer: renderer
                 });
             };
-            exports.default = function(content, highlight) {
-                return "string" != typeof content ? "" : markedRender(content, highlight);
+            exports.default = function(content, highlight, anchor) {
+                return "string" != typeof content ? "" : markedRender(content, highlight, anchor);
             };
         },
         "./src/lib/helpers/outlined.ts": function(module, exports, __webpack_require__) {
@@ -55990,7 +56142,18 @@
                     h3: !0,
                     h4: !0,
                     img: !0,
-                    para: !0,
+                    para: {
+                        paragraph: !0,
+                        italic: !0,
+                        bold: !0,
+                        bolditalic: !0,
+                        delline: !0,
+                        underline: !0,
+                        keytext: !0,
+                        superscript: !0,
+                        subscript: !0,
+                        marktag: !0
+                    },
                     table: !0,
                     quote: !0,
                     link: !0,
@@ -56010,16 +56173,16 @@
             };
         },
         "./src/lib/lang/en/index.json": function(module) {
-            module.exports = JSON.parse('{"placeholder":"Begin editing...","undo":"Undo","redo":"Redo","h1":"Header 1","h2":"Header 2","h3":"Header 3","h4":"Header 4","img":"Image Link","para":"Paragraphy","italic":"Italic","bold":"Bold","bolditalic":"Bold Italic","delline":"Delete Line","underline":"Underline","keytext":"Keyboard Text","superscript":"Superscript","subscript":"Subscript","marktag":"Mark Tag","table":"Table","quote":"Quote","link":"Link","list":"List","orderlist":"Order List","disorderlist":"Disorder List","checklist":"Check List","inlinecode":"Inline Code","code":"Code","collapse":"Collapse","katex":"KaTeX","save":"Save","preview":"Preview","singleColumn":"Single Column","doubleColumn":"Double Columns","fullscreenOn":"FullScreen ON","fullscreenOff":"FullScreen OFF","addImgLink":"Add Image Link","addImg":"Upload Image","toc":"Generate TOC"}');
+            module.exports = JSON.parse('{"placeholder":"Begin editing...","undo":"Undo","redo":"Redo","h1":"Header 1","h2":"Header 2","h3":"Header 3","h4":"Header 4","h5":"Header 5","h6":"Header 6","img":"Image Link","para":"Paragraphy","italic":"Italic","bold":"Bold","bolditalic":"Bold Italic","delline":"Delete Line","underline":"Underline","keytext":"Keyboard Text","superscript":"Superscript","subscript":"Subscript","marktag":"Mark Tag","table":"Table","quote":"Quote","link":"Link","list":"List","orderlist":"Order List","disorderlist":"Disorder List","checklist":"Check List","inlinecode":"Inline Code","code":"Code","collapse":"Collapse","katex":"KaTeX","save":"Save","preview":"Preview","singleColumn":"Single Column","doubleColumn":"Double Columns","fullscreenOn":"FullScreen ON","fullscreenOff":"FullScreen OFF","addImgLink":"Add Image Link","addImg":"Upload Image","toc":"Generate TOC"}');
         },
         "./src/lib/lang/jp/index.json": function(module) {
-            module.exports = JSON.parse('{"placeholder":"入力を開始...","undo":"元に戻す","redo":"やり直す","h1":"第1レベル見出し","h2":"第2レベル見出し","h3":"第3レベル見出し","h4":"第4レベル見出し","para":"段落","italic":"イタリック","bold":"大胆な","bolditalic":"ボールドイタリック","delline":"取り消し線","underline":"下線","keytext":"キーテキスト","superscript":"上付き","subscript":"下付き","marktag":"マーク","table":"テーブル","quote":"引用","img":"画像","link":"リンク","list":"リスト","orderlist":"ナンバリング","disorderlist":"箇条書き","checklist":"チェックリスト","inlinecode":"コード","code":"コードブロック","collapse":"折りたたみブロック","katex":"KaTeX","save":"保存する","preview":"下見","singleColumn":"単一の列","doubleColumn":"複列","fullscreenOn":"全画面","fullscreenOff":"全画面を終了","addImgLink":"画像リンク","addImg":"画像を追加","toc":"目次"}');
+            module.exports = JSON.parse('{"placeholder":"入力を開始...","undo":"元に戻す","redo":"やり直す","h1":"第1レベル見出し","h2":"第2レベル見出し","h3":"第3レベル見出し","h4":"第4レベル見出し","h5":"第5レベル見出し","h6":"第6レベル見出し","para":"段落","italic":"イタリック","bold":"大胆な","bolditalic":"ボールドイタリック","delline":"取り消し線","underline":"下線","keytext":"キーテキスト","superscript":"上付き","subscript":"下付き","marktag":"マーク","table":"テーブル","quote":"引用","img":"画像","link":"リンク","list":"リスト","orderlist":"ナンバリング","disorderlist":"箇条書き","checklist":"チェックリスト","inlinecode":"コード","code":"コードブロック","collapse":"折りたたみブロック","katex":"KaTeX","save":"保存する","preview":"下見","singleColumn":"単一の列","doubleColumn":"複列","fullscreenOn":"全画面","fullscreenOff":"全画面を終了","addImgLink":"画像リンク","addImg":"画像を追加","toc":"目次"}');
         },
         "./src/lib/lang/zh-CN/index.json": function(module) {
-            module.exports = JSON.parse('{"placeholder":"开始编辑...","undo":"上一步","redo":"下一步","h1":"一级标题","h2":"二级标题","h3":"三级标题","h4":"四级标题","para":"段落","italic":"斜体","bold":"粗体","bolditalic":"斜粗体","delline":"删除线","underline":"下划线","keytext":"键盘文本","superscript":"上标","subscript":"下标","marktag":"高亮标签","table":"表格","quote":"引用","img":"添加图片链接","link":"链接","list":"列表","orderlist":"有序列表","disorderlist":"无序列表","checklist":"勾选框列表","inlinecode":"行内代码","code":"代码块","collapse":"折叠块","katex":"KaTeX","save":"保存","preview":"预览","singleColumn":"单栏","doubleColumn":"双栏","fullscreenOn":"全屏编辑","fullscreenOff":"退出全屏","addImgLink":"添加图片链接","addImg":"上传图片","toc":"生成大纲"}');
+            module.exports = JSON.parse('{"placeholder":"开始编辑...","undo":"上一步","redo":"下一步","h1":"一级标题","h2":"二级标题","h3":"三级标题","h4":"四级标题","h5":"五级标题","h6":"六级标题","para":"段落","italic":"斜体","bold":"粗体","bolditalic":"斜粗体","delline":"删除线","underline":"下划线","keytext":"键盘文本","superscript":"上标","subscript":"下标","marktag":"高亮标签","table":"表格","quote":"引用","img":"添加图片链接","link":"链接","list":"列表","orderlist":"有序列表","disorderlist":"无序列表","checklist":"勾选框列表","inlinecode":"行内代码","code":"代码块","collapse":"折叠块","katex":"KaTeX","save":"保存","preview":"预览","singleColumn":"单栏","doubleColumn":"双栏","fullscreenOn":"全屏编辑","fullscreenOff":"退出全屏","addImgLink":"添加图片链接","addImg":"上传图片","toc":"生成大纲"}');
         },
         "./src/lib/lang/zh-TW/index.json": function(module) {
-            module.exports = JSON.parse('{"placeholder":"開始編輯...","undo":"上一步","redo":"下一步","h1":"一階標題","h2":"二階標題","h3":"三階標題","h4":"四階標題","para":"段落","italic":"斜體强調","bold":"粗體强調","bolditalic":"斜粗體强調","delline":"刪除綫","underline":"下劃綫","keytext":"鍵盤文本","superscript":"上標","subscript":"下標","marktag":"高亮塊","table":"表格","quote":"區塊引言","img":"添加圖片連結","link":"連結","list":"清單","orderlist":"有序清單","disorderlist":"無序清單","checklist":"勾選清單","inlinecode":"程式碼","code":"程式碼區塊","collapse":"摺叠區塊","katex":"KaTeX","save":"保存","preview":"預覽","singleColumn":"單欄","doubleColumn":"雙欄","fullscreenOn":"全屏編輯","fullscreenOff":"退出全屏","addImgLink":"圖片連結","addImg":"上傳圖片","toc":"生成大綱"}');
+            module.exports = JSON.parse('{"placeholder":"開始編輯...","undo":"上一步","redo":"下一步","h1":"一階標題","h2":"二階標題","h3":"三階標題","h4":"四階標題","h5":"五階標題","h6":"六階標題","para":"段落","italic":"斜體强調","bold":"粗體强調","bolditalic":"斜粗體强調","delline":"刪除綫","underline":"下劃綫","keytext":"鍵盤文本","superscript":"上標","subscript":"下標","marktag":"高亮塊","table":"表格","quote":"區塊引言","img":"添加圖片連結","link":"連結","list":"清單","orderlist":"有序清單","disorderlist":"無序清單","checklist":"勾選清單","inlinecode":"程式碼","code":"程式碼區塊","collapse":"摺叠區塊","katex":"KaTeX","save":"保存","preview":"預覽","singleColumn":"單欄","doubleColumn":"雙欄","fullscreenOn":"全屏編輯","fullscreenOff":"退出全屏","addImgLink":"圖片連結","addImg":"上傳圖片","toc":"生成大綱"}');
         },
         0: function(module, exports, __webpack_require__) {
             module.exports = __webpack_require__("./example/index.tsx");

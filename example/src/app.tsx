@@ -78,7 +78,48 @@ class App extends Component<{}, IS> {
 
   render() {
     const { value, mobile } = this.state
-
+    const customLang: any = {
+      placeholder: '开始编辑...',
+      undo: '上一步',
+      redo: '下一步',
+      h1: '一级标题',
+      h2: '二级标题',
+      h3: '三级标题',
+      h4: '四级标题',
+      h5: '五级标题',
+      h6: '六级标题',
+      para: '段落',
+      italic: '斜体',
+      bold: '粗体',
+      bolditalic: '斜粗体',
+      delline: '删除线',
+      underline: '下划线',
+      keytext: '键盘文本',
+      superscript: '上标',
+      subscript: '下标',
+      marktag: '高亮标签',
+      table: '表格',
+      quote: '引用',
+      img: '添加图片链接',
+      link: '链接',
+      list: '列表',
+      orderlist: '有序列表',
+      disorderlist: '无序列表',
+      checklist: '勾选框列表',
+      inlinecode: '行内代码',
+      code: '代码块',
+      collapse: '折叠块',
+      katex: 'KaTeX',
+      save: '保存',
+      preview: '预览',
+      singleColumn: '单栏',
+      doubleColumn: '双栏',
+      fullscreenOn: '全屏编辑',
+      fullscreenOff: '退出全屏',
+      addImgLink: '添加图片链接',
+      addImg: '上传图片',
+      toc: '生成大纲'
+    }
     return (
       <div className={styles.main}>
         <div className={styles.top}>
@@ -163,7 +204,7 @@ class App extends Component<{}, IS> {
             <Editor
               ref={this.$vm}
               height="500px"
-              language={this.state.language}
+              language={customLang}
               value={value}
               subfield={false}
               onChange={(value) => this.handleChange(value)}
@@ -181,6 +222,7 @@ class App extends Component<{}, IS> {
               onChange={(value) => this.handleChange(value)}
               onSave={(value) => this.handleSave(value)}
               highlight={Hljs.highlightAuto}
+              anchor={false}
             />
           )}
         </div>

@@ -161,68 +161,108 @@ class Toolbars extends React.Component<IP, IS> {
                 <i className="foricon for-redo" />
               </li>
             )}
-            {toolbar.h1 && (
-              <li onClick={() => this.onClick('h1')} title={words.h1}>
-                H1
-              </li>
-            )}
-            {toolbar.h2 && (
-              <li onClick={() => this.onClick('h2')} title={words.h2}>
-                H2
-              </li>
-            )}
-            {toolbar.h3 && (
-              <li onClick={() => this.onClick('h3')} title={words.h3}>
-                H3
-              </li>
-            )}
-            {toolbar.h4 && (
-              <li onClick={() => this.onClick('h4')} title={words.h4}>
-                H4
-              </li>
-            )}
-            {/* 引用 */}
-            {toolbar.quote && (
-              <li onClick={() => this.onClick('quote')} title={words.quote}>
-                <i className="foricon for-quote" />
-              </li>
-            )}
+            {/* 折叠标题 */}
+            <li
+              className="for-toolbar-title"
+              onMouseOver={() => this.titleMouseOver()}
+              onMouseOut={() => this.titleMouseOut()}
+              onClick={() => this.titleMouseOut()}
+            >
+              <i className="foricon for-title" />
+              <ul style={titleHidden ? { display: 'none' } : {}}>
+                {toolbar.h1 && (
+                  <li onClick={() => this.onClick('h1')} title={words.h1}>
+                    {words.h1}
+                  </li>
+                )}
+                {toolbar.h2 && (
+                  <li onClick={() => this.onClick('h2')} title={words.h2}>
+                    {words.h2}
+                  </li>
+                )}
+                {toolbar.h3 && (
+                  <li onClick={() => this.onClick('h3')} title={words.h3}>
+                    {words.h3}
+                  </li>
+                )}
+                {toolbar.h4 && (
+                  <li onClick={() => this.onClick('h4')} title={words.h4}>
+                    {words.h4}
+                  </li>
+                )}
+                {toolbar.h5 && (
+                  <li onClick={() => this.onClick('h5')} title={words.h5}>
+                    {words.h5}
+                  </li>
+                )}
+                {toolbar.h6 && (
+                  <li onClick={() => this.onClick('h6')} title={words.h6}>
+                    {words.h6}
+                  </li>
+                )}
+              </ul>
+            </li>
             {/* 段落 */}
-            {toolbar.para && (
+            {toolbar.para.paragraph && (
               <li
                 className="for-toolbar-para"
                 onMouseOver={() => this.paraMouseOver()}
                 onMouseOut={() => this.paraMouseOut()}
+                onClick={() => this.paraMouseOut()}
               >
                 <i className="foricon for-text" />
                 <ul style={paraHidden ? { display: 'none' } : {}}>
-                  <li onClick={() => this.onClick('italic')} title={words.italic}>
-                    {words.italic}
-                  </li>
-                  <li onClick={() => this.onClick('bold')} title={words.bold}>
-                    {words.bold}
-                  </li>
-                  <li onClick={() => this.onClick('bolditalic')} title={words.bolditalic}>
-                    {words.bolditalic}
-                  </li>
-                  <li onClick={() => this.onClick('delline')} title={words.delline}>
-                    {words.delline}
-                  </li>
-                  <li onClick={() => this.onClick('underline')} title={words.underline}>
-                    {words.underline}
-                  </li>
-                  <li onClick={() => this.onClick('keytext')} title={words.keytext}>
-                    {words.keytext}
-                  </li>
-                  <li onClick={() => this.onClick('superscript')} title={words.superscript}>
-                    {words.superscript}
-                  </li>
-                  <li onClick={() => this.onClick('subscript')} title={words.subscript}>
-                    {words.subscript}
-                  </li>
-                  <li onClick={() => this.onClick('marktag')} title={words.marktag}>
-                    {words.marktag}
-                  </li>
+                  {toolbar.para.italic && (
+                    <li onClick={() => this.onClick('italic')} title={words.italic}>
+                      {words.italic}
+                    </li>
+                  )}
+                  {toolbar.para.bold && (
+                    <li onClick={() => this.onClick('bold')} title={words.bold}>
+                      {words.bold}
+                    </li>
+                  )}
+                  {toolbar.para.bolditalic && (
+                    <li onClick={() => this.onClick('bolditalic')} title={words.bolditalic}>
+                      {words.bolditalic}
+                    </li>
+                  )}
+
+                  {toolbar.para.delline && (
+                    <li onClick={() => this.onClick('delline')} title={words.delline}>
+                      {words.delline}
+                    </li>
+                  )}
+
+                  {toolbar.para.underline && (
+                    <li onClick={() => this.onClick('underline')} title={words.underline}>
+                      {words.underline}
+                    </li>
+                  )}
+
+                  {toolbar.para.keytext && (
+                    <li onClick={() => this.onClick('keytext')} title={words.keytext}>
+                      {words.keytext}
+                    </li>
+                  )}
+
+                  {toolbar.para.superscript && (
+                    <li onClick={() => this.onClick('superscript')} title={words.superscript}>
+                      {words.superscript}
+                    </li>
+                  )}
+
+                  {toolbar.para.subscript && (
+                    <li onClick={() => this.onClick('subscript')} title={words.subscript}>
+                      {words.subscript}
+                    </li>
+                  )}
+
+                  {toolbar.para.marktag && (
+                    <li onClick={() => this.onClick('marktag')} title={words.marktag}>
+                      {words.marktag}
+                    </li>
+                  )}
                 </ul>
               </li>
             )}
@@ -239,6 +279,7 @@ class Toolbars extends React.Component<IP, IS> {
                 className="for-toolbar-img"
                 onMouseOver={() => this.imgMouseOver()}
                 onMouseOut={() => this.imgMouseOut()}
+                onClick={() => this.imgMouseOut()}
               >
                 <i className="foricon for-image" />
                 <ul style={imgHidden ? { display: 'none' } : {}}>
@@ -254,6 +295,12 @@ class Toolbars extends React.Component<IP, IS> {
                 </ul>
               </li>
             )}
+            {/* 引用 */}
+            {toolbar.quote && (
+              <li onClick={() => this.onClick('quote')} title={words.quote}>
+                <i className="foricon for-quote" />
+              </li>
+            )}
             {toolbar.link && (
               <li onClick={() => this.onClick('link')} title={words.link}>
                 <i className="foricon for-link" />
@@ -265,6 +312,7 @@ class Toolbars extends React.Component<IP, IS> {
                 className="for-toolbar-list"
                 onMouseOver={() => this.listMouseOver()}
                 onMouseOut={() => this.listMouseOut()}
+                onClick={() => this.listMouseOut()}
               >
                 <i className="foricon for-list" />
                 <ul style={listHidden ? { display: 'none' } : {}}>
@@ -335,7 +383,10 @@ class Toolbars extends React.Component<IP, IS> {
               onMouseOut={() => this.titleMouseOut()}
             >
               <i className="foricon for-title" />
-              <ul style={titleHidden ? { display: 'none' } : {}}>
+              <ul
+                style={titleHidden ? { display: 'none' } : {}}
+                onClick={() => this.titleMouseOut()}
+              >
                 {toolbar.h1 && (
                   <li onClick={() => this.onClick('h1')} title={words.h1}>
                     {words.h1}
@@ -360,41 +411,68 @@ class Toolbars extends React.Component<IP, IS> {
             </li>
 
             {/* 段落 */}
-            {toolbar.para && (
+            {toolbar.para.paragraph && (
               <li
                 className="for-toolbar-para"
                 onMouseOver={() => this.paraMouseOver()}
                 onMouseOut={() => this.paraMouseOut()}
               >
                 <i className="foricon for-text" />
-                <ul style={paraHidden ? { display: 'none' } : {}}>
-                  <li onClick={() => this.onClick('italic')} title={words.italic}>
-                    {words.italic}
-                  </li>
-                  <li onClick={() => this.onClick('bold')} title={words.bold}>
-                    {words.bold}
-                  </li>
-                  <li onClick={() => this.onClick('bolditalic')} title={words.bolditalic}>
-                    {words.bolditalic}
-                  </li>
-                  <li onClick={() => this.onClick('delline')} title={words.delline}>
-                    {words.delline}
-                  </li>
-                  <li onClick={() => this.onClick('underline')} title={words.underline}>
-                    {words.underline}
-                  </li>
-                  <li onClick={() => this.onClick('keytext')} title={words.keytext}>
-                    {words.keytext}
-                  </li>
-                  <li onClick={() => this.onClick('superscript')} title={words.superscript}>
-                    {words.superscript}
-                  </li>
-                  <li onClick={() => this.onClick('subscript')} title={words.subscript}>
-                    {words.subscript}
-                  </li>
-                  <li onClick={() => this.onClick('marktag')} title={words.marktag}>
-                    {words.marktag}
-                  </li>
+                <ul
+                  style={paraHidden ? { display: 'none' } : {}}
+                  onClick={() => this.paraMouseOut()}
+                >
+                  {toolbar.para.italic && (
+                    <li onClick={() => this.onClick('italic')} title={words.italic}>
+                      {words.italic}
+                    </li>
+                  )}
+                  {toolbar.para.bold && (
+                    <li onClick={() => this.onClick('bold')} title={words.bold}>
+                      {words.bold}
+                    </li>
+                  )}
+                  {toolbar.para.bolditalic && (
+                    <li onClick={() => this.onClick('bolditalic')} title={words.bolditalic}>
+                      {words.bolditalic}
+                    </li>
+                  )}
+
+                  {toolbar.para.delline && (
+                    <li onClick={() => this.onClick('delline')} title={words.delline}>
+                      {words.delline}
+                    </li>
+                  )}
+
+                  {toolbar.para.underline && (
+                    <li onClick={() => this.onClick('underline')} title={words.underline}>
+                      {words.underline}
+                    </li>
+                  )}
+
+                  {toolbar.para.keytext && (
+                    <li onClick={() => this.onClick('keytext')} title={words.keytext}>
+                      {words.keytext}
+                    </li>
+                  )}
+
+                  {toolbar.para.superscript && (
+                    <li onClick={() => this.onClick('superscript')} title={words.superscript}>
+                      {words.superscript}
+                    </li>
+                  )}
+
+                  {toolbar.para.subscript && (
+                    <li onClick={() => this.onClick('subscript')} title={words.subscript}>
+                      {words.subscript}
+                    </li>
+                  )}
+
+                  {toolbar.para.marktag && (
+                    <li onClick={() => this.onClick('marktag')} title={words.marktag}>
+                      {words.marktag}
+                    </li>
+                  )}
                 </ul>
               </li>
             )}
@@ -406,7 +484,7 @@ class Toolbars extends React.Component<IP, IS> {
                 onMouseOut={() => this.imgMouseOut()}
               >
                 <i className="foricon for-image" />
-                <ul style={imgHidden ? { display: 'none' } : {}}>
+                <ul style={imgHidden ? { display: 'none' } : {}} onClick={() => this.imgMouseOut()}>
                   <li onClick={() => this.addImgUrl()}>{words.addImgLink}</li>
                   <li>
                     {words.addImg}
@@ -426,7 +504,10 @@ class Toolbars extends React.Component<IP, IS> {
                 onMouseOut={() => this.listMouseOut()}
               >
                 <i className="foricon for-list" />
-                <ul style={listHidden ? { display: 'none' } : {}}>
+                <ul
+                  style={listHidden ? { display: 'none' } : {}}
+                  onClick={() => this.listMouseOut()}
+                >
                   <li onClick={() => this.onClick('disorderlist')} title={words.disorderlist}>
                     {words.disorderlist}
                   </li>
@@ -445,7 +526,7 @@ class Toolbars extends React.Component<IP, IS> {
               onMouseOut={() => this.moreMouseOut()}
             >
               <i className="foricon for-more" />
-              <ul style={moreHidden ? { display: 'none' } : {}}>
+              <ul style={moreHidden ? { display: 'none' } : {}} onClick={() => this.moreMouseOut()}>
                 {/* 引用 */}
                 {toolbar.quote && (
                   <li onClick={() => this.onClick('quote')} title={words.quote}>

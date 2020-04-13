@@ -143,10 +143,20 @@
         > .for-pc {
             display: -webkit-box;
             display: flex;
+            width: calc(100% - 110px);
+            > ul {
+                flex-wrap: wrap;
+                width: 100%;
+                align-content: flex-start;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                flex-direction: row;
+            }
         }
         > .for-right-pc {
             display: -webkit-box;
             display: flex;
+            width: 110px;
         }
         > .for-mobile {
             display: none;

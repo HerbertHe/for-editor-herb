@@ -7,8 +7,8 @@ export interface ICONFIG {
   language: {
     'zh-CN': IWords
     'zh-TW': IWords
-    'en': IWords
-    'jp': IWords
+    en: IWords
+    jp: IWords
     [key: string]: IWords
   }
   langList: string[]
@@ -20,8 +20,8 @@ export const CONFIG: ICONFIG = {
   language: {
     'zh-CN': zhCN,
     'zh-TW': zhTW,
-    'en': en,
-    'jp': jp
+    en: en,
+    jp: jp
   },
   langList: ['zh-CN', 'zh-TW', 'en', 'jp'],
   toolbar: {
@@ -30,7 +30,18 @@ export const CONFIG: ICONFIG = {
     h3: true,
     h4: true,
     img: true,
-    para: true,
+    para: {
+      paragraph: true,
+      italic: true,
+      bold: true,
+      bolditalic: true,
+      delline: true,
+      underline: true,
+      keytext: true,
+      superscript: true,
+      subscript: true,
+      marktag: true
+    },
     table: true,
     quote: true,
     link: true,

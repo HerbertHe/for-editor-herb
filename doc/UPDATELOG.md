@@ -1,5 +1,7 @@
 # 更新日志
 
+- 2020-04-13
+  - v2.3.3: 更新[#5](https://github.com/HerbertHe/for-editor-herb/issues/5), [#6](https://github.com/HerbertHe/for-editor-herb/issues/6), [#7](https://github.com/HerbertHe/for-editor-herb/issues/7)
 - 2020-04-10
   - v2.3.2: 回退行计算方式，将在`v3.0.0`进行重构
   - v2.3.1: 增补更新

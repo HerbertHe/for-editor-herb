@@ -13,7 +13,7 @@
 
 `x.x.x` ---> `Incompatible Update` . `New Features(include Fixing Known Bugs)` . `Fix Bugs`
 
-A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long time without refreshing, without PR handler, the repository is built and kept in sync with `for-editor` PR. Hug to Open Source! If you like this, please give a star to [for-editor](https://github.com/kkfor/for-editor)
+A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long time without refreshing, without PR handler. Hug to Open Source! If you like this, please give a star to [for-editor](https://github.com/kkfor/for-editor)
 
 * [Demo](https://goer.icu/for-editor-herb/)
 * [GitHub](https://github.com/HerbertHe/for-editor-herb)
@@ -27,7 +27,8 @@ A branch of [for-editor](https://github.com/kkfor/for-editor)! Beacuse of long t
 * [x] Responsive Layout
 * [x] Support Preview Outline for jumping appointed anchor
 * [x] Generate TOC
-* [x] Support Traditional Chinese, Japanese (Welcome to PR translation to different lanaguages & Help to correct translation)
+* [x] Support Simplified Chinese, Traditional Chinese, English, Japanese
+* [x] Support localization ( v2.3.3~ )
 * [x] Support GitHub Diff Syntax ( v1.5.0~ )
 * [x] Support to highlight the programming language which you want ( v2.0.0~ )
 * [x] Support to render `emoji` by `emoji shortname` ( v2.2.0~ ), visit [joypixels](https://www.joypixels.com/emoji) for more information
@@ -84,6 +85,51 @@ class App extends Component {
 
   render() {
     const { value } = this.state
+    // Support default language('en', 'zh-CN', 'zh-TW', 'jp') and localization
+    const customLang: any = {
+      placeholder: "Begin editing...",
+      undo: "Undo",
+      redo: "Redo",
+      h1: "Header 1",
+      h2: "Header 2",
+      h3: "Header 3",
+      h4: "Header 4",
+      h5: "Header 5",
+      h6: "Header 6",
+      img: "Image Link",
+      para: "Paragraphy",
+      italic: "Italic",
+      bold: "Bold",
+      bolditalic: "Bold Italic",
+      delline: "Delete Line",
+      underline: "Underline",
+      keytext: "Keyboard Text",
+      superscript: "Superscript",
+      subscript: "Subscript",
+      marktag: "Mark Tag",
+      table: "Table",
+      quote: "Quote",
+      link: "Link",
+      list: "List",
+      orderlist: "Order List",
+      disorderlist: "Disorder List",
+      checklist: "Check List",
+      inlinecode: "Inline Code",
+      code: "Code",
+      collapse: "Collapse",
+      katex: "KaTeX",
+      save: "Save",
+      preview: "Preview",
+      singleColumn: "Single Column",
+      doubleColumn: "Double Columns",
+      fullscreenOn: "FullScreen ON",
+      fullscreenOff: "FullScreen OFF",
+      addImgLink: "Add Image Link",
+      addImg: "Upload Image",
+      toc: "Generate TOC"
+    }
+
+    }
     // Transfer function `Hljs.highlightAuto` to the Editor
     return (
       <Editor
@@ -102,20 +148,21 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 ### props
 
-| name        | type    | default             | description         |
-| ----------- | ------- | ------------------- | ------------------  |
-| value       | String  | -                   | value               |
-| language    | String  | zh-CN               | Language switch, zh-CN: Simplified Chinese, en: English, zh-TW: Traditional Chinese, jp: Japanese     |
-| placeholder | String  | Begin editing...            | The default prompt text when the textarea is empty  |
-| lineNum     | Boolean | true                        | Show lineNum                                        |
-| style       | Object  | -                           | editor styles                                       |
-| height      | String  | 600px                       | editor height                                       |
-| preview     | Boolean | false                       | preview switch                                      |
-| expand      | Boolean | false                       | fullscreen switch                                   |
-| subfield    | Boolean | false                       | true: Double columns - Edit preview same screen(notice: preview: true), Single Columns - otherwise not |
-| toolbar     | Object  | As in the following example | toolbars                                            |
-| outline     | Boolean | true | Display outline list for markdown                                          |
-| highlight   | Function| Hljs.highlightAuto | Hljs (highlight.js)'s function --- highlightAuto             |
+| name        | type     | default                     | description                                                                                            |
+| ----------- | -------- | --------------------------- | ------------------------------------------------------------------------------------------------------ |
+| value       | String   | -                           | value                                                                                                  |
+| language    | String `|` IWords  | en   | Default Language(zh-CN: Simplified Chinese, en: English, zh-TW: Traditional Chinese, jp: Japanese), support localization by following the `interface IWords`     |
+| placeholder | String   | Begin editing...            | The default prompt text when the textarea is empty                                                     |
+| lineNum     | Boolean  | true                        | Show lineNum                                                                                           |
+| style       | Object   | -                           | editor styles                                                                                          |
+| height      | String   | 600px                       | editor height                                                                                          |
+| preview     | Boolean  | false                       | preview switch                                                                                         |
+| expand      | Boolean  | false                       | fullscreen switch                                                                                      |
+| subfield    | Boolean  | false                       | true: Double columns - Edit preview same screen(notice: preview: true), Single Columns - otherwise not |
+| toolbar     | Object   | As in the following example | toolbars                                                                                               |
+| outline     | Boolean  | true                        | Display outline list for markdown                                                                      |
+| highlight   | Function | Hljs.highlightAuto          | Hljs (highlight.js)'s function --- highlightAuto                                                       |
+| anchor | Boolean | true | Control if the anchor is displayed at the preview |
 
 ```js
 /*
@@ -137,7 +184,18 @@ toolbar: {
     h4: true,
     img: true,
     list: true,
-    para: true,       // parapraph
+    para: {
+      paragraph: true,            // control the whole part if you don't want to display
+      italic: true,
+      bold: true,
+      bolditalic: true,
+      delline: true,
+      underline: true,
+      keytext: true,
+      superscript: true,
+      subscript: true,
+      marktag: true
+    },
     table: true,
     quote: true,
     link: true,
@@ -152,6 +210,55 @@ toolbar: {
     save: true,
     subfield: true,
     toc: true         // generate TOC
+```
+
+#### Localization
+
+> IWords
+
+```js
+interface IWords {
+  placeholder: string
+  h1: string
+  h2: string
+  h3: string
+  h4: string
+  h5: string
+  h6: string
+  undo: string
+  redo: string
+  list: string
+  orderlist: string
+  disorderlist: string
+  checklist: string
+  para: string
+  italic: string
+  bold: string
+  bolditalic: string
+  delline: string
+  underline: string
+  keytext: string
+  superscript: string
+  subscript: string
+  marktag: string
+  quote: string
+  table: string
+  img: string
+  link: string
+  inlinecode: string
+  code: string
+  collapse: string
+  katex: string
+  save: string
+  preview: string
+  singleColumn: string
+  doubleColumn: string
+  fullscreenOn: string
+  fullscreenOff: string
+  addImgLink: string
+  addImg: string
+  toc: string
+}
 ```
 
 ### events

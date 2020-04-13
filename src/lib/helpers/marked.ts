@@ -2,7 +2,7 @@ import marked from 'marked'
 import katex from 'katex'
 const emojione = require('emojione')
 
-const markedRender = (content: string, highlight: Function): string => {
+const markedRender = (content: string, highlight: any, anchor: boolean): string => {
   marked.setOptions({
     renderer: new marked.Renderer(),
     gfm: true,
@@ -20,9 +20,9 @@ const markedRender = (content: string, highlight: Function): string => {
   const headingParse = (text: string, level: number) => {
     return `<h${level}>
     <span class="for-heading">${text}</span>
-    <a href="#${text}" name="${text}" class="for-anchor">
-      #
-    </a>
+    ${anchor
+    ? `<a href="#${text}" name="${text}" class="for-anchor">#</a>`
+    : ''}
   </h${level}>`
   }
 
@@ -154,8 +154,8 @@ const markedRender = (content: string, highlight: Function): string => {
   return marked(content, { renderer })
 }
 
-export default (content: string, highlight: Function): string => {
+export default (content: string, highlight: any, anchor: boolean): string => {
   if (typeof content !== 'string') return ''
 
-  return markedRender(content, highlight)
+  return markedRender(content, highlight, anchor)
 }

@@ -12,15 +12,30 @@ import './lib/fonts/katex.css'
 import { CONFIG } from './lib'
 import { outlined, generateTOC } from './lib/helpers/outlined'
 
+export interface IParagraph {
+  paragraph?: boolean
+  italic?: boolean
+  bold?: boolean
+  bolditalic?: boolean
+  delline?: boolean
+  underline?: boolean
+  keytext?: boolean
+  superscript?: boolean
+  subscript?: boolean
+  marktag?: boolean
+}
+
 export interface IToolbar {
   h1?: boolean
   h2?: boolean
   h3?: boolean
   h4?: boolean
+  h5?: boolean
+  h6?: boolean
   // 列表
   list?: boolean
   // 段落
-  para?: boolean
+  para?: IParagraph
   // 引用
   quote?: boolean
   // 表格
@@ -44,51 +59,53 @@ export interface IToolbar {
 }
 
 export interface IWords {
-  placeholder?: string
-  h1?: string
-  h2?: string
-  h3?: string
-  h4?: string
-  undo?: string
-  redo?: string
+  placeholder: string
+  h1: string
+  h2: string
+  h3: string
+  h4: string
+  h5: string
+  h6: string
+  undo: string
+  redo: string
   // 列表
-  list?: string
-  orderlist?: string
-  disorderlist?: string
-  checklist?: string
+  list: string
+  orderlist: string
+  disorderlist: string
+  checklist: string
   // 段落
-  para?: string
-  italic?: string
-  bold?: string
-  bolditalic?: string
-  delline?: string
-  underline?: string
-  keytext?: string
-  superscript?: string
-  subscript?: string
-  marktag?: string
+  para: string
+  italic: string
+  bold: string
+  bolditalic: string
+  delline: string
+  underline: string
+  keytext: string
+  superscript: string
+  subscript: string
+  marktag: string
   // 引用
-  quote?: string
+  quote: string
   // 表格
-  table?: string
-  img?: string
-  link?: string
+  table: string
+  img: string
+  link: string
   // 行内代码
-  inlinecode?: string
-  code?: string
+  inlinecode: string
+  code: string
   // 折叠面板
-  collapse?: string
+  collapse: string
   // katex
-  katex?: string
-  save?: string
-  preview?: string
-  singleColumn?: string
-  doubleColumn?: string
-  fullscreenOn?: string
-  fullscreenOff?: string
-  addImgLink?: string
-  addImg?: string
-  toc?: string
+  katex: string
+  save: string
+  preview: string
+  singleColumn: string
+  doubleColumn: string
+  fullscreenOn: string
+  fullscreenOff: string
+  addImgLink: string
+  addImg: string
+  toc: string
 }
 
 interface ILeft {
@@ -110,7 +127,9 @@ interface IP {
   expand?: boolean
   subfield?: boolean
   toolbar?: IToolbar
-  language?: string
+  language?: string | IWords
+  // anchor
+  anchor?: boolean
   outline?: boolean
   addImg?: (file: File, index: number) => void
   // highlight
@@ -142,7 +161,8 @@ class MdEditor extends React.Component<IP, IS> {
     style: {},
     toolbar: CONFIG.toolbar,
     language: 'en',
-    outline: true
+    outline: true,
+    anchor: true
   }
   private $vm = React.createRef<HTMLTextAreaElement>()
   private $scrollEdit = React.createRef<HTMLDivElement>()
@@ -161,16 +181,56 @@ class MdEditor extends React.Component<IP, IS> {
       historyIndex: 0,
       lineIndex: 1,
       value: props.value,
-      words: {}
+      words: {
+        placeholder: '',
+        h1: '',
+        h2: '',
+        h3: '',
+        h4: '',
+        h5: '',
+        h6: '',
+        undo: '',
+        redo: '',
+        list: '',
+        orderlist: '',
+        disorderlist: '',
+        checklist: '',
+        para: '',
+        italic: '',
+        bold: '',
+        bolditalic: '',
+        delline: '',
+        underline: '',
+        keytext: '',
+        superscript: '',
+        subscript: '',
+        marktag: '',
+        quote: '',
+        table: '',
+        img: '',
+        link: '',
+        inlinecode: '',
+        code: '',
+        collapse: '',
+        katex: '',
+        save: '',
+        preview: '',
+        singleColumn: '',
+        doubleColumn: '',
+        fullscreenOn: '',
+        fullscreenOff: '',
+        addImgLink: '',
+        addImg: '',
+        toc: ''
+      }
     }
   }
 
   componentDidMount() {
-    const { value } = this.props
     keydownListen(this.$vm.current, (type: string) => {
       this.toolBarLeftClick(type)
     })
-    this.reLineNum(value)
+    this.reLineNum()
     this.initLanguage()
   }
 
@@ -178,7 +238,7 @@ class MdEditor extends React.Component<IP, IS> {
     const { value, preview, expand, subfield, language } = this.props
     const { history, historyIndex } = this.state
     if (preProps.value !== value) {
-      this.reLineNum(value)
+      this.reLineNum()
     }
     if (value !== history[historyIndex]) {
       window.clearTimeout(this.currentTimeout)
@@ -198,10 +258,16 @@ class MdEditor extends React.Component<IP, IS> {
     }
 
     if (language !== preProps.language) {
-      const lang = CONFIG.langList.indexOf(language) >= 0 ? language : 'en'
-      this.setState({
-        words: CONFIG.language[lang]
-      })
+      if (typeof language === 'string') {
+        const lang = CONFIG.langList.indexOf(language) >= 0 ? language : 'en'
+        this.setState({
+          words: CONFIG.language[lang]
+        })
+      } else {
+        this.setState({
+          words: language
+        })
+      }
     }
 
     // 在此添加渲染函数
@@ -209,10 +275,16 @@ class MdEditor extends React.Component<IP, IS> {
 
   initLanguage = (): void => {
     const { language } = this.props
-    const lang = CONFIG.langList.indexOf(language) >= 0 ? language : 'en'
-    this.setState({
-      words: CONFIG.language[lang]
-    })
+    if (typeof language === 'string') {
+      const lang = CONFIG.langList.indexOf(language) >= 0 ? language : 'en'
+      this.setState({
+        words: CONFIG.language[lang]
+      })
+    } else {
+      this.setState({
+        words: language
+      })
+    }
   }
 
   // 输入框改变
@@ -238,17 +310,16 @@ class MdEditor extends React.Component<IP, IS> {
     })
   }
 
-  // reLineNum() {
-  //   const editHeight: number = parseFloat(document.getElementById('true-value').getBoundingClientRect().height.toFixed(1))
-  //   const baseHeight: number = parseInt(((editHeight - 16.0) / 22.4).toFixed())
-  //   this.setState({
-  //     lineIndex: baseHeight
-  //   })
-  // }
-  reLineNum(value: string) {
-    const lineIndex = value ? value.split('\n').length : 1
+  reLineNum() {
+    const editHeight: number = parseFloat(
+      document
+        .getElementById('true-value')
+        .getBoundingClientRect()
+        .height.toFixed(1)
+    )
+    const baseHeight: number = parseInt(((editHeight - 16.0) / 22.4).toFixed())
     this.setState({
-      lineIndex
+      lineIndex: baseHeight
     })
   }
 
@@ -302,6 +373,16 @@ class MdEditor extends React.Component<IP, IS> {
         prefix: '#### ',
         subfix: '',
         str: words.h4
+      },
+      h5: {
+        prefix: '##### ',
+        subfix: '',
+        str: words.h5
+      },
+      h6: {
+        prefix: '###### ',
+        subfix: '',
+        str: words.h6
       },
       quote: {
         prefix: '> ',
@@ -455,11 +536,13 @@ class MdEditor extends React.Component<IP, IS> {
   // 右侧菜单
   toolBarRightClick = (type: string): void => {
     const toolbarRightPreviewClick = () => {
+      this.reLineNum()
       this.setState({
         preview: !this.state.preview
       })
     }
     const toolbarRightExpandClick = () => {
+      this.reLineNum()
       this.setState({
         expand: !this.state.expand
       })
@@ -467,6 +550,7 @@ class MdEditor extends React.Component<IP, IS> {
 
     const toolbarRightSubfieldClick = () => {
       const { preview, subfield } = this.state
+      this.reLineNum()
       if (preview) {
         if (subfield) {
           this.setState({
@@ -516,7 +600,18 @@ class MdEditor extends React.Component<IP, IS> {
 
   render() {
     const { preview, expand, subfield, lineIndex, words } = this.state
-    const { value, placeholder, fontSize, disabled, height, style, toolbar, outline } = this.props
+    const {
+      value,
+      placeholder,
+      fontSize,
+      disabled,
+      height,
+      style,
+      toolbar,
+      outline,
+      highlight,
+      anchor
+    } = this.props
     const editorClass = classNames({
       'for-editor-edit': true,
       'for-panel': true,
@@ -593,7 +688,7 @@ class MdEditor extends React.Component<IP, IS> {
             </div>
           </div>
           {/* 大纲 */}
-          {preview && outline && (
+          {preview && outline && anchor && (
             <div id="for-outline-box" className="for-outline-box">
               <div className="for-outline-title">
                 <i className="foricon for-outline"></i>
@@ -611,7 +706,7 @@ class MdEditor extends React.Component<IP, IS> {
               id="for-preview"
               ref={this.$scrollPreview}
               className="for-preview for-markdown-preview"
-              dangerouslySetInnerHTML={{ __html: marked(value, this.props.highlight) }}
+              dangerouslySetInnerHTML={{ __html: marked(value, highlight, anchor) }}
             ></div>
           </div>
         </div>
