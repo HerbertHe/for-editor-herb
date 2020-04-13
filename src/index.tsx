@@ -230,7 +230,7 @@ class MdEditor extends React.Component<IP, IS> {
     keydownListen(this.$vm.current, (type: string) => {
       this.toolBarLeftClick(type)
     })
-    this.reLineNum()
+    this.reHeight()
     this.initLanguage()
   }
 
@@ -238,7 +238,7 @@ class MdEditor extends React.Component<IP, IS> {
     const { value, preview, expand, subfield, language } = this.props
     const { history, historyIndex } = this.state
     if (preProps.value !== value) {
-      this.reLineNum()
+      this.reHeight()
     }
     if (value !== history[historyIndex]) {
       window.clearTimeout(this.currentTimeout)
@@ -311,16 +311,21 @@ class MdEditor extends React.Component<IP, IS> {
   }
 
   reLineNum() {
+    const { fontSize } = this.props
     const editHeight: number = parseFloat(
-      document
-        .getElementById('true-value')
-        .getBoundingClientRect()
-        .height.toFixed(1)
+      this.$vm.current.getBoundingClientRect().height.toFixed(1)
     )
-    const baseHeight: number = parseInt(((editHeight - 16.0) / 22.4).toFixed())
+    const lineHeight: number = parseFloat(fontSize.replace('px', '')) * 1.6
+    const baseHeight: number = parseInt(((editHeight - 16.0) / lineHeight).toFixed())
     this.setState({
       lineIndex: baseHeight
     })
+  }
+
+  reHeight() {
+    this.$vm.current.style.height = ''
+    this.$vm.current.style.height = this.$vm.current.scrollHeight + 'px'
+    this.reLineNum()
   }
 
   // 保存
@@ -536,13 +541,11 @@ class MdEditor extends React.Component<IP, IS> {
   // 右侧菜单
   toolBarRightClick = (type: string): void => {
     const toolbarRightPreviewClick = () => {
-      this.reLineNum()
       this.setState({
         preview: !this.state.preview
       })
     }
     const toolbarRightExpandClick = () => {
-      this.reLineNum()
       this.setState({
         expand: !this.state.expand
       })
@@ -550,7 +553,9 @@ class MdEditor extends React.Component<IP, IS> {
 
     const toolbarRightSubfieldClick = () => {
       const { preview, subfield } = this.state
-      this.reLineNum()
+      if (subfield) {
+        this.reHeight()
+      }
       if (preview) {
         if (subfield) {
           this.setState({

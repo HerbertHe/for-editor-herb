@@ -411,7 +411,7 @@
             .for-line-num {
                 list-style: none;
                 background: #eee;
-                padding: 8px 0 120px;
+                padding: 8px 3px 120px;
                 min-width: 30px;
                 text-align: center;
                 &.hidden {
@@ -444,14 +444,17 @@
 
     textarea {
         font-family: "Consolas", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-        box-sizing: border-box;
+        // box-sizing: border-box;
         position: absolute;
-        top: 0;
+        top: 8px;
         bottom: 0;
-        padding: 8px 0;
+        // padding: 8px 0;
+        border: none;
         display: block;
-        height: 100%;
+        height: auto;
         width: 100%;
+        margin: 0;
+        padding: 0;
         overflow: hidden;
         resize: none;
         border: none;
