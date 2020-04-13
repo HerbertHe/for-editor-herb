@@ -407,6 +407,16 @@ class Toolbars extends React.Component<IP, IS> {
                     {words.h4}
                   </li>
                 )}
+                {toolbar.h5 && (
+                  <li onClick={() => this.onClick('h5')} title={words.h5}>
+                    {words.h5}
+                  </li>
+                )}
+                {toolbar.h6 && (
+                  <li onClick={() => this.onClick('h6')} title={words.h6}>
+                    {words.h6}
+                  </li>
+                )}
               </ul>
             </li>
 

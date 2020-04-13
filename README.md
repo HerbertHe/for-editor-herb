@@ -182,6 +182,8 @@ toolbar: {
     h2: true,
     h3: true,
     h4: true,
+    h5: true,
+    h6: true,
     img: true,
     list: true,
     para: {

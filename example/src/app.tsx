@@ -222,7 +222,8 @@ class App extends Component<{}, IS> {
               onChange={(value) => this.handleChange(value)}
               onSave={(value) => this.handleSave(value)}
               highlight={Hljs.highlightAuto}
-              anchor={false}
+              anchor={true}
+              outline={true}
             />
           )}
         </div>

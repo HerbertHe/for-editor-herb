@@ -297,7 +297,8 @@
                             return _this.handleSave(value);
                         },
                         highlight: Hljs.highlightAuto,
-                        anchor: !1
+                        anchor: !0,
+                        outline: !0
                     })));
                 }, App;
             }(react_1.Component);
@@ -55127,7 +55128,17 @@
                             return _this.onClick("h4");
                         },
                         title: words.h4
-                    }, words.h4))), toolbar.para.paragraph && React.createElement("li", {
+                    }, words.h4), toolbar.h5 && React.createElement("li", {
+                        onClick: function() {
+                            return _this.onClick("h5");
+                        },
+                        title: words.h5
+                    }, words.h5), toolbar.h6 && React.createElement("li", {
+                        onClick: function() {
+                            return _this.onClick("h6");
+                        },
+                        title: words.h6
+                    }, words.h6))), toolbar.para.paragraph && React.createElement("li", {
                         className: "for-toolbar-para",
                         onMouseOver: function() {
                             return _this.paraMouseOver();
@@ -56141,6 +56152,8 @@
                     h2: !0,
                     h3: !0,
                     h4: !0,
+                    h5: !0,
+                    h6: !0,
                     img: !0,
                     para: {
                         paragraph: !0,
