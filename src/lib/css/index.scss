@@ -157,6 +157,17 @@
             display: -webkit-box;
             display: flex;
             width: 110px;
+            > ul {
+                display: -webkit-box;
+                display: flex;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                flex-direction: row;
+                -webkit-box-pack: end;
+                justify-content: flex-end;
+                -webkit-box-align: center;
+                align-items: center;
+            }
         }
         > .for-mobile {
             display: none;
@@ -176,7 +187,7 @@
             > ul {
                 flex-wrap: wrap;
                 width: 100%;
-                align-content: flex-start;
+                align-content: flex-end;
                 -webkit-box-orient: horizontal;
                 -webkit-box-direction: normal;
                 flex-direction: row;

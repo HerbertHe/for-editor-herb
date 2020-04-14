@@ -151,7 +151,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | name        | type     | default                     | description                                                                                            |
 | ----------- | -------- | --------------------------- | ------------------------------------------------------------------------------------------------------ |
 | value       | String   | -                           | value                                                                                                  |
-| language    | String `|` IWords  | en   | Default Language(zh-CN: Simplified Chinese, en: English, zh-TW: Traditional Chinese, jp: Japanese), support localization by following the `interface IWords`     |
+| language    | String / IWords  | en   | Default Language(zh-CN: Simplified Chinese, en: English, zh-TW: Traditional Chinese, jp: Japanese), support localization by following the `interface IWords`     |
 | placeholder | String   | Begin editing...            | The default prompt text when the textarea is empty                                                     |
 | lineNum     | Boolean  | true                        | Show lineNum                                                                                           |
 | style       | Object   | -                           | editor styles                                                                                          |

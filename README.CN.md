@@ -156,7 +156,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | preview     | Boolean | false       | 预览模式                                                        |
 | expand      | Boolean | false       | 全屏模式                                                        |
 | subfield    | Boolean | false       | 双栏模式(预览模式激活下有效)                                       |
-| language    | String `|` IWords | en       | 默认语言(支持 zh-CN:中文简体, en:英文, zh-TW: 繁体中文, jp: 日语)，支持按照IWords这个interface本土化       |
+| language    | String / IWords | en       | 默认语言(支持 zh-CN:中文简体, en:英文, zh-TW: 繁体中文, jp: 日语)，支持按照IWords这个interface本土化       |
 | toolbar     | Object  | 如下         | 自定义工具栏                                                    |
 | outline     | Boolean | true        | 显示Markdown的大纲                                              |
 | highlight   | Function | Hljs.highlightAuto | Hljs(highlight.js) 的 highlightAuto函数                 |
