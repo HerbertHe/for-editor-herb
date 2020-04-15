@@ -20,9 +20,7 @@ const markedRender = (content: string, highlight: any, anchor: boolean): string 
   const headingParse = (text: string, level: number) => {
     return `<h${level}>
     <span class="for-heading">${text}</span>
-    ${anchor
-    ? `<a href="#${text}" name="${text}" class="for-anchor">#</a>`
-    : ''}
+    ${anchor ? `<a href="#${text}" name="${text}" class="for-anchor">#</a>` : ''}
   </h${level}>`
   }
 
@@ -55,12 +53,12 @@ const markedRender = (content: string, highlight: any, anchor: boolean): string 
 
   // 段落解析
   const paragraphParse = (text: string) => {
-    const texBlock = /(?<=\$\$)[\s\S]*?(?=\$\$)/
-    const texInline = /(\$+)([^\$]|[^\$][\s\S]*?[^\$])\1(?!\$)/
-    const emojiInline = /(\:+)([^\:]|[^\:][\s\S]*?[^\:])\1(?!\:)/g
-    const excludeColon = /([\S]+:)/g
-    const excludeHttp = /(?<=http(s)?:\/\/)[\s\S]*?/
-    const markTag = /(\=\=+)([^\=\=]|[^\=\=][\s\S]*?[^\=\=])\1(?!\=\=)/g
+    const texBlock = new RegExp('(?<=\\$\\$)[\\s\\S]*?(?=\\$\\$)')
+    const texInline = new RegExp('(\\$+)([^\\$]|[^\\$][\\s\\S]*?[^\\$])\\1(?!\\$)')
+    const emojiInline = new RegExp('(\\:+)([^\\:]|[^\\:][\\s\\S]*?[^\:])\\1(?!\\:)', 'g')
+    const excludeColon = new RegExp('([\\S]+:)', 'g')
+    const excludeHttp = new RegExp('(?<=http(s)?:\\/\\/)[\\s\\S]*?')
+    const markTag = new RegExp('(\\=\\=+)([^\\=\\=]|[^\\=\\=][\\s\\S]*?[^\\=\\=])\\1(?!\\=\\=)', 'g')
 
     if (texBlock.test(text)) {
       return latexBlockParse(texBlock.exec(text)[0])
@@ -125,14 +123,18 @@ const markedRender = (content: string, highlight: any, anchor: boolean): string 
     if (language === 'diff') {
       let diffArray: Array<string> = code.split('\n')
       let backDiff: string = ''
+      const addDiff = new RegExp('(?<=\\+ )')
+      const delDiff = new RegExp('(?<=\\- )')
+      const focusDiff = new RegExp('(?<=\\! )')
+      const ignoreDiff = new RegExp('(?<=\\# )')
       diffArray.forEach((item: string) => {
-        if (/(?<=\+ )/.test(item)) {
+        if (addDiff.test(item)) {
           backDiff += `<p class="for-md-diff-add">${item}</p>`
-        } else if (/(?<=\- )/.test(item)) {
+        } else if (delDiff.test(item)) {
           backDiff += `<p class="for-md-diff-del">${item}</p>`
-        } else if (/(?<=\! )/.test(item)) {
+        } else if (focusDiff.test(item)) {
           backDiff += `<p class="for-md-diff-focus">${item}</p>`
-        } else if (/(?<=\# )/.test(item)) {
+        } else if (ignoreDiff.test(item)) {
           backDiff += `<p class="for-md-diff-ignore">${item}</p>`
         } else {
           backDiff += `<p>${item}</p>`

@@ -1,6 +1,6 @@
 {
   "name": "for-editor-herb",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "description": "react markdown editor",
   "main": "dist/index.js",
   "scripts": {
