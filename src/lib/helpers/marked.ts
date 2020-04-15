@@ -55,7 +55,7 @@ const markedRender = (content: string, highlight: any, anchor: boolean): string 
   const paragraphParse = (text: string) => {
     const texBlock = new RegExp('(?<=\\$\\$)[\\s\\S]*?(?=\\$\\$)')
     const texInline = new RegExp('(\\$+)([^\\$]|[^\\$][\\s\\S]*?[^\\$])\\1(?!\\$)')
-    const emojiInline = new RegExp('(\\:+)([^\\:]|[^\\:][\\s\\S]*?[^\:])\\1(?!\\:)', 'g')
+    const emojiInline = new RegExp('(\\:+)([^\\:]|[^\\:][\\s\\S]*?[^\\:])\\1(?!\\:)', 'g')
     const excludeColon = new RegExp('([\\S]+:)', 'g')
     const excludeHttp = new RegExp('(?<=http(s)?:\\/\\/)[\\s\\S]*?')
     const markTag = new RegExp('(\\=\\=+)([^\\=\\=]|[^\\=\\=][\\s\\S]*?[^\\=\\=])\\1(?!\\=\\=)', 'g')
