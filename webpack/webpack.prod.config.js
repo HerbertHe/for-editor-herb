@@ -7,7 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = merge(webpackBaseConfig, {
-  mode: 'development',
+  mode: 'production',
   entry: ['./example/index.tsx'],
   output: {
     path: path.resolve(__dirname, '../docs'),
