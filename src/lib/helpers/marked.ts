@@ -53,15 +53,19 @@ const markedRender = (content: string, highlight: any, anchor: boolean): string 
 
   // 段落解析
   const paragraphParse = (text: string) => {
-    const texBlock = new RegExp('(?<=\\$\\$)[\\s\\S]*?(?=\\$\\$)')
+    // const texBlock = new RegExp('(?<=\\$\\$)[\\s\\S]*?(?=\\$\\$)')
+    const texBlock = new RegExp('(\\$\\$+)([^\\$\\$]|[^\\$\\$][\\s\\S]*?[^\\$\\$])\\1(?!\\$\\$)')
     const texInline = new RegExp('(\\$+)([^\\$]|[^\\$][\\s\\S]*?[^\\$])\\1(?!\\$)')
     const emojiInline = new RegExp('(\\:+)([^\\:]|[^\\:][\\s\\S]*?[^\\:])\\1(?!\\:)', 'g')
     const excludeColon = new RegExp('([\\S]+:)', 'g')
-    const excludeHttp = new RegExp('(?<=http(s)?:\\/\\/)[\\s\\S]*?')
-    const markTag = new RegExp('(\\=\\=+)([^\\=\\=]|[^\\=\\=][\\s\\S]*?[^\\=\\=])\\1(?!\\=\\=)', 'g')
+    const excludeHttp = new RegExp('(http(s)?:\\/\\/)[\\s\\S]*?')
+    const markTag = new RegExp(
+      '(\\=\\=+)([^\\=\\=]|[^\\=\\=][\\s\\S]*?[^\\=\\=])\\1(?!\\=\\=)',
+      'g'
+    )
 
     if (texBlock.test(text)) {
-      return latexBlockParse(texBlock.exec(text)[0])
+      return latexBlockParse(texBlock.exec(text)[2])
     } else if (texInline.test(text)) {
       while (texInline.test(text)) {
         let result: RegExpExecArray = texInline.exec(text)
@@ -123,10 +127,10 @@ const markedRender = (content: string, highlight: any, anchor: boolean): string 
     if (language === 'diff') {
       let diffArray: Array<string> = code.split('\n')
       let backDiff: string = ''
-      const addDiff = new RegExp('(?<=\\+ )')
-      const delDiff = new RegExp('(?<=\\- )')
-      const focusDiff = new RegExp('(?<=\\! )')
-      const ignoreDiff = new RegExp('(?<=\\# )')
+      const addDiff = new RegExp('(\\+ )')
+      const delDiff = new RegExp('(\\- )')
+      const focusDiff = new RegExp('(\\! )')
+      const ignoreDiff = new RegExp('(\\# )')
       diffArray.forEach((item: string) => {
         if (addDiff.test(item)) {
           backDiff += `<p class="for-md-diff-add">${item}</p>`

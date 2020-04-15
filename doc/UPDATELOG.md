@@ -1,6 +1,7 @@
 # 更新日志
 
 - 2020-04-15
+  - v2.3.7: 修复正则表达式
   - v2.3.6: 修复[#10](https://github.com/HerbertHe/for-editor-herb/issues/10)
 - 2020-04-13
   - v2.3.5: 更好的计算行号

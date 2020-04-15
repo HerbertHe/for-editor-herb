@@ -56046,14 +56046,14 @@
                 };
                 return renderer.code = function(code, language) {
                     if ("diff" === language) {
-                        var diffArray = code.split("\n"), backDiff_1 = "", addDiff_1 = new RegExp("(?<=\\+ )"), delDiff_1 = new RegExp("(?<=\\- )"), focusDiff_1 = new RegExp("(?<=\\! )"), ignoreDiff_1 = new RegExp("(?<=\\# )");
+                        var diffArray = code.split("\n"), backDiff_1 = "", addDiff_1 = new RegExp("(\\+ )"), delDiff_1 = new RegExp("(\\- )"), focusDiff_1 = new RegExp("(\\! )"), ignoreDiff_1 = new RegExp("(\\# )");
                         return diffArray.forEach(function(item) {
                             addDiff_1.test(item) ? backDiff_1 += '<p class="for-md-diff-add">' + item + "</p>" : delDiff_1.test(item) ? backDiff_1 += '<p class="for-md-diff-del">' + item + "</p>" : focusDiff_1.test(item) ? backDiff_1 += '<p class="for-md-diff-focus">' + item + "</p>" : ignoreDiff_1.test(item) ? backDiff_1 += '<p class="for-md-diff-ignore">' + item + "</p>" : backDiff_1 += "<p>" + item + "</p>";
                         }), '<pre class="for-md-diff"><code>' + backDiff_1 + "</code></pre>";
                     }
                     return '<pre><code title="' + language + '" class="language-' + language + '">' + highlight(code).value + "</code></pre>";
                 }, renderer.paragraph = function(text) {
-                    var texBlock = new RegExp("(?<=\\$\\$)[\\s\\S]*?(?=\\$\\$)"), texInline = new RegExp("(\\$+)([^\\$]|[^\\$][\\s\\S]*?[^\\$])\\1(?!\\$)"), emojiInline = new RegExp("(\\:+)([^\\:]|[^\\:][\\s\\S]*?[^\\:])\\1(?!\\:)", "g"), excludeColon = new RegExp("([\\S]+:)", "g"), excludeHttp = new RegExp("(?<=http(s)?:\\/\\/)[\\s\\S]*?"), markTag = new RegExp("(\\=\\=+)([^\\=\\=]|[^\\=\\=][\\s\\S]*?[^\\=\\=])\\1(?!\\=\\=)", "g");
+                    var texBlock = new RegExp("(\\$\\$+)([^\\$\\$]|[^\\$\\$][\\s\\S]*?[^\\$\\$])\\1(?!\\$\\$)"), texInline = new RegExp("(\\$+)([^\\$]|[^\\$][\\s\\S]*?[^\\$])\\1(?!\\$)"), emojiInline = new RegExp("(\\:+)([^\\:]|[^\\:][\\s\\S]*?[^\\:])\\1(?!\\:)", "g"), excludeColon = new RegExp("([\\S]+:)", "g"), excludeHttp = new RegExp("(http(s)?:\\/\\/)[\\s\\S]*?"), markTag = new RegExp("(\\=\\=+)([^\\=\\=]|[^\\=\\=][\\s\\S]*?[^\\=\\=])\\1(?!\\=\\=)", "g");
                     if (texBlock.test(text)) return function(latex) {
                         return katex_1.default.renderToString(latex, {
                             displayMode: !0,
@@ -56064,7 +56064,7 @@
                             trust: !1,
                             output: "html"
                         });
-                    }(texBlock.exec(text)[0]);
+                    }(texBlock.exec(text)[2]);
                     if (texInline.test(text)) {
                         for (;texInline.test(text); ) {
                             var result = texInline.exec(text);
